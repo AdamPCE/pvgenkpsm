@@ -954,15 +954,15 @@ if 	(array['locatieveiligstellen'] == "Extractie mislukt") {
 if	(array['SoortGoed'] == "Smartphone met Simkaart en microSD") {
 	content = content	+  '<p>'
 						+  'De simkaart is door mij uitgelezen door gebruik te maken van ' + array['ufedtool'] + '.'
-						+ ' ' + capitalizeFirstLetter(array['ufedtool']) + ' extraheerd informatie uit de SIM om het vervolgens aan de onderzoeker te kunnen presenteren.'
+						+ ' ' + capitalizeFirstLetter(array['ufedtool']) + ' extraheerd informatie uit de simkaart om het vervolgens aan de onderzoeker te kunnen presenteren.'
 	if (array['simcode'] == "Ja, bekend") {
-						+ 'De SIM was voorzien van een bekende pin code. Hierdoor kon de simkaart uitgelezen worden'
+						+ 'De simkaart was voorzien van een bekende pin code. Hierdoor kon de simkaart uitgelezen worden'
 						+ 'met ' + capitalizeFirstLetter(array['ufedtool']) + '.'						
 						+  '</p>';
 	}else if (array['simcode'] == "Ja, onbekend") {
-						+ 'De SIM was voorzien van een onbekende pin code. Hierdoor kon de simkaart niet uitgelezen worden.'
+						+ 'De simkaart was voorzien van een onbekende pin code. Hierdoor kon de simkaart niet uitgelezen worden.'
 	}else if (array['simcode'] == "nee, niet actief") {
-						+ 'De SIM was niet voorzien van een pin code. Hierdoor kon de simkaart uitgelezen worden'
+						+ 'De simkaart was niet voorzien van een pin code. Hierdoor kon de simkaart uitgelezen worden'
 						+ 'met ' + capitalizeFirstLetter(array['ufedtool']) + '.'						
 						+  '</p>';
 	}
