@@ -592,6 +592,123 @@ if 	(array['SoortGoed'] == "Tablet met microSD") {
 	// next item
 }
 
+if 	(array['SoortGoed'] == "Tablet met Simkaart en microSD") {
+	content = content 	+ '<table width="100%">'
+						+ 	'<tr>'
+						+ 		'<td class="grey"  width="20%">Soort goed </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['SoortGoed'] ) + '</td>'
+						+ 	'</tr>'
+						+ 	'<tr>'
+						+ 		'<td class="grey"  width="20%">Merk goed </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['merkgoed'] ) + '</td>'
+						+ 	'</tr>'
+						+ 	'<tr>'
+						+		'<td class="grey" width="20%">Type </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['typegoed'] ) + '</td>'
+						+ 	'</tr>'
+						+ 	'<tr>'
+						+		'<td class="grey" width="20%">Serienummer </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['serialgoed'] ) + '</td>'
+						+ 	'</tr>'
+						+ 	'<tr>'
+						+		'<td class="grey" width="20%">GeheugenIntern </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['intmemsize'] ) + '</td>'
+						+ 	'</tr>'
+						+ 	'<tr>'
+						+		'<td class="grey" width="20%">Extern geheugen </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['extmemmerk'] ) + '</td>'
+						+ 	'</tr>'
+						+ 	'<tr>'
+						+		'<td class="grey" width="20%">Extern geheugen </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['extmemtype'] ) + '</td>'
+						+ 	'</tr>'
+						+ 	'<tr>'
+						+		'<td class="grey" width="20%">Extern geheugen </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['extmemsize'] ) + '</td>'
+						+ 	'</tr>'
+						+ 	'<tr>'
+						+		'<td class="grey" width="20%">Toestel aan of uit? </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['onoff'] ) + '</td>'
+						+ 	'</tr>'
+						+ 	'<tr>'
+						+		'<td class="grey" width="20%">Flightmode </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['flightmode'] ) + '</td>'
+						+ 	'</tr>'
+						+ 	'<tr>'
+						+		'<td class="grey" width="20%">Telecomprovider </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['telco'] ) + '</td>'
+						+ 	'</tr>'
+						+ 	'<tr>'
+						+		'<td class="grey" width="20%">ICCID </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['iccid'] ) + '</td>'
+						+ 	'</tr>'
+						+ 	'<tr>'
+						+		'<td class="grey" width="20%">IMSI </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['imsi'] ) + '</td>'
+						+ 	'</tr>'
+						+ 	'<tr>'
+						+		'<td class="grey" width="20%">SIMcode </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['simcode'] ) + '</td>'
+						+ 	'</tr>'
+						+ '</table>';
+
+					} else {
+	// next item
+}
+
+if 	(array['SoortGoed'] == "Tablet met Simkaart") {
+	content = content 	+ '<table width="100%">'
+						+ 	'<tr>'
+						+ 		'<td class="grey"  width="20%">Soort goed </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['SoortGoed'] ) + '</td>'
+						+ 	'</tr>'
+						+ 	'<tr>'
+						+ 		'<td class="grey"  width="20%">Merk goed </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['merkgoed'] ) + '</td>'
+						+ 	'</tr>'
+						+ 	'<tr>'
+						+		'<td class="grey" width="20%">Type </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['typegoed'] ) + '</td>'
+						+ 	'</tr>'
+						+ 	'<tr>'
+						+		'<td class="grey" width="20%">Serienummer </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['serialgoed'] ) + '</td>'
+						+ 	'</tr>'
+						+ 	'<tr>'
+						+		'<td class="grey" width="20%">Toestel aan of uit? </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['onoff'] ) + '</td>'
+						+ 	'</tr>'
+						+ 	'<tr>'
+						+		'<td class="grey" width="20%">Toestelcode </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['tstcode'] ) + '</td>'
+						+ 	'</tr>'
+						+ 	'<tr>'
+						+		'<td class="grey" width="20%">Flightmode </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['flightmode'] ) + '</td>'
+						+ 	'</tr>'
+						+ 	'<tr>'
+						+		'<td class="grey" width="20%">Telecomprovider </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['telco'] ) + '</td>'
+						+ 	'</tr>'
+						+ 	'<tr>'
+						+		'<td class="grey" width="20%">ICCID </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['iccid'] ) + '</td>'
+						+ 	'</tr>'
+						+ 	'<tr>'
+						+		'<td class="grey" width="20%">IMSI </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['imsi'] ) + '</td>'
+						+ 	'</tr>'
+						+ 	'<tr>'
+						+		'<td class="grey" width="20%">SIMcode </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['simcode'] ) + '</td>'
+						+ 	'</tr>'
+						+ '</table>';
+
+					} else {
+	// next item
+}
+
+
 if	(array['SoortGoed'] == "Geheugenkaart") {
 
 	content = content 	+ '<table width="100%">'
@@ -625,6 +742,152 @@ if	(array['SoortGoed'] == "Geheugenkaart") {
 						+ 	'</tr>'						
 						+ '</table>';
 } else {
+	// next item
+}
+
+	
+
+if	(array['SoortGoed'] == "Harde schijf") {
+
+	content = content 	+ '<table width="100%">'
+						+ 	'<tr>'
+						+ 		'<td class="grey"  width="20%">Soort goed </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['SoortGoed'] ) + '</td>'
+						+ 	'</tr>'
+						+ 	'<tr>'
+						+ 		'<td class="grey"  width="20%">Merk goed </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['merkgoed'] ) + '</td>'
+						+ 	'</tr>'
+						+ 	'<tr>'
+						+		'<td class="grey" width="20%">Type </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['typegoed'] ) + '</td>'
+						+ 	'</tr>'
+						+ 	'<tr>'
+						+		'<td class="grey" width="20%">Serienummer </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['serialgoed'] ) + '</td>'
+						+ 	'</tr>'
+						+ 	'<tr>'
+						+		'<td class="grey" width="20%">Extern geheugen </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['extmemmerk'] ) + '</td>'
+						+ 	'</tr>'
+						+ 	'<tr>'
+						+		'<td class="grey" width="20%">Extern geheugen </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['extmemtype'] ) + '</td>'
+						+ 	'</tr>'
+						+ 	'<tr>'
+						+		'<td class="grey" width="20%">Capaciteit </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['extmemsize'] ) + '</td>'
+						+ 	'</tr>'
+						+ '</table>';
+					} else {
+	// next item
+}
+	
+if	(array['SoortGoed'] == "USB stick") {
+
+	content = content 	+ '<table width="100%">'
+						+ 	'<tr>'
+						+ 		'<td class="grey"  width="20%">Soort goed </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['SoortGoed'] ) + '</td>'
+						+ 	'</tr>'
+						+ 	'<tr>'
+						+ 		'<td class="grey"  width="20%">Merk goed </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['merkgoed'] ) + '</td>'
+						+ 	'</tr>'
+						+ 	'<tr>'
+						+		'<td class="grey" width="20%">Type </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['typegoed'] ) + '</td>'
+						+ 	'</tr>'
+						+ 	'<tr>'
+						+		'<td class="grey" width="20%">Serienummer </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['serialgoed'] ) + '</td>'
+						+ 	'</tr>'
+						+ 	'<tr>'
+						+		'<td class="grey" width="20%">Extern geheugen </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['extmemmerk'] ) + '</td>'
+						+ 	'</tr>'
+						+ 	'<tr>'
+						+		'<td class="grey" width="20%">Extern geheugen </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['extmemtype'] ) + '</td>'
+						+ 	'</tr>'
+						+ 	'<tr>'
+						+		'<td class="grey" width="20%">Capaciteit </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['extmemsize'] ) + '</td>'
+						+ 	'</tr>'
+						+ '</table>';
+					} else {
+	// next item
+}
+
+if	(array['SoortGoed'] == "Datadrager") {
+
+	content = content 	+ '<table width="100%">'
+						+ 	'<tr>'
+						+ 		'<td class="grey"  width="20%">Soort goed </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['SoortGoed'] ) + '</td>'
+						+ 	'</tr>'
+						+ 	'<tr>'
+						+ 		'<td class="grey"  width="20%">Merk goed </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['merkgoed'] ) + '</td>'
+						+ 	'</tr>'
+						+ 	'<tr>'
+						+		'<td class="grey" width="20%">Type </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['typegoed'] ) + '</td>'
+						+ 	'</tr>'
+						+ 	'<tr>'
+						+		'<td class="grey" width="20%">Serienummer </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['serialgoed'] ) + '</td>'
+						+ 	'</tr>'
+						+ 	'<tr>'
+						+		'<td class="grey" width="20%">Extern geheugen </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['extmemmerk'] ) + '</td>'
+						+ 	'</tr>'
+						+ 	'<tr>'
+						+		'<td class="grey" width="20%">Extern geheugen </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['extmemtype'] ) + '</td>'
+						+ 	'</tr>'
+						+ 	'<tr>'
+						+		'<td class="grey" width="20%">Capaciteit </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['extmemsize'] ) + '</td>'
+						+ 	'</tr>'
+						+ '</table>';
+					} else {
+	// next item
+}	
+
+if	(array['SoortGoed'] == "Laptop/Computer") {
+
+	content = content 	+ '<table width="100%">'
+						+ 	'<tr>'
+						+ 		'<td class="grey"  width="20%">Soort goed </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['SoortGoed'] ) + '</td>'
+						+ 	'</tr>'
+						+ 	'<tr>'
+						+ 		'<td class="grey"  width="20%">Merk goed </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['merkgoed'] ) + '</td>'
+						+ 	'</tr>'
+						+ 	'<tr>'
+						+		'<td class="grey" width="20%">Type </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['typegoed'] ) + '</td>'
+						+ 	'</tr>'
+						+ 	'<tr>'
+						+		'<td class="grey" width="20%">Serienummer </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['serialgoed'] ) + '</td>'
+						+ 	'</tr>'
+						+ 	'<tr>'
+						+		'<td class="grey" width="20%">Extern geheugen </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['extmemmerk'] ) + '</td>'
+						+ 	'</tr>'
+						+ 	'<tr>'
+						+		'<td class="grey" width="20%">Extern geheugen </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['extmemtype'] ) + '</td>'
+						+ 	'</tr>'
+						+ 	'<tr>'
+						+		'<td class="grey" width="20%">Capaciteit </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['extmemsize'] ) + '</td>'
+						+ 	'</tr>'
+						+ '</table>';
+					} else {
 	// next item
 }
 
