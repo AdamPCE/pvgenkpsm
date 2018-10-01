@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="js/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="js/jquery-ui-themes/themes/smoothness/jquery-ui.css">
+		<link rel="stylesheet" href="js/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css">
+		<style>
+		.ui-widget-header 	{ background: #54b4eb !important; }
+		.ui-progressbar-value		{ margin:0px !important; }
+		.form-group .required:after { content:"*"; color:red; }
+
+		.pdf { font-size: 10px; font-family: arial; }
+		.pdf h1 { font-size: 14px; margin-top: 10px; font-family: arial; }
+		.pdf h2 { font-size: 12px; margin-top: 10px; margin-bottom: 0px; font-family: arial; }
+		.pdf h3 { font-size: 11px; margin-top: 10px; margin-bottom: 0px; font-family: arial; }
+		.pdf .grey { background-color:#EEEEEE; font-weight: bold; }
+		.pdf .black { background-color:#000000; font-weight: bold; color:#FFFFFF; }
+		.pdf .hidden {display: none }
+		.pdf p {margin-top: 0px; margin-bottom: 5px; }
+		.pdf table { width: 100%; overflow: auto; }
+		.div { page-break-after: auto; }
+
+		</style>
+		<!-- jQuery / Bootstrap / jQuery UI -->
+		<script src="js/jquery-3.2.1.min.js"></script>
+		<script src="js/bootstrap/js/bootstrap.min.js"></script>
+		<script src="js/jquery-ui/jquery-ui.min.js"></script>
+
+		<!-- File saver voor browsers die dit niet native ondersteunen, waar onder chrome -->
+		<script src="js/filesaver/FileSaver.min.js"></script>
+
+		<!-- JSPDF Javascripts -->
+		<script src="js/html2pdf-koopmans/vendor/jspdf.min.js"></script>
+		<script src="js/html2pdf-koopmans/vendor/html2canvas.min.js"></script>
+		<script src="js/html2pdf-koopmans/src/html2pdf.js"></script>
+
+		<!-- Promise support voor IE11, nodig voor html2canvas -->
+		<script src="js/bluebird/bluebird.min.js"></script>
+
+		<!-- MomentJS date library -->
+		<script src="js/momentjs/moment-with-locales.js"></script>
+		<script type="text/javascript">
+		moment.locale('nl');
+		</script>
+
+		<!-- Plugins -->
+		<script src="js/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+
+		<!-- Word generator javascript -->
+		<script src="js/datefunctions.js"></script>
+		<script src="js/controller.js"></script>
+		<script src="js/intake.js"></script>
+		<script src="js/pv.js"></script>
+		<script src="js/filereader.js"></script>
+
+
+		<script type="text/javascript">
+		$( document ).ready( function() { showStep('0'); });
+		$( document ).ready( function() {
+			$("#files").change(function() { handleFileSelect(window.event); });
+			$("#files").change(function() { readBlob(); });
+		});
+
+
+		var options = {
+			sideBySide: true,
+			format: "YYYY-MM-DDTHH:mm"
+			};
+
+		var options2 = {
+			sideBySide: false,
+			format: "YYYY-MM-DD"
+			};
+
+
+		$( function () {
+			$("#datumaanvraag").datetimepicker(options2);
+			$("#vanafdatumtijd").datetimepicker(options);
+			$("#totdatumtijd").datetimepicker(options);
+			$("#datumtoestemmingOVJ").datetimepicker(options2);
+
+			$("#recorderdatumtijd").datetimepicker(options);
+			$("#werkelijkedatumtijd").datetimepicker(options);
+			$("#recorderdatumtijd_1").datetimepicker(options);
+			$("#werkelijkedatumtijd_1").datetimepicker(options);
+
+			$("#recorderdatumtijd_2").datetimepicker(options);
+			$("#werkelijkedatumtijd_2").datetimepicker(options);
+			$("#vanafdatumtijd_3").datetimepicker(options);
+			$("#totdatumtijd_3").datetimepicker(options);
+
+		} );
+
+		var choice;
+		var choicetext;
+
+		$(document).ready(function() {
+			$( "#buttonintake" ).click(function() {
+			  choice = "intake";
+			  showStep(2);
+			});
+
+			$( "#buttonpv" ).click(function() {
+			  choice = "pv";
+			  showStep(2);
+			});
+		});
+
+		</script>
+	</head>
+	<body>
+		<div class="container">
+				<p style="font-size: 22px; margin-top: 10px;">
+					<a href="index.html">
+						<span class="glyphicon glyphicon-home"> </span>
+						PV Generator
+					</a>
+				</p>
+				<p><span class="glyphicon glyphicon-off"> </span> Powered by: KPSM</p>
+
+			<div id="progressbar"></div>
+			<form id="form" class="form-horizontal" style="padding: 10px; ">
+				<fieldset id="stap0" style="display: none;">
+					<legend> </legend>
+					<p>Welkom bij de PV generator.<br>Kies "Nieuw proces verbaal" om een nieuw pv te maken.</p>
+					<br>
+					<center>
+<!--						<button id="buttonopenen" type="button" class="btn btn-default" onclick="showStep(1)" style="width: 75%; margin-bottom: 10px;">Openen bestaande zaak </button>						<br>
+---><!---						<button id="buttonintake" type="button" class="btn btn-primary" onclick="" style="width: 75%; margin-bottom: 10px;">Nieuw intake formulier</button>
+--->						<br>
+						<button id="buttonpv" type="button" class="btn btn-primary" onclick="" style="width: 75%; margin-bottom: 10px;">Nieuw proces verbaal</button>
+<!---						<br>
+						<button id="buttoncalculator" type="button" class="btn btn-default" onclick="showStep(99, true)" style="width: 75%; margin-bottom: 10px;">Calculator</button>
+--->						<br>
+					</center>
+				</fieldset>
+
+				<fieldset id="stap1" style="display: none;">
+				<!-- Form Name -->
+					<legend>Upload - Bestaande gegevens</legend>
+					<!-- Text input-->
+					<div class="form-group">
+						<div class="col-md-12">
+							<p>Het is hier mogelijk een tussentijds opgeslagen casus of een intakeformulier in te lezen. </p>
+							<label for="videorecordermerk">Intake formulier (origineel) </label>
+							<input type="file" id="files" name="files[]" multiple />
+							<output id="list"></output>
+						</div>
+					</div>
+					<div id="byte_range"></div>
+					<div id="byte_content" style="display:none"></div>
+					<button type="button" class="btn btn-default" onclick="showStep(0)">Vorige</button>
+					<button type="button" class="btn btn-primary" onclick="showStep(2)">Volgende</button>
+				</fieldset>
+
+				<fieldset id="stap2" style="display: none;">
+				<!-- Form Name -->
+					<legend>Aanvraag Onderzoek</legend>
+					<!-- Text input-->
+					<div class="form-group">
+					
+						<div class="col-md-4">
+							<label for="officier" class="required">Officier van justitie</label>
+							<select id="OVJname" name="OVJname" type="text" placeholder="OVJname" class="form-control input-md" required="true">
+							<option>######</option>
+							<option>M. van Nes</option>
+							<option>D. Hazejager</option>
+							<option>J. Kuipers</option>
+							<option>R. Rammelo</option>
+							<option>J. Spaans</option>
+							<option>#####</option>
+							</select>
+						</div>
+					
+						<div class="col-md-4">
+							<label for="datumtoestemmingOVJ" class="required" > Datum toestemming OVJ</label>
+							<input id="datumtoestemmingOVJ" name="datumtoestemmingOVJ" type="date" class="form-control input-md" required="true">
+						</div>
+					</div>
+					
+					<legend>Aanvrager Onderzoek</legend>
+					<!-- Text input-->
+					<div class="form-group">
+						<div class="col-md-4">
+							<label for="naam" class="required">Naam aanvrager</label>
+							<input id="naam" name="naam" type="text" placeholder="Naam" class="form-control input-md" required="true">
+						</div>
+						
+						<div class="col-md-4">
+							<label for="datumaanvraag" class="required"> Datum aanvraag </label>
+							<input id="datumaanvraag" name="datumaanvraag" type="date" class="form-control input-md" required="true">
+						</div>
+							
+						<div class="col-md-4">
+							<label for="aanvraagafd">Afdeling aanvrager </label>
+							<select id="aanvraagafd" name="aanvraagafd" type="text" placeholder="aanvraagafd" class="form-control input-md">
+								<option>####</option>
+								<option>Algemene Recherche</option>
+								<option>Special Unit Robbery</option>
+								<option>ZwaCri</option>								
+								<option>Jeugd en Zeden</option>
+								<option>Surveillance dienst</option>
+								</select>							
+						</div>	
+						
+						<div class="col-md-4">
+							<!-- Leeg -->
+						</div>					
+					</div>
+				<button type="button" class="btn btn-default" onclick="showStep(0)">Vorige</button>
+				<button type="button" class="btn btn-default" onclick="saveForm($('#form'))">Tussentijds opslaan</button>
+				<button type="button" class="btn btn-primary" onclick="showStep(3)">Volgende</button>
+				</fieldset>
+
+				<fieldset id="stap3" style="display: none;">
+				<!-- Form Name -->
+					<legend>Onderzoek informatie</legend>
+					<!-- Text input-->
+					<div class="form-group">
+						<div class="col-md-4">
+							<label for="naamonderzoek" class="required">Naam onderzoek</label>
+							<input id="naamonderzoek" name="naamonderzoek" type="text" placeholder="Naam onderzoek" class="form-control input-md" required="true">
+						</div>
+
+						<div class="col-md-4">
+							<label for="onderzoeksnummer" class="required"> Onderzoeksnummer </label>
+							<input id="onderzoeksnummer" name="onderzoeksnummer" type="text" placeholder="Onderzoeksnummer" class="form-control input-md" maxlength=16 required="true">	
+						</div>
+						<div class="col-md-4">
+							<label for="volgnummer" class="required" > Volgnummer </label>
+							<input id="volgnummer" name="volgnummer" type="text" placeholder="Volgnummer" class="form-control input-md" required="true">
+
+						</div>
+					</div>
+					<div class="form-group">
+					
+						<div class="col-md-4">
+							<label for="inbeslagnamenummer" class="required" >Inbeslagnamenummer </label>
+							<input id="inbeslagnamenummer" name="inbeslagnamenummer" type="text" placeholder="Inbeslagnamenummer" class="form-control input-md" required="true">
+						</div>
+							
+						<div class="col-md-4">
+							<label for="soortdelict" class="required">Soort delict </label>
+							<input id="soortdelict" name="soortdelict" type="text" placeholder="Soort delict" class="form-control input-md" required="true">
+						</div>
+					</div>
+					<button type="button" class="btn btn-default" onclick="showStep(2)">Vorige</button>
+					<button type="button" class="btn btn-default" onclick="saveForm($('#form'))">Tussentijds opslaan</button>
+					<button type="button" class="btn btn-primary" onclick="showStep(4)">Volgende</button>
+				</fieldset>
+				
+				<fieldset id="stap4" style="display: none;">
+				<!-- Form Name -->
+					<legend>Wat voor goed</legend>
+					<!-- Text input-->
+						<div class="form-group">
+							<div class="col-md-4">
+								<label for="SoortGoed">Soort goed</label>
+								<select id="SoortGoed" name="SoortGoed" type="text" placeholder="Soort Goed" class="form-control input-md">
+									<option>Smartphone met Simkaart en microSD</option>
+									<option>Smartphone met Simkaart</option>
+									<option>Smartphone met microSD</option>
+									<option>Smartphone</option>
+									<option>Simkaart</option>
+									<option>Tablet met microSD</option>
+									<option>Geheugenkaart</option>
+									</select>
+							</div>
+							<div class="col-md-4">
+								<label for="fortool">Veiliggesteld middels</label>
+								<select id="fortool" name="fortool" type="text" placeholder="Forensic Tool used" class="form-control input-md">
+									<option>Ufed Touch</option>
+									<option>Ufed4PC</option>
+									<option>Ufed Touch with Tableau</option>
+									<option>Ufed4PC with Tableau</option>
+									<option>Tableau</option>
+									</select>
+							</div>
+						</div>	
+					<legend>Goed</legend>
+					<!-- Text input-->
+						<div class="form-group">
+							<div class="col-md-4">
+								<label for="merkgoed">Merk v/h goed</label>
+								<input id="merkgoed" name="merkgoed" type="text" placeholder="merkgoed" class="form-control input-md">
+							</div>
+							<div class="col-md-4">
+								<label for="typegoed">Type v/h goed</label>
+								<input id="typegoed" name="typegoed" type="text" placeholder="typegoed" class="form-control input-md">							
+							</div>
+							<div class="col-md-4">
+								<label for="serialgoed">Serienummer</label>
+								<input id="serialgoed" name="serialgoed" type="text" placeholder="serialgoed" class="form-control input-md">							
+							</div>
+						</div>
+						<div class="form-group">						
+							<div class="col-md-4">
+								<label for="extmemmerk">Merk geheugen</label>
+								<input id="extmemmerk" name="extmemmerk" type="text" placeholder="merkgeheugen" class="form-control input-md">
+							</div>
+							<div class="col-md-4">
+								<label for="extmemtype">Type geheugen</label>
+								<select id="extmemtype" name="extmemtype" type="text" placeholder="typegeheugen" class="form-control input-md">
+									<option>####<option>
+									<option>MicroSD<option>
+									<option>SD<option>
+									<option>USB stick<option>									
+									</select>								
+							</div>
+							<div class="col-md-4">
+								<label for="extmemsize">Capaciteit geheugen</label>
+								<input id="extmemsize" name="extmemsize" type="text" placeholder="capaciteitgeheugen" class="form-control input-md">
+							</div>
+							<div class="col-md-4">
+								<label for="intmemsize" class="required" >Intern geheugen</label>
+								<input id="intmemsize" name="intmemsize" type="text" placeholder="intmemsize" class="form-control input-md"  maxlength="16" required="true">
+							</div>
+						</div>
+					<legend>Hashwaardes</legend>
+					<!-- Text input-->
+						<div class="form-group">
+							<div class="col-md-8">
+								<label for="md5" >MD5</label>
+								<input id="md5" name="md5" type="text" placeholder="md5" class="form-control input-md">
+							</div>
+							<div class="col-md-8">
+								<label for="sha" >SHA</label>
+								<input id="sha" name="sha" type="text" placeholder="sha" class="form-control input-md">
+							</div>
+							<div class="col-md-4">
+								<label for="memtool">Veiliggesteld middels</label>
+								<select id="memtool" name="memtool" type="text" placeholder="Forensic Tool used" class="form-control input-md">
+									<option>Tableau</option>
+									</select>
+							</div>
+						</div>							
+					<legend>Kenmerken Sim en Toestel</legend>
+					<!-- Text input-->
+						<div class="col-md-4">
+								<label for="ufedtool">Veiliggesteld middels</label>
+								<select id="ufedtool" name="ufedtool" type="text" placeholder="Forensic Tool used" class="form-control input-md">
+									<option>Ufed Touch</option>
+									<option>Ufed4PC</option>
+									</select>
+							</div>
+						<div class="form-group">
+							<div class="col-md-4">
+								<label for="imei1" class="required" >IMEI nummer 1</label>
+								<input id="imei1" name="imei1" type="text" placeholder="imei1" class="form-control input-md"  maxlength="16" required="true">
+							</div>
+							<div class="col-md-4">
+								<label for="imei2">IMEI nummer 2</label>
+								<input id="imei2" name="imei2" type="text" placeholder="imei2" class="form-control input-md" maxlength="16">
+
+							</div>
+							<div class="col-md-4">
+								<label for="imsi" class="required">IMSI </label>
+								<input id="imsi" name="imsi" type="text" placeholder="imsi" class="form-control input-md" maxlength="17" required="true">
+
+							</div>
+							<div class="col-md-4">
+								<label for="iccid" >iccid </label>
+								<input id="iccid" name="iccid" type="text" placeholder="iccid " class="form-control input-md" maxlength="20">
+
+							</div>
+							<div class="col-md-4">
+								<label for="telco" >telco </label>
+								<select id="telco" name="telco" type="text" placeholder="telco " class="form-control input-md" maxlength="20">
+									<option>######<option>
+									<option>CHIPPIE<option>
+									<option>TelEm<option>
+								</select>
+							</div>							
+							<div class="col-md-4">
+								<label for="tstcode">tstcode </label>
+								<select id="tstcode" name="tstcode" type="text" placeholder="tstcode " class="form-control input-md">
+									<option>Ja, bekend</option>
+									<option>Ja, onbekend</option>
+									<option>Nee</option>
+									</select>
+							</div>
+							<div class="col-md-4">
+								<label for="simcode" >simcode </label>
+								<select id="simcode" name="simcode" type="text" placeholder="simcode" class="form-control input-md">
+									<option>Ja, bekend</option>
+									<option>Ja, onbekend</option>
+									<option>nee, niet actief</option>
+									</select>
+							</div>
+							<div class="col-md-4">
+								<label for="onoff" >Toestel aan of uit? </label>
+								<select id="onoff" name="onoff" type="text" placeholder="Toestel aan of uit" class="form-control input-md">
+									<option>Toestel aan</option>
+									<option>Toestel uit</option>
+									</select>
+							</div>							
+							<div class="col-md-4">
+								<label for="flightmode" >Flightmode? </label>
+								<select id="flightmode" name="flightmode" type="text" placeholder="flightmode" class="form-control input-md">
+									<option>flightmode stond aan bij ontvangst</option>
+									<option>flightmode stond niet aan, door verbalisant</option>
+									<option>flightmode kon niet aangezet worden</option>
+									</select>
+							</div>
+						</div>
+					<button type="button" class="btn btn-default" onclick="showStep(3)">Vorige</button>
+					<button type="button" class="btn btn-default" onclick="saveForm($('#form'))">Tussentijds opslaan</button>
+					<button type="button" class="btn btn-primary" onclick="showStep(6)">Volgende</button>
+				</fieldset>
+
+				
+				<fieldset id="stap5" style="display: none;">
+				<!-- Form Name -->
+					<legend>(Video)bewakingssysteem - Gegevens</legend>
+					<!-- Text input-->
+					<div class="form-group">
+						<div class="col-md-4">
+							<label for="videorecordermerk">Merk </label>
+							<input id="videorecordermerk" name="videorecordermerk" type="text" placeholder="Merk" class="form-control input-md">
+						</div>
+						<div class="col-md-4">
+							<label for="videorecordertype">Type / model </label>
+							<input id="videorecordertype" name="videorecordertype" type="text" placeholder="Type / model" class="form-control input-md">
+						</div>
+						<div class="col-md-4">
+							<label for="videorecorderserienummer">Serienummer </label>
+							<input id="videorecorderserienummer" name="videorecorderserienummer" type="text" placeholder="Serienummer" class="form-control input-md">
+						</div>
+						<div class="col-md-4">
+							<label for="videorecordergebruikersnaam">Gebruikersnaam (evt.)</label>
+							<input id="videorecordergebruikersnaam" name="videorecordergebruikersnaam" type="text" placeholder="Gebruikersnaam" class="form-control input-md">
+						</div>
+						<div class="col-md-4">
+							<label for="videorecorderwachtwoord">Wachtwoord (evt.)</label>
+							<input id="videorecorderwachtwoord" name="videorecorderwachtwoord" type="text" placeholder="Wachtwoord" class="form-control input-md">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-12">
+							<label for="videorecorderinstallateur">(Externe) beheerder of installatiebedrijf (evt.)</label>
+							<textarea id="videorecorderinstallateur" name="videorecorderinstallateur" type="text" placeholder="(Externe) beheerder of installatiebedrijf (evt.) " class="form-control input-md" rows="3"></textarea>
+						</div>
+					</div>
+					<legend>(Video)bewakingssysteem - Vraagstelling onderzoeksteam</legend>
+					<div class="form-group">
+						<div class="col-md-12">
+							<label for="gewenstebeelden">Gewenste beelden / camera's </label>
+							<textarea id="gewenstebeelden" name="gewenstebeelden" type="text" placeholder="Van welke specifieke camera's of standpunten zijn beelden gewenst? " class="form-control input-md" rows="5" required="true"></textarea>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-6">
+							<label for="vanafdatumtijd" class="required">Vanaf datum & tijd </label>
+							<input id="vanafdatumtijd" name="vanafdatumtijd" type="datetime" class="form-control input-md" required="true">
+						</div>
+						<div class="col-md-6">
+							<label for="totdatumtijd" class="required">Tot datum & tijd </label>
+							<input id="totdatumtijd" name="totdatumtijd" type="datetime" class="form-control input-md" required="true">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-md-4">
+							<label for="adresplaatsdelict" class="required">imei-1 </label>
+							<select id="adresplaatsdelict" name="adresplaatsdelict" type="text" placeholder="imei" class="form-control input-md" required="true">
+								<option>dummyimei_adresplaatsdelict<option>
+							</select>	
+						</div>
+						<div class="col-md-4">
+							<label for="postcodeplaatsdelict" class="required">imei-2 </label>
+							<select id="postcodeplaatsdelict" name="postcodeplaatsdelict" type="text" placeholder="imsi" class="form-control input-md" required="true" maxlength=6>
+								<option>dummyimei2_postcodeplaatsdelict<option>
+							</select>	
+						</div>
+						<div class="col-md-4">
+							<label for="plaatsnaamplaatsdelict" class="required">telecomprovider </label>
+							<select id="plaatsnaamplaatsdelict" name="plaatsnaamplaatsdelict" type="text" placeholder="telecomprovider " class="form-control input-md" required="true">
+								<option>dummytelecomprovider_plaatsnaamplaatsdelict<option>
+							</select>	
+						</div>
+					</div>					
+					<legend>(Video)bewakingssysteem - Contactpersoon</legend>
+					<div class="form-group">
+						<div class="col-md-4">
+							<label for="naamcontactpersoon" class="required">Naam </label>
+							<select id="naamcontactpersoon" name="naamcontactpersoon" type="text" placeholder="Naam" class="form-control input-md" required="true">
+								<option>dummynaam_naamcontactpersoon<option>
+							</select>
+						</div>
+						<div class="col-md-4">
+							<label for="functiecontactpersoon">Functie </label>
+							<input id="functiecontactpersoon" name="functiecontactpersoon" type="text" placeholder="Functie" class="form-control input-md">
+						</div>						
+					</div>
+					<div class="form-group">
+						<div class="col-md-4">
+							<label for="telefoonnummercontactpersoon" class="required">Telefoonnummer </label>
+							<select id="telefoonnummercontactpersoon" name="telefoonnummercontactpersoon" type="text" placeholder="Telefoonnummer" class="form-control input-md" required="true maxlength=16">
+								<option>dummy<option>
+							</select>	
+						</div>
+						<div class="col-md-4">
+							<label for="emailcontactpersoon">Email </label>
+							<input id="emailcontactpersoon" name="emailcontactpersoon" type="text" placeholder="Email" class="form-control input-md">
+						</div>
+					</div>
+						<legend>Soort Goed</legend>
+						<!-- Text input-->
+						<div class="form-group">
+							<div class="col-md-6">
+								<label for="soortlaatsdelict">soort</label>
+								<select id="soortlaatsdelict" name="soortlaatsdelict" type="text" placeholder="Soort (woning, bedrijf, openbare weg, etc)" class="form-control input-md">
+									<option>GSM<option>
+								</select>
+							</div>
+							
+							<div class="col-md-6">
+							<label for="naamplaatsdelict">Merk</label>
+							<input id="naamplaatsdelict" name="naamplaatsdelict" type="text" placeholder="Merk" class="form-control input-md">
+							</div>
+						</div>
+
+
+					<legend style="margin-top:10px;">(Video)bewakingssysteem - Vraagstelling onderzoeksteam</legend>
+					<div class="form-group">
+						<div class="col-md-12">
+							<label for="gewenstebeelden_1">Gewenste beelden / camera's </label>
+							<textarea id="gewenstebeelden_1" name="gewenstebeelden_1" type="text" placeholder="Van welke specifieke camera's of standpunten zijn beelden gewenst? " class="form-control input-md" rows="5" readonly></textarea>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-6">
+							<label for="vanafdatumtijd_1">Vanaf datum & tijd </label>
+							<input id="vanafdatumtijd_1" name="vanafdatumtijd_1" type="datetime" class="form-control input-md" readonly>
+						</div>
+						<div class="col-md-6">
+							<label for="totdatumtijd_1">Tot datum & tijd </label>
+							<input id="totdatumtijd_1" name="totdatumtijd_1" type="datetime" class="form-control input-md" readonly>
+						</div>
+					</div>
+
+					<legend>(Video)bewakingssysteem - Selectie conform berekening</legend>
+					<p id="timezonenotification" class="hidden" style="color: red">Let op; het tijdstip in de aanvraag van het onderzoek ligt mogelijk in een andere tijdszone mbt. zomer en wintertijd dan de datum van de recorder. Hierdoor is de selectie automatisch met 1 uur uitgebreid.</p>
+
+					<div class="form-group">
+						<div class="col-md-6">
+							<label for="berekendedatumtijdstart">Te selecteren vanaf datum & tijd </label>
+							<input id="berekendedatumtijdstart" name="berekendedatumtijdstart" type="datetime" class="form-control input-md" readonly>
+						</div>
+						<div class="col-md-6">
+							<label for="berekendedatumtijdseind">Te selecteren tot datum & tijd </label>
+							<input id="berekendedatumtijdseind" name="berekendedatumtijdseind" type="datetime" class="form-control input-md" readonly>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-md-12">
+							<label for="overigevragen">Overige vragen / opmerkingen </label>
+							<textarea id="overigevragen" name="overigevragen" type="text" placeholder="Overige vragen / opmerkingen. Denk ook aan:
+- Schadetoestel, geen accu/batterij etc etc." class="form-control input-md" rows="5"></textarea>
+						</div>
+					</div>					
+					
+					<button type="button" class="btn btn-default" onclick="showStep(4)">Vorige</button>
+					<button type="button" class="btn btn-default" onclick="saveForm($('#form'))">Tussentijds opslaan</button>
+					<button type="button" class="btn btn-primary" onclick="showStep(6)">Volgende</button>
+				</fieldset>
+
+
+				<fieldset id="stap6" style="display: none;">
+				<!-- Form Name -->
+
+				</fieldset>
+
+				<fieldset id="stap7" style="display: none;">
+				<!-- Form Name -->
+					<legend>Datum en tijd controle</legend>
+					<!-- Text input-->
+					<button type="button" class="btn btn-default" onclick="calcdatetimediff('recorderdatumtijd', 'werkelijkedatumtijd', 'berekendedatumtijdstart', 'berekendedatumtijdseind', 'verschildatumtijd', '#timezonenotification', 'vanafdatumtijd_1', 'totdatumtijd_1')">Bereken verschil</button>
+					
+					<div class="form-group">
+						<div class="col-md-4">
+							<label for="recorderdatumtijd" class="required">Waargenomen systeem datum / tijd </label>
+							<input id="recorderdatumtijd" name="recorderdatumtijd" type="datetime" class="form-control input-md" required>
+						</div>
+						<div class="col-md-4">
+							<label for="werkelijkedatumtijd">Werkelijke datum / tijd </label>
+							<input id="werkelijkedatumtijd" name="werkelijkedatumtijd" type="datetime" class="form-control input-md">
+						</div>
+						<div class="col-md-4">
+							<label for="verschildatumtijd" class="required">Verschil datum / tijd </label>
+							<input id="verschildatumtijd" name="verschildatumtijd" type="text" placeholder="Tijdsverschil" class="form-control input-md" required="true" readonly required="true">
+						</div>
+					</div>
+					
+					<legend>Aanvullende opmerkingen</legend>
+					<div class="form-group">
+						<div class="col-md-4">
+							<label for="opmerking" class="required">Opmerking </label>
+							<select id="opmerking" name="opmerking" type="text" placeholder="opmerking Y/N " class="form-control input-md" required="true">
+								<option>Ja<option>
+								<option>Nee<option>
+							</select>	
+						</div>					
+						<div class="col-md-12">
+							<label for="overigevragen_1">Overige vragen / opmerkingen </label>
+							<textarea id="overigevragen_1" name="overigevragen_1" type="text" placeholder="Overige vragen / opmerkingen. Denk ook aan:
+- Schadetoestel, geen accu/batterij etc etc." class="form-control input-md" rows="5"></textarea>
+						</div>
+					</div>
+					
+					<button type="button" class="btn btn-default" onclick="showStep(5)">Vorige</button>
+					<button type="button" class="btn btn-default" onclick="saveForm($('#form'))">Tussentijds opslaan</button>
+					<button type="button" class="btn btn-primary" onclick="showStep(8)">Volgende</button>
+				</fieldset>
+
+
+				<fieldset id="stap8" style="display: none;">
+				<!-- Form Name -->
+					<legend>Verbalisant</legend>
+					<!-- Text input-->
+					<div class="form-group">
+						<div class="col-md-4">
+							<label for="verbalisantnaam" class="required">Verbalisant naam</label>
+							<select id="verbalisantnaam" name="verbalisantnaam" type="text" placeholder="Verbalisant naam (volledige voor en achternaam)" class="form-control input-md" required="true">
+								<option>Emanuel Hendricus Volkert KEIJSPER</option>
+								</select>
+							</div>
+						<div class="col-md-4">
+							<label for="verbalisantdienstnummer">Verbalisant dienstnummer </label>
+							<select id="verbalisantdienstnummer" name="verbalisantdienstnummer" type="text" placeholder="Verbalisant dienstnummer" class="form-control input-md">
+								<option>112896</options>
+								</select>
+							</div>
+						<div class="col-md-4">
+							<label for="verbalisantrang" class="required">Verbalisant rang</label>
+							<select id="verbalisantrang" name="verbalisantrang" class="form-control" required="true">
+							<option>Bijzonder agent</option>
+							<option>Inspecteur</option>
+							<option>Brigadier</option>
+							<option>Hoofdagent</option>
+							<option>Buitengewoon opsporingsabmtenaar</option>
+								</select>
+							</div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-4">
+							<label for="verbalisantafdeling">Verbalisant afdeling </label>
+							<select id="verbalisantafdeling" name="verbalisantafdeling" type="text" placeholder="Verbalisant functie" class="form-control input-md">
+								<option>Digitale Opsporing<option>
+								<option>######<option>
+								</select>
+							</div>
+						<div class="col-md-4">
+							<label for="cctv" class="required">CCTV Gecertificeerd </label>
+							<select id="cctv" name="cctv" class="form-control" required="true">
+								<option>Niet Gecertificeerd</option>
+								<option>CCTV Gecertificeerd</option>
+								</select>
+							</div>
+						<div class="col-md-4">
+							<label for="eedofbelofte" class="required">Ambtseed / Ambtsbelofte </label>
+							<select id="eedofbelofte" name="eedofbelofte" class="form-control" required="true">
+								<option>Ambtsbelofte</option>
+							</select>
+							</div>
+					</div>
+
+
+					<legend>Veiligstellen</legend>
+					<!-- Text input-->
+					<div class="form-group">
+						<div class="col-md-4">
+							<label for="locatieveiligstellen" class="required">Extractie gelukt? </label>
+							<select id="locatieveiligstellen" name="locatieveiligstellen" class="form-control" required="true">
+								<option>Extractie gelukt</option>
+								<option>Extractie mislukt</option>
+								<option>Ter plaatse, geen opnames aanwezig</option>
+								<option>Overgebracht naar bureau</option>
+							</select>
+						</div>
+						<div class="col-md-4">
+							<!-- Text input-->
+						</div>
+						<div class="col-md-4">
+							<!-- Text input-->
+						</div>
+					</div>
+				<button type="button" class="btn btn-default" onclick="showStep(7)">Vorige</button>
+				<button type="button" class="btn btn-default" onclick="saveForm($('#form'))">Tussentijds opslaan</button>
+				<button type="button" class="btn btn-primary" onclick="showStep(9)">Volgende</button>
+				</fieldset>
+
+				<fieldset id="stap9" style="display: none;">
+					<legend>(Video)bewakingssysteem - Controle op bureau </legend>
+					<!-- Text input-->
+					<div class="form-group">
+						<div class="col-md-4">
+							<label for="recorderdatumtijd_1 class="required"">Waargenomen systeem datum / tijd </label>
+							<input id="recorderdatumtijd_1" name="recorderdatumtijd_1" type="datetime" class="form-control input-md" required>
+						</div>
+						<div class="col-md-4">
+							<label for="werkelijkedatumtijd_1">Werkelijke datum / tijd </label>
+							<input id="werkelijkedatumtijd_1" name="werkelijkedatumtijd_1" type="datetime" class="form-control input-md">
+						</div>
+						<div class="col-md-4">
+							<label for="verschildatumtijd_1" class="required">Verschil datum / tijd </label>
+							<input id="verschildatumtijd_1" name="verschildatumtijd_1" type="text" placeholder="Tijdsverschil" class="form-control input-md" readonly required="true">
+						</div>
+					</div>
+					<button type="button" class="btn btn-default" onclick="calcdatetimediff('recorderdatumtijd_1', 'werkelijkedatumtijd_1', 'berekendedatumtijdstart_1', 'berekendedatumtijdseind_1', 'verschildatumtijd_1', '#timezonenotification_1', 'vanafdatumtijd', 'totdatumtijd')">Bereken verschil</button>
+
+					<legend style="margin-top:10px;">(Video)bewakingssysteem - Vraagstelling onderzoeksteam</legend>
+					<div class="form-group">
+						<div class="col-md-12">
+							<label for="gewenstebeelden_2">Gewenste beelden / camera's </label>
+							<textarea id="gewenstebeelden_2" name="gewenstebeelden_2" type="text" placeholder="Van welke specifieke camera's of standpunten zijn beelden gewenst? " class="form-control input-md" rows="5" readonly></textarea>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-6">
+							<label for="vanafdatumtijd_2">Vanaf datum & tijd </label>
+							<input id="vanafdatumtijd_2" name="vanafdatumtijd_2" type="datetime" class="form-control input-md" readonly>
+						</div>
+						<div class="col-md-6">
+							<label for="totdatumtijd_2">Tot datum & tijd </label>
+							<input id="totdatumtijd_2" name="totdatumtijd_2" type="datetime" class="form-control input-md" readonly>
+						</div>
+					</div>
+
+					<legend>(Video)bewakingssysteem - Selectie conform berekening</legend>
+					<p id="timezonenotification_1" class="hidden" style="color: red">Let op; het tijdstip in de aanvraag van het onderzoek ligt mogelijk in een andere tijdszone mbt. zomer en wintertijd dan de datum van de recorder. Hierdoor is de selectie automatisch met 1 uur uitgebreid.</p>
+
+					<div class="form-group">
+						<div class="col-md-6">
+							<label for="berekendedatumtijdstart_1">Te selecteren vanaf datum & tijd </label>
+							<input id="berekendedatumtijdstart_1" name="berekendedatumtijdstart_1" type="datetime" class="form-control input-md" readonly>
+						</div>
+						<div class="col-md-6">
+							<label for="berekendedatumtijdseind_1">Te selecteren tot datum & tijd </label>
+							<input id="berekendedatumtijdseind_1" name="berekendedatumtijdseind_1" type="datetime" class="form-control input-md" readonly>
+						</div>
+					</div>
+
+					<legend>Veiligstellen</legend>
+					<!-- Text input-->
+					<div class="form-group">
+						<div class="col-md-4">
+							<label for="opnamesaanwezig" class="required">Opnames aanwezig? </label>
+							<select id="opnamesaanwezig" name="opnamesaanwezig" class="form-control" required="true">
+								<option>Ja, opnames aanwezig</option>
+								<option>Nee, geen opnames aanwezig</option>
+							</select>
+						</div>
+						<div class="col-md-4">
+							<!-- Text input-->
+						</div>
+						<div class="col-md-4">
+							<!-- Text input-->
+						</div>
+					</div>					
+					
+					<button type="button" class="btn btn-default" onclick="showStep(8)">Vorige</button>
+					<button type="button" class="btn btn-primary" onclick="generatePV($('#form'))">Genereer PV</button>
+
+				</fieldset>
+
+				<fieldset id="stap10" style="display: none;">
+				<legend>Einde </legend>
+				<div class="form-group">
+						<div class="col-md-12">
+							Dit is het einde van de wizzard. Zie downloads voor het formulier of het proces verbaal.
+						</div>
+						<div class="col-md-12">
+							<button type="button" class="btn btn-default" onclick="showStep(8)">Vorige</button>
+						</div>
+				</div>
+				</fieldset>
+
+
+
+				<fieldset id="stap99" style="display: none;">
+					<legend>(Video)bewakingssysteem - Calculator </legend>
+					<!-- Text input-->
+					<div class="form-group">
+						<div class="col-md-4">
+							<label for="recorderdatumtijd_2" class="required">Waargenomen systeem datum / tijd </label>
+							<input id="recorderdatumtijd_2" name="recorderdatumtijd_2" type="datetime" class="form-control input-md" required>
+						</div>
+						<div class="col-md-4">
+							<label for="werkelijkedatumtijd_2">Werkelijke datum / tijd </label>
+							<input id="werkelijkedatumtijd_2" name="werkelijkedatumtijd_2" type="datetime" class="form-control input-md">
+						</div>
+						<div class="col-md-4">
+							<label for="verschildatumtijd_2" class="required">Verschil datum / tijd </label>
+							<input id="verschildatumtijd_2" name="verschildatumtijd_2" type="text" placeholder="Tijdsverschil" class="form-control input-md" readonly required="true">
+						</div>
+					</div>
+
+					<legend style="margin-top:10px;">(Video)bewakingssysteem - Vraagstelling onderzoeksteam</legend>
+
+					<div class="form-group">
+						<div class="col-md-6">
+							<label for="vanafdatumtijd_3">Vanaf datum & tijd </label>
+							<input id="vanafdatumtijd_3" name="vanafdatumtijd_3" type="datetime" class="form-control input-md">
+						</div>
+						<div class="col-md-6">
+							<label for="totdatumtijd_3">Tot datum & tijd </label>
+							<input id="totdatumtijd_3" name="totdatumtijd_3" type="datetime" class="form-control input-md">
+						</div>
+					</div>
+
+					<button type="button" class="btn btn-default" onclick="calcdatetimediff('recorderdatumtijd_2', 'werkelijkedatumtijd_2', 'berekendedatumtijdstart_2', 'berekendedatumtijdseind_2', 'verschildatumtijd_2', '#timezonenotification_2', 'vanafdatumtijd_3', 'totdatumtijd_3')">Bereken verschil</button>
+
+
+
+					<legend>(Video)bewakingssysteem - Selectie conform berekening</legend>
+					<p id="timezonenotification_2" class="hidden" style="color: red">Let op; het tijdstip in de aanvraag van het onderzoek ligt mogelijk in een andere tijdszone mbt. zomer en wintertijd dan de datum van de recorder. Hierdoor is de selectie automatisch met 1 uur uitgebreid.</p>
+
+					<div class="form-group">
+						<div class="col-md-6">
+							<label for="berekendedatumtijdstart_2">Te selecteren vanaf datum & tijd </label>
+							<input id="berekendedatumtijdstart_2" name="berekendedatumtijdstart_2" type="datetime" class="form-control input-md" readonly>
+						</div>
+						<div class="col-md-6">
+							<label for="berekendedatumtijdseind_2">Te selecteren tot datum & tijd </label>
+							<input id="berekendedatumtijdseind_2" name="berekendedatumtijdseind_2" type="datetime" class="form-control input-md" readonly>
+						</div>
+					</div>
+					<button type="button" class="btn btn-default" onclick="showStep(0)">Terug naar hoofdscherm</button>
+
+
+
+				</fieldset>
+			</form>
+		</div>
+	</body>
+</html>
