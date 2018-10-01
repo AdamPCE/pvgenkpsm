@@ -924,7 +924,7 @@ if 	(array['locatieveiligstellen'] != "Overgebracht naar bureau") {
 						+  'reeds was overschreven door het videobewakingssysteem. ';
 	}
 	else if (array['locatieveiligstellen'] == "Extractie gelukt") {
-	content = content 	+  'Vervolgens is door mij, verbalisant, de op bovenstaande wijze verkregen informatie geëxporteerd naar een extern opslagmedium.'
+	content = content 	+  'Vervolgens is door mij, verbalisant, de op bovenstaande wijze verkregen informatie geexporteerd naar een extern opslagmedium.'
 		if 	(array['verschildatumtijd'] != "0 minuten") {
 		content = content 	+  'Gelet op het tijdsverschil tussen de werkelijke datum en tijd en de datum en tijd op het goed, moet er bij de analyse van de informatie mogelijk rekening mee moeten worden gehouden.'
 		}
@@ -939,7 +939,7 @@ if 	(array['locatieveiligstellen'] == "Extractie mislukt") {
 //						+  'reeds was overschreven door het videobewakingssysteem. ';
 	}
 	else if (array['opnamesaanwezig'] == "Geen informatie wel geheugen") {
-	content = content 	+  'Vervolgens zijn door mij, verbalisant, bovengenoemde informatie van het bewijsbestand geexporteerd naar een extern opslagmedium.  ';
+	content = content 	+  'Vervolgens zijn door mij, verbalisant, bovengenoemde informatie van het bewijsbestand ge&euml;xporteerd naar een extern opslagmedium.  ';
 	}
 }
 	content = content	+ 	'</p>';
@@ -980,8 +980,8 @@ if	(array['SoortGoed'] == "Smartphone met Simkaart en microSD") {
 var overdracht = 	 	 	'<h3>Vertrekking veiliggestelde data</h3>'
 						+ 	'<p>'
 						+ 	'De (kopie&euml;n van) de veiliggestelde data, '
-						+	'worden tijdelijk bewaard op een server, in gebruik bij de afdeling Digitale Recherche en kunnen '
-						+	'voor verder onderzoek worden (of zijn reeds) overgedragen middels een extern opslagmedium aan een '
+						+	'worden tijdelijk bewaard op een server, in gebruik bij de afdeling Digitale Recherche en zijn '
+						+	'voor verder onderzoek reeds overgedragen middels een extern opslagmedium aan een '
 						+ 	'medewerker van het aanvragende onderzoeksteam.'
 						+ 	'</p>';
 
