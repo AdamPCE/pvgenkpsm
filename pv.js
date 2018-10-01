@@ -211,7 +211,13 @@ var content = 			'<div class="page"> ';
 						+		'<td class="grey">Datum toestemming </td>'
 						+ 		'<td class="white">' + datumtoestemmingOVJStr + '</td>'
 						+ 	'</tr>'
-						+ '</table>';
+						+	'<tr>'
+						+ 		'<td class="grey">Status eigenaar</td>'
+						+ 		'<td class="white"> ' + array['verdachte'] + '</td>'
+						+		'<td class="grey">Naam</td>'
+						+ 		'<td class="white">' + array['NAW'] + '</td>'
+						+ 	'</tr>'
+						+ '</table>'
 
 	content = content 	+ '<table width="100%" style="border-bottom: solid 1px black; ">';
 	content = content	+ 	'<tr>';
