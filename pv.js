@@ -257,6 +257,7 @@ if 	(array['cctv'] == "CCTV Gecertificeerd") {
 
 
 // inhoud bepalen van het overzicht goed
+// Smartphone met Simkaarten microSD
 if	(array['SoortGoed'] == "Smartphone met Simkaart en microSD") {
 	content = content 	+ '<table width="100%">'
 						+ 	'<tr>'
@@ -329,10 +330,11 @@ if	(array['SoortGoed'] == "Smartphone met Simkaart en microSD") {
 						+ 	'</tr>'
 						+ '</table>';
 
-} else {
+					} else {
 	// next item
-}
+	}
 
+// Smartphone met simkaart
 if 	(array['SoortGoed'] == "Smartphone met Simkaart") {
 	content = content 	+ '<table width="100%">'
 						+ 	'<tr>'
@@ -405,10 +407,11 @@ if 	(array['SoortGoed'] == "Smartphone met Simkaart") {
 						+ 	'</tr>'
 						+ '</table>';
 
-} else {
+					} else {
 	// next item
-}
+	}
 
+// Smartphone met microSD
 if 	(array['SoortGoed'] == "Smartphone met microSD") {
 	content = content 	+ '<table width="100%">'
 						+ 	'<tr>'
@@ -468,6 +471,7 @@ if 	(array['SoortGoed'] == "Smartphone met microSD") {
 	// next item
 }
 
+// Smartphone
 if 	(array['SoortGoed'] == "Smartphone") {
 	content = content 	+ '<table width="100%">'
 						+ 	'<tr>'
@@ -511,10 +515,11 @@ if 	(array['SoortGoed'] == "Smartphone") {
 						+ 		'<td>' + capitalizeFirstLetter ( array['tstcode'] ) + '</td>'
 						+ 	'</tr>'
 						+ '</table>';
-} else {
+					} else {
 	// next item
-}
+	}
 
+// Simkaart
 if 	(array['SoortGoed'] == "Simkaart") {
 	content = content 	+ '<table width="100%">'
 						+ 	'<tr>'
@@ -538,11 +543,11 @@ if 	(array['SoortGoed'] == "Simkaart") {
 						+ 		'<td>' + capitalizeFirstLetter ( array['simcode'] ) + '</td>'
 						+ 	'</tr>'
 						+ '</table>';
-
-} else {
+					} else {
 	// next item
-}
+	}
 
+// Tablet met microSD
 if 	(array['SoortGoed'] == "Tablet met microSD") {
 	content = content 	+ '<table width="100%">'
 						+ 	'<tr>'
@@ -587,10 +592,11 @@ if 	(array['SoortGoed'] == "Tablet met microSD") {
 						+ 	'</tr>'
 						+ '</table>';
 
-} else {
+					} else {
 	// next item
 }
 
+// Tablet met Simkaart en microSD
 if 	(array['SoortGoed'] == "Tablet met Simkaart en microSD") {
 	content = content 	+ '<table width="100%">'
 						+ 	'<tr>'
@@ -655,6 +661,7 @@ if 	(array['SoortGoed'] == "Tablet met Simkaart en microSD") {
 	// next item
 }
 
+// Tablet met Simkaart
 if 	(array['SoortGoed'] == "Tablet met Simkaart") {
 	content = content 	+ '<table width="100%">'
 						+ 	'<tr>'
@@ -707,7 +714,7 @@ if 	(array['SoortGoed'] == "Tablet met Simkaart") {
 	// next item
 }
 
-
+// Geheugenkaart
 if	(array['SoortGoed'] == "Geheugenkaart") {
 
 	content = content 	+ '<table width="100%">'
@@ -740,12 +747,11 @@ if	(array['SoortGoed'] == "Geheugenkaart") {
 						+ 		'<td>' + capitalizeFirstLetter ( array['extmemsize'] ) + '</td>'
 						+ 	'</tr>'
 						+ '</table>';
-} else {
+					} else {
 	// next item
 }
 
-
-
+// Harde schijf
 if	(array['SoortGoed'] == "Harde schijf") {
 
 	content = content 	+ '<table width="100%">'
@@ -782,6 +788,7 @@ if	(array['SoortGoed'] == "Harde schijf") {
 	// next item
 }
 
+// USB stick
 if	(array['SoortGoed'] == "USB stick") {
 
 	content = content 	+ '<table width="100%">'
@@ -818,6 +825,7 @@ if	(array['SoortGoed'] == "USB stick") {
 	// next item
 }
 
+// Datadrager
 if	(array['SoortGoed'] == "Datadrager") {
 
 	content = content 	+ '<table width="100%">'
@@ -854,6 +862,7 @@ if	(array['SoortGoed'] == "Datadrager") {
 	// next item
 }
 
+// Laptop/Computer
 if	(array['SoortGoed'] == "Laptop/Computer") {
 
 	content = content 	+ '<table width="100%">'
@@ -891,8 +900,6 @@ if	(array['SoortGoed'] == "Laptop/Computer") {
 }
 
 
-
-
 	content = content 	+	' '
 						+ 	'<h3>Vraagstelling onderzoeksteam</h3>'
 						+ 	'<p>'
@@ -912,7 +919,7 @@ if	(array['SoortGoed'] == "Smartphone met Simkaart en microSD"){
 
 						+  '</p>';
 
-} else {
+					} else {
 	// next item
 }
 
@@ -926,7 +933,7 @@ if	(array['SoortGoed'] == "Smartphone met Simkaart"){
 						+ ' '
 						+  '</p>';
 
-} else {
+					} else {
 	// next item
 }
 
@@ -940,7 +947,7 @@ if	(array['SoortGoed'] == "Smartphone met microSD"){
 						+ ' '
 						+  '</p>';
 
-} else {
+					} else {
 	// next item
 }
 
@@ -954,7 +961,7 @@ if	(array['SoortGoed'] == "Smartphone"){
 						+ ' '
 						+  '</p>';
 
-} else {
+					} else {
 	// next item
 }
 
@@ -968,7 +975,7 @@ if	(array['SoortGoed'] == "Simkaart"){
 						+ ' '
 						+  '</p>';
 
-} else {
+					} else {
 	// next item
 }
 
@@ -982,7 +989,7 @@ if	(array['SoortGoed'] == "Tablet met microSD"){
 						+ ' '
 						+  '</p>';
 
-} else {
+	} else {
 	// next item
 }
 
@@ -994,21 +1001,68 @@ if	(array['SoortGoed'] == "Geheugenkaart"){
 						+  'Op ' + werkelijkedatumtijdStr1 + ' uur is de ' + array['SoortGoed'] + ' door mij veilig gesteld door gebruik te maken van ' + array['memtool'] + '.'
 						+  '</p>';
 
-} else {
+					} else {
+	// next item
+}
+
+if	(array['SoortGoed'] == "Harde schijf"){
+	content = content	+ ' '
+	content = content	+ '<h3>Onderzoek en veiligstellen</h3>'
+
+						+  '<p>'
+						+  'Op ' + werkelijkedatumtijdStr1 + ' uur is de ' + array['SoortGoed'] + ' door mij veilig gesteld door gebruik te maken van ' + array['memtool'] + '.'
+						+  '</p>';
+
+					} else {
+	// next item
+}
+
+if	(array['SoortGoed'] == "USB stick"){
+	content = content	+ ' '
+	content = content	+ '<h3>Onderzoek en veiligstellen</h3>'
+
+						+  '<p>'
+						+  'Op ' + werkelijkedatumtijdStr1 + ' uur is de ' + array['SoortGoed'] + ' door mij veilig gesteld door gebruik te maken van ' + array['memtool'] + '.'
+						+  '</p>';
+
+					} else {
+	// next item
+}
+
+if	(array['SoortGoed'] == "Datadrager"){
+	content = content	+ ' '
+	content = content	+ '<h3>Onderzoek en veiligstellen</h3>'
+
+						+  '<p>'
+						+  'Op ' + werkelijkedatumtijdStr1 + ' uur is de ' + array['SoortGoed'] + ' door mij veilig gesteld door gebruik te maken van ' + array['memtool'] + '.'
+						+  '</p>';
+
+					} else {
+	// next item
+}
+
+if	(array['SoortGoed'] == "Laptop/Computer"){
+	content = content	+ ' '
+	content = content	+ '<h3>Onderzoek en veiligstellen</h3>'
+
+						+  '<p>'
+						+  'Op ' + werkelijkedatumtijdStr1 + ' uur is de ' + array['SoortGoed'] + ' door mij veilig gesteld door gebruik te maken van ' + array['memtool'] + '.'
+						+  '</p>';
+
+					} else {
 	// next item
 }
 
 
 
-
-
+// Zijn er bijzdonderheden voor het goed?
 if (array['opmerking'] == "Ja"){
 	content = content 	+ 	'<h3>Opmerking verbalisant</h3>'
 						+ 	'<p>'
 						+	'Ten aanzien van het goed zijn de volgende opmerkingen van toepassing: '
 						+	capitalizeFirstLetter ( array['overigevragen_1'] ) + '.'
 						+ 	'</p>';
-} else {
+					} else {
 
 }
 
@@ -1065,7 +1119,7 @@ if	(array['fortool'] == "Ufed4PC with Tableau"){
 						+ '<br>'
 						+ 'De hashwaarde, die is berekend door ' + array['memtool'] +', is een digitale vingerafdruk van een bestand. Zo’n digitale vingerafdruk bestaat uit een reeks getallen (van vaste lengte) die berekend wordt aan de hand van, en die kenmerkend is voor, de inhoud van een bestand. De berekening geschiedt door middel van een hashalgoritme. Bij gebruik van een goed hashalgoritme is het bijzonder moeilijk om twee verschillende bestanden te vinden die gelijke bestandskenmerken opleveren.'
 						+ '<br>';
-} else {
+					} else {
 	// next item
 }
 
@@ -1091,9 +1145,10 @@ if	(array['fortool'] == "Tableau"){
 						+ '<br>'
 						+ 'De hashwaarde, die is berekend door ' + array['memtool'] +', is een digitale vingerafdruk van een bestand. Zo’n digitale vingerafdruk bestaat uit een reeks getallen (van vaste lengte) die berekend wordt aan de hand van, en die kenmerkend is voor, de inhoud van een bestand. De berekening geschiedt door middel van een hashalgoritme. Bij gebruik van een goed hashalgoritme is het bijzonder moeilijk om twee verschillende bestanden te vinden die gelijke bestandskenmerken opleveren.'
 						+ '<br>';
-} else {
+					} else {
 	// next item
 }
+
 
 
 	content = content	+ ' '
@@ -1102,7 +1157,7 @@ if	(array['fortool'] == "Tableau"){
 						+  '<p>'
 						+  'Het goed is door mij, verbalisant, gecontroleerd op de datum en tijd. ';
 
-	if 	(array['verschildatumtijd'] == "0 minuten") {
+if 	(array['verschildatumtijd'] == "0 minuten") {
 	content = content 	+  'Hierbij zag ik, verbalisant, dat de ingestelde datum en tijd overeenkwam met de op dat moment geldige datum en tijd. '
 	content = content	+ ' '
 	content = content 	+ '<table width="100%">'
@@ -1116,9 +1171,7 @@ if	(array['fortool'] == "Tableau"){
 						+ 	'</tr>'
 						+ '</table>';
 
-}
-
-	else {
+} else {
 	content = content 	+ 'Hierbij zag ik dat de datum en tijd op dat moment stond ingesteld op: '	+ recorderdatumtijdStr + ' uur. '
 						+ 'De op dat moment geldige datum en/of tijd bleek echter te zijn: ' + werkelijkedatumtijdStr1 + ' uur. '
 						+ 'Gelet op vorenstaande bleek mij dat de ingestelde tijd op het goed derhalve '
