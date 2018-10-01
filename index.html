@@ -171,7 +171,6 @@
 							<option>J. Kuipers</option>
 							<option>R. Rammeloo</option>
 							<option>J. Spaans</option>
-							<option>#####</option>
 							</select>
 						</div>
 					
@@ -200,12 +199,34 @@
 								<option>####</option>
 								<option>Algemene Recherche</option>
 								<option>Special Unit Robbery</option>
-								<option>ZwaCri</option>								
+								<option>Team Zware Criminaliteitsbestrijding</option>								
 								<option>Jeugd en Zeden</option>
 								<option>Surveillance dienst</option>
 								</select>							
 						</div>	
-						
+					<!-- Form Name -->
+					<legend>Verdachte/Getuige/Aangever</legend>
+					<!-- Text input-->
+					<div class="form-group">
+						<div class="col-md-4">
+							<!-- Leeg -->
+								<label for="verdachte">Status eigenaar goed</label>
+								<select id="verdachte" name="verdachte" type="text" placeholder="Status" class="form-control input-md">
+								<option>#######</option>
+								<option>Verdachte</option>
+								<option>Slachtoffer</option>
+								<option>Aangever</option>
+								<option>Aangever/Benadeelde</option>
+								<option>Onbekend</option>
+								</select>
+						</div>
+
+						<div class="col-md-4">
+							<label for="NAW">Naam</label>
+							<input id="NAW" name="NAW" type="text" placeholder="Naam VE/AAN/BEN" class="form-control input-md">
+						</div>
+
+					</div>
 						<div class="col-md-4">
 							<!-- Leeg -->
 						</div>					
@@ -371,38 +392,40 @@
 								<select id="telco" name="telco" type="text" placeholder="telco " class="form-control input-md" maxlength="20">
 									<option>######<option>
 									<option>CHIPPIE<option>
-									<option>TelEm<option>
+									<option>TelCell<option>
 								</select>
 							</div>							
 							<div class="col-md-4">
 								<label for="tstcode">tstcode </label>
 								<select id="tstcode" name="tstcode" type="text" placeholder="tstcode " class="form-control input-md">
-									<option>Ja, bekend</option>
-									<option>Ja, onbekend</option>
-									<option>Nee</option>
+									<option>Ja, bekend.</option>
+									<option>Ja, onbekend.</option>
+									<option>Nee niet aanwezig op toestel.</option>
 									</select>
 							</div>
 							<div class="col-md-4">
 								<label for="simcode" >simcode </label>
 								<select id="simcode" name="simcode" type="text" placeholder="simcode" class="form-control input-md">
-									<option>Ja, bekend</option>
-									<option>Ja, onbekend</option>
-									<option>nee, niet actief</option>
+									<option>Ja, bekend.</option>
+									<option>Ja, onbekend.</option>
+									<option>nee, niet actief.</option>
 									</select>
 							</div>
 							<div class="col-md-4">
 								<label for="onoff" >Toestel aan of uit? </label>
 								<select id="onoff" name="onoff" type="text" placeholder="Toestel aan of uit" class="form-control input-md">
-									<option>Toestel aan</option>
-									<option>Toestel uit</option>
+									<option>Toestel aan.</option>
+									<option>Toestel uit.</option>
 									</select>
 							</div>							
 							<div class="col-md-4">
 								<label for="flightmode" >Flightmode? </label>
 								<select id="flightmode" name="flightmode" type="text" placeholder="flightmode" class="form-control input-md">
-									<option>flightmode stond aan bij ontvangst</option>
-									<option>flightmode stond niet aan, door verbalisant</option>
-									<option>flightmode kon niet aangezet worden</option>
+									<option>###########</option>
+									<option>flightmode stond aan bij ontvangst.</option>
+									<option>flightmode stond niet aan, door verbalisant aangezet.</option>
+									<option>flightmode kon niet aangezet worden.</option>
+									<option>Flightmode niet van toepassing</option>
 									</select>
 							</div>
 						</div>
