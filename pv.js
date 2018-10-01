@@ -7,8 +7,7 @@ function generatePV(formi) {
 // fotobijlage ??
 // Ontvangstbewijs ??
 // Versie van UFED erbij??
-// kenmerken van het SoortGoed etc in tekst met hoofdletters
-// 
+//
 //
 
 
@@ -149,10 +148,10 @@ var content = 			'<div class="page"> ';
 						+ 	'</tr>'
 						+	'<tr>'
 						+		'<td class="white">Philipsburg, Sint Maarten</td>'
-						+ 	'</tr>'	
+						+ 	'</tr>'
 						+ '</table>'
 						+ '<br><br><br>;'						;
-	
+
 
 	content = content 	+ '<table width="100%" style="border-bottom: solid 1px black; ">';
 	content = content	+ 	'<tr>';
@@ -182,7 +181,7 @@ var content = 			'<div class="page"> ';
 						+ 		'<td class="grey">Naam </td>'
 						+ 		'<td class="white">' + capitalizeFirstLetter ( array['naamonderzoek'] ) + '</td>'
 						+ 		'<td class="grey">Inbeslagname nr. </td>'
-						+ 		'<td class="white">' + capitalizeFirstLetter ( array['inbeslagnamenummer'] ) + '</td>'						
+						+ 		'<td class="white">' + capitalizeFirstLetter ( array['inbeslagnamenummer'] ) + '</td>'
 
 						+ 	'</tr>'
 						+ 	'<tr>'
@@ -233,7 +232,7 @@ if 	(array['cctv'] == "CCTV Gecertificeerd") {
 	content = content	+  'het volgende:'
 						+ '</p>'
 
-						
+
 	content = content 	+ ' '
 						+ '<h3>Aanvang onderzoek</h3>'
 
@@ -247,8 +246,8 @@ if 	(array['cctv'] == "CCTV Gecertificeerd") {
 						+	'<h3>Toestemming OvJ</h3>'
 						+ 	'<p>'
 						+ 	'Op bevel van de Officier van Justitie, ' + array['OVJname'] +', op ' + datumtoestemmingOVJStr + ', is volgens artikel 184 jo. 183 jo. 120 en 121 van het Wetboek van Strafvordering, de inhoud van de goed uitgelezen en onderzocht.'
-						+ 	'</p>';						
-						
+						+ 	'</p>';
+
 	content = content	+	' '
 						+	'<h3>Goed</h3>'
 
@@ -257,7 +256,7 @@ if 	(array['cctv'] == "CCTV Gecertificeerd") {
 						+ 	'</p>';
 
 
-// inhoud bepalen van het overzicht goed	
+// inhoud bepalen van het overzicht goed
 if	(array['SoortGoed'] == "Smartphone met Simkaart en microSD") {
 	content = content 	+ '<table width="100%">'
 						+ 	'<tr>'
@@ -295,7 +294,7 @@ if	(array['SoortGoed'] == "Smartphone met Simkaart en microSD") {
 						+ 	'<tr>'
 						+		'<td class="grey" width="20%">Telecomprovider </td>'
 						+ 		'<td>' + capitalizeFirstLetter ( array['telco'] ) + '</td>'
-						+ 	'</tr>'						
+						+ 	'</tr>'
 						+ 	'<tr>'
 						+		'<td class="grey" width="20%">Geheugen Intern </td>'
 						+ 		'<td>' + capitalizeFirstLetter ( array['intmemsize'] ) + '</td>'
@@ -311,15 +310,15 @@ if	(array['SoortGoed'] == "Smartphone met Simkaart en microSD") {
 						+ 	'<tr>'
 						+		'<td class="grey" width="20%">Extern geheugen </td>'
 						+ 		'<td>' + capitalizeFirstLetter ( array['extmemsize'] ) + '</td>'
-						+ 	'</tr>'						
+						+ 	'</tr>'
 						+ 	'<tr>'
 						+		'<td class="grey" width="20%">Toestel aan of uit? </td>'
 						+ 		'<td>' + capitalizeFirstLetter ( array['onoff'] ) + '</td>'
-						+ 	'</tr>'							
+						+ 	'</tr>'
 						+ 	'<tr>'
 						+		'<td class="grey" width="20%">Flightmode </td>'
 						+ 		'<td>' + capitalizeFirstLetter ( array['flightmode'] ) + '</td>'
-						+ 	'</tr>'							
+						+ 	'</tr>'
 						+ 	'<tr>'
 						+		'<td class="grey" width="20%">Toestelcode </td>'
 						+ 		'<td>' + capitalizeFirstLetter ( array['tstcode'] ) + '</td>'
@@ -329,7 +328,7 @@ if	(array['SoortGoed'] == "Smartphone met Simkaart en microSD") {
 						+ 		'<td>' + capitalizeFirstLetter ( array['simcode'] ) + '</td>'
 						+ 	'</tr>'
 						+ '</table>';
-					
+
 } else {
 	// next item
 }
@@ -371,7 +370,7 @@ if 	(array['SoortGoed'] == "Smartphone met Simkaart") {
 						+ 	'<tr>'
 						+		'<td class="grey" width="20%">Telecomprovider </td>'
 						+ 		'<td>' + capitalizeFirstLetter ( array['telco'] ) + '</td>'
-						+ 	'</tr>'						
+						+ 	'</tr>'
 						+ 	'<tr>'
 						+		'<td class="grey" width="20%">Geheugen intern </td>'
 						+ 		'<td>' + capitalizeFirstLetter ( array['intmemsize'] ) + '</td>'
@@ -387,15 +386,15 @@ if 	(array['SoortGoed'] == "Smartphone met Simkaart") {
 						+ 	'<tr>'
 						+		'<td class="grey" width="20%">Extern geheugen </td>'
 						+ 		'<td>' + capitalizeFirstLetter ( array['extmemsize'] ) + '</td>'
-						+ 	'</tr>'						
+						+ 	'</tr>'
 						+ 	'<tr>'
 						+		'<td class="grey" width="20%">Toestel aan of uit? </td>'
 						+ 		'<td>' + capitalizeFirstLetter ( array['onoff'] ) + '</td>'
-						+ 	'</tr>'							
+						+ 	'</tr>'
 						+ 	'<tr>'
 						+		'<td class="grey" width="20%">Flightmode </td>'
 						+ 		'<td>' + capitalizeFirstLetter ( array['flightmode'] ) + '</td>'
-						+ 	'</tr>'							
+						+ 	'</tr>'
 						+ 	'<tr>'
 						+		'<td class="grey" width="20%">Toestelcode </td>'
 						+ 		'<td>' + capitalizeFirstLetter ( array['tstcode'] ) + '</td>'
@@ -404,7 +403,7 @@ if 	(array['SoortGoed'] == "Smartphone met Simkaart") {
 						+		'<td class="grey" width="20%">SIMcode </td>'
 						+ 		'<td>' + capitalizeFirstLetter ( array['simcode'] ) + '</td>'
 						+ 	'</tr>'
-						+ '</table>';						
+						+ '</table>';
 
 } else {
 	// next item
@@ -451,15 +450,15 @@ if 	(array['SoortGoed'] == "Smartphone met microSD") {
 						+ 	'<tr>'
 						+		'<td class="grey" width="20%">Extern geheugen </td>'
 						+ 		'<td>' + capitalizeFirstLetter ( array['extmemsize'] ) + '</td>'
-						+ 	'</tr>'						
+						+ 	'</tr>'
 						+ 	'<tr>'
 						+		'<td class="grey" width="20%">Toestel aan of uit? </td>'
 						+ 		'<td>' + capitalizeFirstLetter ( array['onoff'] ) + '</td>'
-						+ 	'</tr>'							
+						+ 	'</tr>'
 						+ 	'<tr>'
 						+		'<td class="grey" width="20%">Flightmode </td>'
 						+ 		'<td>' + capitalizeFirstLetter ( array['flightmode'] ) + '</td>'
-						+ 	'</tr>'							
+						+ 	'</tr>'
 						+ 	'<tr>'
 						+		'<td class="grey" width="20%">Toestelcode </td>'
 						+ 		'<td>' + capitalizeFirstLetter ( array['tstcode'] ) + '</td>'
@@ -468,7 +467,7 @@ if 	(array['SoortGoed'] == "Smartphone met microSD") {
 						} else {
 	// next item
 }
-						
+
 if 	(array['SoortGoed'] == "Smartphone") {
 	content = content 	+ '<table width="100%">'
 						+ 	'<tr>'
@@ -502,11 +501,11 @@ if 	(array['SoortGoed'] == "Smartphone") {
 						+	'<tr>'
 						+		'<td class="grey" width="20%">Toestel aan of uit? </td>'
 						+ 		'<td>' + capitalizeFirstLetter ( array['onoff'] ) + '</td>'
-						+ 	'</tr>'							
+						+ 	'</tr>'
 						+ 	'<tr>'
 						+		'<td class="grey" width="20%">Flightmode </td>'
 						+ 		'<td>' + capitalizeFirstLetter ( array['flightmode'] ) + '</td>'
-						+ 	'</tr>'							
+						+ 	'</tr>'
 						+ 	'<tr>'
 						+		'<td class="grey" width="20%">Toestelcode </td>'
 						+ 		'<td>' + capitalizeFirstLetter ( array['tstcode'] ) + '</td>'
@@ -525,7 +524,7 @@ if 	(array['SoortGoed'] == "Simkaart") {
 						+ 	'<tr>'
 						+		'<td class="grey" width="20%">Telecomprovider </td>'
 						+ 		'<td>' + capitalizeFirstLetter ( array['telco'] ) + '</td>'
-						+ 	'</tr>'						
+						+ 	'</tr>'
 						+ 	'<tr>'
 						+		'<td class="grey" width="20%">ICCID </td>'
 						+ 		'<td>' + capitalizeFirstLetter ( array['iccid'] ) + '</td>'
@@ -538,7 +537,7 @@ if 	(array['SoortGoed'] == "Simkaart") {
 						+		'<td class="grey" width="20%">SIMcode </td>'
 						+ 		'<td>' + capitalizeFirstLetter ( array['simcode'] ) + '</td>'
 						+ 	'</tr>'
-						+ '</table>';						
+						+ '</table>';
 
 } else {
 	// next item
@@ -577,15 +576,15 @@ if 	(array['SoortGoed'] == "Tablet met microSD") {
 						+ 	'<tr>'
 						+		'<td class="grey" width="20%">Extern geheugen </td>'
 						+ 		'<td>' + capitalizeFirstLetter ( array['extmemsize'] ) + '</td>'
-						+ 	'</tr>'						
+						+ 	'</tr>'
 						+ 	'<tr>'
 						+		'<td class="grey" width="20%">Toestel aan of uit? </td>'
 						+ 		'<td>' + capitalizeFirstLetter ( array['onoff'] ) + '</td>'
-						+ 	'</tr>'							
+						+ 	'</tr>'
 						+ 	'<tr>'
 						+		'<td class="grey" width="20%">Flightmode </td>'
 						+ 		'<td>' + capitalizeFirstLetter ( array['flightmode'] ) + '</td>'
-						+ 	'</tr>'							
+						+ 	'</tr>'
 						+ '</table>';
 
 } else {
@@ -739,13 +738,13 @@ if	(array['SoortGoed'] == "Geheugenkaart") {
 						+ 	'<tr>'
 						+		'<td class="grey" width="20%">Extern geheugen </td>'
 						+ 		'<td>' + capitalizeFirstLetter ( array['extmemsize'] ) + '</td>'
-						+ 	'</tr>'						
+						+ 	'</tr>'
 						+ '</table>';
 } else {
 	// next item
 }
 
-	
+
 
 if	(array['SoortGoed'] == "Harde schijf") {
 
@@ -782,7 +781,7 @@ if	(array['SoortGoed'] == "Harde schijf") {
 					} else {
 	// next item
 }
-	
+
 if	(array['SoortGoed'] == "USB stick") {
 
 	content = content 	+ '<table width="100%">'
@@ -853,7 +852,7 @@ if	(array['SoortGoed'] == "Datadrager") {
 						+ '</table>';
 					} else {
 	// next item
-}	
+}
 
 if	(array['SoortGoed'] == "Laptop/Computer") {
 
@@ -899,7 +898,7 @@ if	(array['SoortGoed'] == "Laptop/Computer") {
 						+ 	'<p>'
 						+ 	'De vraag van het onderzoeksteam was om informatie vanaf de ' + capitalizeFirstLetter ( array['merkgoed'] ) + ' veilig te stellen, inclusief de eventueel aanwezige andere gegevensdragers. '
 						+ 	'</p>';
-						
+
 	content = content	+ '<br style="page-break-after: always">';
 
 //gebruik forensic tool
@@ -924,7 +923,7 @@ if	(array['SoortGoed'] == "Smartphone met Simkaart"){
 						+  '<p>'
 						+  'Op ' + werkelijkedatumtijdStr1 + ' uur is de ' + array['SoortGoed'] + ' door mij veilig gesteld door gebruik te maken van ' + array['fortool'] + '.'
 						+ ' ' + capitalizeFirstLetter(array['fortool']) + ' extraheerd informatie uit het goed om het vervolgens aan de onderzoeker te kunnen presenteren.'
-						+ ' '						
+						+ ' '
 						+  '</p>';
 
 } else {
@@ -938,7 +937,7 @@ if	(array['SoortGoed'] == "Smartphone met microSD"){
 						+  '<p>'
 						+  'Op ' + werkelijkedatumtijdStr1 + ' uur is de ' + array['SoortGoed'] + ' door mij veilig gesteld door gebruik te maken van ' + array['fortool'] + '.'
 						+ ' ' + capitalizeFirstLetter(array['fortool']) + ' extraheerd informatie uit het goed om het vervolgens aan de onderzoeker te kunnen presenteren.'
-						+ ' '						
+						+ ' '
 						+  '</p>';
 
 } else {
@@ -952,7 +951,7 @@ if	(array['SoortGoed'] == "Smartphone"){
 						+  '<p>'
 						+  'Op ' + werkelijkedatumtijdStr1 + ' uur is de ' + array['SoortGoed'] + ' door mij veilig gesteld door gebruik te maken van ' + array['fortool'] + '.'
 						+ ' ' + capitalizeFirstLetter(array['fortool']) + ' extraheerd informatie uit het goed om het vervolgens aan de onderzoeker te kunnen presenteren.'
-						+ ' '						
+						+ ' '
 						+  '</p>';
 
 } else {
@@ -966,7 +965,7 @@ if	(array['SoortGoed'] == "Simkaart"){
 						+  '<p>'
 						+  'Op ' + werkelijkedatumtijdStr1 + ' uur is de ' + array['SoortGoed'] + ' door mij veilig gesteld door gebruik te maken van ' + array['fortool'] + '.'
 						+ ' ' + capitalizeFirstLetter(array['fortool']) + ' extraheerd informatie uit het goed om het vervolgens aan de onderzoeker te kunnen presenteren.'
-						+ ' '						
+						+ ' '
 						+  '</p>';
 
 } else {
@@ -980,7 +979,7 @@ if	(array['SoortGoed'] == "Tablet met microSD"){
 						+  '<p>'
 						+  'Op ' + werkelijkedatumtijdStr1 + ' uur is de ' + array['SoortGoed'] + ' door mij veilig gesteld door gebruik te maken van ' + array['fortool'] + '.'
 						+ ' ' + capitalizeFirstLetter(array['fortool']) + ' extraheerd informatie uit het goed om het vervolgens aan de onderzoeker te kunnen presenteren.'
-						+ ' '						
+						+ ' '
 						+  '</p>';
 
 } else {
@@ -1030,7 +1029,7 @@ if	(array['fortool'] == "Ufed Touch with Tableau"){
 						+ '<br>'
 	content = content 	+ '<table width="100%">'
 						+ 	'<tr>'
-						+ 		'<td class="grey"  width="20%">MD5 hashwaarde: </td>'			
+						+ 		'<td class="grey"  width="20%">MD5 hashwaarde: </td>'
 						+ 		'<td>' + array['md5'] + '</td>'
 						+ 	'</tr>'
 						+ 	'<tr>'
@@ -1038,12 +1037,12 @@ if	(array['fortool'] == "Ufed Touch with Tableau"){
 						+ 		'<td>' + array['md5'] + '</td>'
 						+ 	'</tr>'
 						+ '</table>'
-						+ '<br>'						
+						+ '<br>'
 						+ 'De hashwaarde, die is berekend door ' + array['memtool'] +', is een digitale vingerafdruk van een bestand. Zo’n digitale vingerafdruk bestaat uit een reeks getallen (van vaste lengte) die berekend wordt aan de hand van, en die kenmerkend is voor, de inhoud van een bestand. De berekening geschiedt door middel van een hashalgoritme. Bij gebruik van een goed hashalgoritme is het bijzonder moeilijk om twee verschillende bestanden te vinden die gelijke bestandskenmerken opleveren.'
 						+ '<br>';
 	// next item
 }
-			
+
 if	(array['fortool'] == "Ufed4PC with Tableau"){
 	content = content	+ ' '
 	content = content	+ '<h3>Datadrager</h3>'
@@ -1055,7 +1054,7 @@ if	(array['fortool'] == "Ufed4PC with Tableau"){
 						+	'<br>'
 	content = content 	+ '<table width="100%">'
 						+ 	'<tr>'
-						+ 		'<td class="grey"  width="20%">MD5 hashwaarde: </td>'			
+						+ 		'<td class="grey"  width="20%">MD5 hashwaarde: </td>'
 						+ 		'<td>' + array['md5'] + '</td>'
 						+ 	'</tr>'
 						+ 	'<tr>'
@@ -1063,7 +1062,7 @@ if	(array['fortool'] == "Ufed4PC with Tableau"){
 						+ 		'<td>' + array['md5'] + '</td>'
 						+ 	'</tr>'
 						+ '</table>'
-						+ '<br>'						
+						+ '<br>'
 						+ 'De hashwaarde, die is berekend door ' + array['memtool'] +', is een digitale vingerafdruk van een bestand. Zo’n digitale vingerafdruk bestaat uit een reeks getallen (van vaste lengte) die berekend wordt aan de hand van, en die kenmerkend is voor, de inhoud van een bestand. De berekening geschiedt door middel van een hashalgoritme. Bij gebruik van een goed hashalgoritme is het bijzonder moeilijk om twee verschillende bestanden te vinden die gelijke bestandskenmerken opleveren.'
 						+ '<br>';
 } else {
@@ -1081,7 +1080,7 @@ if	(array['fortool'] == "Tableau"){
 						+ '<br>'
 	content = content 	+ '<table width="100%">'
 						+ 	'<tr>'
-						+ 		'<td class="grey"  width="20%">MD5 hashwaarde: </td>'			
+						+ 		'<td class="grey"  width="20%">MD5 hashwaarde: </td>'
 						+ 		'<td>' + array['md5'] + '</td>'
 						+ 	'</tr>'
 						+ 	'<tr>'
@@ -1091,7 +1090,7 @@ if	(array['fortool'] == "Tableau"){
 						+ '</table>'
 						+ '<br>'
 						+ 'De hashwaarde, die is berekend door ' + array['memtool'] +', is een digitale vingerafdruk van een bestand. Zo’n digitale vingerafdruk bestaat uit een reeks getallen (van vaste lengte) die berekend wordt aan de hand van, en die kenmerkend is voor, de inhoud van een bestand. De berekening geschiedt door middel van een hashalgoritme. Bij gebruik van een goed hashalgoritme is het bijzonder moeilijk om twee verschillende bestanden te vinden die gelijke bestandskenmerken opleveren.'
-						+ '<br>';						
+						+ '<br>';
 } else {
 	// next item
 }
@@ -1108,40 +1107,40 @@ if	(array['fortool'] == "Tableau"){
 	content = content	+ ' '
 	content = content 	+ '<table width="100%">'
 						+ 	'<tr>'
-						+ 		'<td class="grey"  width="20%">Datum en tijd</td>'			
+						+ 		'<td class="grey"  width="20%">Datum en tijd</td>'
 						+ 		'<td>' + werkelijkedatumtijdStr1 + '</td>'
 						+ 	'</tr>'
 						+ 	'<tr>'
 						+		'<td class="grey" width="20%">Datum en tijd van het goed</td>'
 						+ 		'<td>' + recorderdatumtijdStr + '</td>'
 						+ 	'</tr>'
-						+ '</table>';	
-	
-}	
-	
+						+ '</table>';
+
+}
+
 	else {
 	content = content 	+ 'Hierbij zag ik dat de datum en tijd op dat moment stond ingesteld op: '	+ recorderdatumtijdStr + ' uur. '
 						+ 'De op dat moment geldige datum en/of tijd bleek echter te zijn: ' + werkelijkedatumtijdStr1 + ' uur. '
 						+ 'Gelet op vorenstaande bleek mij dat de ingestelde tijd op het goed derhalve '
 						+ array['verschildatumtijd'] + ' ' + voorachterloopStr + ' op de daadwerkelijke tijd. '
 						+  '</p>';
-	content = content	+ ' '						
+	content = content	+ ' '
 	content = content 	+ '<table width="100%">'
 						+ 	'<tr>'
-						+ 		'<td class="grey"  width="20%">Datum en tijd</td>'			
+						+ 		'<td class="grey"  width="20%">Datum en tijd</td>'
 						+ 		'<td>' + werkelijkedatumtijdStr1 + '</td>'
 						+ 	'</tr>'
 						+ 	'<tr>'
 						+		'<td class="grey" width="20%">Datum en tijd van het goed</td>'
 						+ 		'<td>' + recorderdatumtijdStr + '</td>'
 						+ 	'</tr>'
-						+ '</table>';							
+						+ '</table>';
 	}
 
-	
+
 ////	overgebracht naar het bureau
 // 		ombuigen naar
-//		......	
+//		......
 	if 	(array['locatieveiligstellen'] == "Overgebracht naar bureau") {
 		content = content	+ '<h3>Vervolgonderzoek aan bureau</h3>'
 		content = content 	+  'Het bleek ter plaatse niet of niet direct mogelijk de gevraagde beelden te exporteren. '
@@ -1166,8 +1165,8 @@ if	(array['fortool'] == "Tableau"){
 		}
 	}
 
-	
-	
+
+
 	content = content 	+ 	'<h3>Veiligstellen</h3>'
 						+ 	'<p>'
 
@@ -1175,7 +1174,7 @@ if	(array['fortool'] == "Tableau"){
 
 ///// naar bureau en geen opnames.
 // ombuigen naar:
-//  .....						
+//  .....
 if 	(array['locatieveiligstellen'] != "Overgebracht naar bureau") {
 	if 	(array['locatieveiligstellen'] == "Ter plaatse, geen opnames aanwezig") {
 	content = content 	+  'Het bleek niet mogelijk informatie veilig te stellen. '
@@ -1207,23 +1206,23 @@ if 	(array['locatieveiligstellen'] == "Extractie mislukt") {
 
 
 	content = content 	+ 	'<h3>Simkaart</h3>'
-						+ 	'<p>'	
+						+ 	'<p>'
 
 
-// simkaart uitlezen?						
+// simkaart uitlezen?
 if	(array['SoortGoed'] == "Smartphone met Simkaart en microSD") {
 	content = content	+  '<p>'
 						+  'De simkaart is door mij uitgelezen door gebruik te maken van ' + array['ufedtool'] + '.'
 						+ ' ' + capitalizeFirstLetter(array['ufedtool']) + ' extraheerd informatie uit de simkaart om het vervolgens aan de onderzoeker te kunnen presenteren.'
 	if (array['simcode'] == "Ja, bekend") {
 						+ 'De simkaart was voorzien van een bekende pin code. Hierdoor kon de simkaart uitgelezen worden'
-						+ 'met ' + capitalizeFirstLetter(array['ufedtool']) + '.'						
+						+ 'met ' + capitalizeFirstLetter(array['ufedtool']) + '.'
 						+  '</p>';
 	}else if (array['simcode'] == "Ja, onbekend") {
 						+ 'De simkaart was voorzien van een onbekende pin code. Hierdoor kon de simkaart niet uitgelezen worden.'
 	}else if (array['simcode'] == "nee, niet actief") {
 						+ 'De simkaart was niet voorzien van een pin code. Hierdoor kon de simkaart uitgelezen worden'
-						+ 'met ' + capitalizeFirstLetter(array['ufedtool']) + '.'						
+						+ 'met ' + capitalizeFirstLetter(array['ufedtool']) + '.'
 						+  '</p>';
 	}
 	else {
@@ -1236,7 +1235,7 @@ if	(array['SoortGoed'] == "Smartphone met Simkaart en microSD") {
 
 
 
-										
+
 var overdracht = 	 	 	'<h3>Vertrekking veiliggestelde data</h3>'
 						+ 	'<p>'
 						+ 	'De (kopie&euml;n van) de veiliggestelde data, '
@@ -1260,22 +1259,22 @@ if 	(array['locatieveiligstellen'] == "Overgebracht naar bureau") {
 	content = content 	+ 	'<p>'
 						+ 	'Waarvan door mij is opgemaakt dit proces-verbaal, dat ik sloot en ondertekende op '
 						+ 	lowercaseFirstLetter ( array['eedofbelofte'] ) + ' op ' + pvdatumtijd_1Str + ' uur te Philipsburg. '
-						
-						
+
+
 	content = content 	+ '<br>'
 						+ '<table width="30%">'
 						+ 	'<tr>'
 						+ 		'<td class="white"  width="15%">Verbalisant</td>'
 						+ 		'<td class="white"  width="15%">Gezien</td>'
 						+ 	'</tr>'
-						+ '<br>'						
+						+ '<br>'
 ///						+ 	'<tr>'
-						+ 	'<tr>'		
+						+ 	'<tr>'
 						+ 		'<td class="white"  width="15%">' + array['verbalisantnaam'] + '</td>'
 						+ 		'<td class="white"  width="15%">J. Muller-Rijna</td>'
 						+ 	'</tr>'
 						+ 	'</table>'
-						+ 	'<br><br><br>';	
+						+ 	'<br><br><br>';
 
 	content = content 	+ '<table id="hrdftrtbl" border=1 cellspacing=0 cellpadding=0><tr><td>'
 						+	'<div style="mso-element:footer" id="f1"> '
