@@ -40,7 +40,7 @@ var vanafdatumtijdStr = moment(array['vanafdatumtijd']).format("dddd LLL");
 var totdatumtijdStr = moment(array['totdatumtijd']).format("dddd LLL");
 /// var datumtoestemmingOVJStr = moment(array['datumtoestemmingOVJ']).format("dddd LLL");
 var datumtoestemmingOVJStr = moment(array['datumtoestemmingOVJ']).format("dddd LL");
-var datumaanvraagStr = moment(array['datumaanvraag']).format("dddd LL");
+var datumonderzoekStr = moment(array['datumonderzoek']).format("dddd LL");
 
 var werkelijkedatumtijdStr = moment(array['werkelijkedatumtijd']).format("dddd LLL");
 var werkelijkedatumtijdStr1 = moment(array['werkelijkedatumtijd']).format("LLL");
