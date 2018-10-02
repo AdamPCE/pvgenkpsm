@@ -161,7 +161,7 @@
 					<legend>Aanvraag Onderzoek</legend>
 					<!-- Text input-->
 					<div class="form-group">
-					
+
 						<div class="col-md-4">
 							<label for="officier" class="required">Officier van justitie</label>
 							<select id="OVJname" name="OVJname" type="text" placeholder="OVJname" class="form-control input-md" required="true">
@@ -173,13 +173,13 @@
 							<option>J. Spaans</option>
 							</select>
 						</div>
-					
+
 						<div class="col-md-4">
 							<label for="datumtoestemmingOVJ" class="required" > Datum toestemming OVJ</label>
 							<input id="datumtoestemmingOVJ" name="datumtoestemmingOVJ" type="date" class="form-control input-md" required="true">
 						</div>
 					</div>
-					
+
 					<legend>Aanvrager Onderzoek</legend>
 					<!-- Text input-->
 					<div class="form-group">
@@ -187,23 +187,24 @@
 							<label for="naam" class="required">Naam aanvrager</label>
 							<input id="naam" name="naam" type="text" placeholder="Naam" class="form-control input-md" required="true">
 						</div>
-						
+
 						<div class="col-md-4">
 							<label for="datumaanvraag" class="required"> Datum aanvraag </label>
 							<input id="datumaanvraag" name="datumaanvraag" type="date" class="form-control input-md" required="true">
 						</div>
-							
+
 						<div class="col-md-4">
 							<label for="aanvraagafd">Afdeling aanvrager </label>
 							<select id="aanvraagafd" name="aanvraagafd" type="text" placeholder="aanvraagafd" class="form-control input-md">
 								<option>####</option>
 								<option>Algemene Recherche</option>
 								<option>Special Unit Robbery</option>
-								<option>Team Zware Criminaliteitsbestrijding</option>								
+								<option>Team Zware Criminaliteitsbestrijding</option>
 								<option>Jeugd en Zeden</option>
 								<option>Surveillance dienst</option>
-								</select>							
-						</div>	
+								</select>
+						</div>
+					</div>
 					<!-- Form Name -->
 					<legend>Verdachte/Getuige/Aangever</legend>
 					<!-- Text input-->
@@ -230,7 +231,6 @@
 						<div class="col-md-4">
 							<!-- Leeg -->
 						</div>					
-					</div>
 				<button type="button" class="btn btn-default" onclick="showStep(0)">Vorige</button>
 				<button type="button" class="btn btn-default" onclick="saveForm($('#form'))">Tussentijds opslaan</button>
 				<button type="button" class="btn btn-primary" onclick="showStep(3)">Volgende</button>
@@ -248,7 +248,7 @@
 
 						<div class="col-md-4">
 							<label for="onderzoeksnummer" class="required"> Onderzoeksnummer </label>
-							<input id="onderzoeksnummer" name="onderzoeksnummer" type="text" placeholder="Onderzoeksnummer" class="form-control input-md" maxlength=16 required="true">	
+							<input id="onderzoeksnummer" name="onderzoeksnummer" type="text" placeholder="Onderzoeksnummer" class="form-control input-md" maxlength=16 required="true">
 						</div>
 						<div class="col-md-4">
 							<label for="volgnummer" class="required" > Volgnummer </label>
@@ -257,12 +257,12 @@
 						</div>
 					</div>
 					<div class="form-group">
-					
+
 						<div class="col-md-4">
 							<label for="inbeslagnamenummer" class="required" >Inbeslagnamenummer </label>
 							<input id="inbeslagnamenummer" name="inbeslagnamenummer" type="text" placeholder="Inbeslagnamenummer" class="form-control input-md" required="true">
 						</div>
-							
+
 						<div class="col-md-4">
 							<label for="soortdelict" class="required">Soort delict </label>
 							<input id="soortdelict" name="soortdelict" type="text" placeholder="Soort delict" class="form-control input-md" required="true">
@@ -272,7 +272,7 @@
 					<button type="button" class="btn btn-default" onclick="saveForm($('#form'))">Tussentijds opslaan</button>
 					<button type="button" class="btn btn-primary" onclick="showStep(4)">Volgende</button>
 				</fieldset>
-				
+
 				<fieldset id="stap4" style="display: none;">
 				<!-- Form Name -->
 					<legend>Wat voor goed</legend>
@@ -307,7 +307,7 @@
 									<option>Tableau</option>
 									</select>
 							</div>
-						</div>	
+						</div>
 					<legend>Goed</legend>
 					<!-- Text input-->
 						<div class="form-group">
@@ -317,14 +317,14 @@
 							</div>
 							<div class="col-md-4">
 								<label for="typegoed">Type v/h goed</label>
-								<input id="typegoed" name="typegoed" type="text" placeholder="typegoed" class="form-control input-md">							
+								<input id="typegoed" name="typegoed" type="text" placeholder="typegoed" class="form-control input-md">
 							</div>
 							<div class="col-md-4">
 								<label for="serialgoed">Serienummer</label>
-								<input id="serialgoed" name="serialgoed" type="text" placeholder="serialgoed" class="form-control input-md">							
+								<input id="serialgoed" name="serialgoed" type="text" placeholder="serialgoed" class="form-control input-md">
 							</div>
 						</div>
-						<div class="form-group">						
+						<div class="form-group">
 							<div class="col-md-4">
 								<label for="extmemmerk">Merk geheugen</label>
 								<input id="extmemmerk" name="extmemmerk" type="text" placeholder="merkgeheugen" class="form-control input-md">
@@ -335,8 +335,8 @@
 									<option>####<option>
 									<option>MicroSD<option>
 									<option>SD<option>
-									<option>USB stick<option>									
-									</select>								
+									<option>USB stick<option>
+									</select>
 							</div>
 							<div class="col-md-4">
 								<label for="extmemsize">Capaciteit geheugen</label>
@@ -364,7 +364,7 @@
 									<option>Tableau</option>
 									</select>
 							</div>
-						</div>							
+						</div>
 					<legend>Kenmerken Sim en Toestel</legend>
 					<!-- Text input-->
 						<div class="col-md-4">
@@ -401,7 +401,7 @@
 									<option>CHIPPIE<option>
 									<option>TelCell<option>
 								</select>
-							</div>							
+							</div>
 							<div class="col-md-4">
 								<label for="tstcode">tstcode </label>
 								<select id="tstcode" name="tstcode" type="text" placeholder="tstcode " class="form-control input-md">
@@ -424,7 +424,7 @@
 									<option>Toestel aan.</option>
 									<option>Toestel uit.</option>
 									</select>
-							</div>							
+							</div>
 							<div class="col-md-4">
 								<label for="flightmode" >Flightmode? </label>
 								<select id="flightmode" name="flightmode" type="text" placeholder="flightmode" class="form-control input-md">
@@ -441,7 +441,7 @@
 					<button type="button" class="btn btn-primary" onclick="showStep(6)">Volgende</button>
 				</fieldset>
 
-				
+
 				<fieldset id="stap5" style="display: none;">
 				<!-- Form Name -->
 					<legend>(Video)bewakingssysteem - Gegevens</legend>
@@ -497,21 +497,21 @@
 							<label for="adresplaatsdelict" class="required">imei-1 </label>
 							<select id="adresplaatsdelict" name="adresplaatsdelict" type="text" placeholder="imei" class="form-control input-md" required="true">
 								<option>dummyimei_adresplaatsdelict<option>
-							</select>	
+							</select>
 						</div>
 						<div class="col-md-4">
 							<label for="postcodeplaatsdelict" class="required">imei-2 </label>
 							<select id="postcodeplaatsdelict" name="postcodeplaatsdelict" type="text" placeholder="imsi" class="form-control input-md" required="true" maxlength=6>
 								<option>dummyimei2_postcodeplaatsdelict<option>
-							</select>	
+							</select>
 						</div>
 						<div class="col-md-4">
 							<label for="plaatsnaamplaatsdelict" class="required">telecomprovider </label>
 							<select id="plaatsnaamplaatsdelict" name="plaatsnaamplaatsdelict" type="text" placeholder="telecomprovider " class="form-control input-md" required="true">
 								<option>dummytelecomprovider_plaatsnaamplaatsdelict<option>
-							</select>	
+							</select>
 						</div>
-					</div>					
+					</div>
 					<legend>(Video)bewakingssysteem - Contactpersoon</legend>
 					<div class="form-group">
 						<div class="col-md-4">
@@ -523,14 +523,14 @@
 						<div class="col-md-4">
 							<label for="functiecontactpersoon">Functie </label>
 							<input id="functiecontactpersoon" name="functiecontactpersoon" type="text" placeholder="Functie" class="form-control input-md">
-						</div>						
+						</div>
 					</div>
 					<div class="form-group">
 						<div class="col-md-4">
 							<label for="telefoonnummercontactpersoon" class="required">Telefoonnummer </label>
 							<select id="telefoonnummercontactpersoon" name="telefoonnummercontactpersoon" type="text" placeholder="Telefoonnummer" class="form-control input-md" required="true maxlength=16">
 								<option>dummy<option>
-							</select>	
+							</select>
 						</div>
 						<div class="col-md-4">
 							<label for="emailcontactpersoon">Email </label>
@@ -546,7 +546,7 @@
 									<option>GSM<option>
 								</select>
 							</div>
-							
+
 							<div class="col-md-6">
 							<label for="naamplaatsdelict">Merk</label>
 							<input id="naamplaatsdelict" name="naamplaatsdelict" type="text" placeholder="Merk" class="form-control input-md">
@@ -585,15 +585,15 @@
 							<input id="berekendedatumtijdseind" name="berekendedatumtijdseind" type="datetime" class="form-control input-md" readonly>
 						</div>
 					</div>
-					
+
 					<div class="form-group">
 						<div class="col-md-12">
 							<label for="overigevragen">Overige vragen / opmerkingen </label>
 							<textarea id="overigevragen" name="overigevragen" type="text" placeholder="Overige vragen / opmerkingen. Denk ook aan:
 - Schadetoestel, geen accu/batterij etc etc." class="form-control input-md" rows="5"></textarea>
 						</div>
-					</div>					
-					
+					</div>
+
 					<button type="button" class="btn btn-default" onclick="showStep(4)">Vorige</button>
 					<button type="button" class="btn btn-default" onclick="saveForm($('#form'))">Tussentijds opslaan</button>
 					<button type="button" class="btn btn-primary" onclick="showStep(6)">Volgende</button>
@@ -610,7 +610,7 @@
 					<legend>Datum en tijd controle</legend>
 					<!-- Text input-->
 					<button type="button" class="btn btn-default" onclick="calcdatetimediff('recorderdatumtijd', 'werkelijkedatumtijd', 'berekendedatumtijdstart', 'berekendedatumtijdseind', 'verschildatumtijd', '#timezonenotification', 'vanafdatumtijd_1', 'totdatumtijd_1')">Bereken verschil</button>
-					
+
 					<div class="form-group">
 						<div class="col-md-4">
 							<label for="recorderdatumtijd" class="required">Waargenomen systeem datum / tijd </label>
@@ -625,7 +625,7 @@
 							<input id="verschildatumtijd" name="verschildatumtijd" type="text" placeholder="Tijdsverschil" class="form-control input-md" required="true" readonly required="true">
 						</div>
 					</div>
-					
+
 					<legend>Aanvullende opmerkingen</legend>
 					<div class="form-group">
 						<div class="col-md-4">
@@ -633,15 +633,15 @@
 							<select id="opmerking" name="opmerking" type="text" placeholder="opmerking Y/N " class="form-control input-md" required="true">
 								<option>Ja<option>
 								<option>Nee<option>
-							</select>	
-						</div>					
+							</select>
+						</div>
 						<div class="col-md-12">
 							<label for="overigevragen_1">Overige vragen / opmerkingen </label>
 							<textarea id="overigevragen_1" name="overigevragen_1" type="text" placeholder="Overige vragen / opmerkingen. Denk ook aan:
 - Schadetoestel, geen accu/batterij etc etc." class="form-control input-md" rows="5"></textarea>
 						</div>
 					</div>
-					
+
 					<button type="button" class="btn btn-default" onclick="showStep(5)">Vorige</button>
 					<button type="button" class="btn btn-default" onclick="saveForm($('#form'))">Tussentijds opslaan</button>
 					<button type="button" class="btn btn-primary" onclick="showStep(8)">Volgende</button>
@@ -791,8 +791,8 @@
 						<div class="col-md-4">
 							<!-- Text input-->
 						</div>
-					</div>					
-					
+					</div>
+
 					<button type="button" class="btn btn-default" onclick="showStep(8)">Vorige</button>
 					<button type="button" class="btn btn-primary" onclick="generatePV($('#form'))">Genereer PV</button>
 
