@@ -40,6 +40,7 @@ var vanafdatumtijdStr = moment(array['vanafdatumtijd']).format("dddd LLL");
 var totdatumtijdStr = moment(array['totdatumtijd']).format("dddd LLL");
 /// var datumtoestemmingOVJStr = moment(array['datumtoestemmingOVJ']).format("dddd LLL");
 var datumtoestemmingOVJStr = moment(array['datumtoestemmingOVJ']).format("dddd LL");
+var datumaanvraagStr = moment(array['datumaanvraag']).format("dddd LL");
 
 var werkelijkedatumtijdStr = moment(array['werkelijkedatumtijd']).format("dddd LLL");
 var werkelijkedatumtijdStr1 = moment(array['werkelijkedatumtijd']).format("LLL");
@@ -914,7 +915,7 @@ if	(array['SoortGoed'] == "Smartphone met Simkaart en microSD"){
 						+	'<h3>Onderzoek en veiligstellen</h3>'
 
 						+  '<p>'
-						+  'Op ' + werkelijkedatumtijdStr1 + ' uur is de ' + array['SoortGoed'] + ' door mij veilig gesteld door gebruik te maken van ' + array['fortool'] + '.'
+						+  'Op ' + datumaanvraagStr + ' uur is de ' + array['SoortGoed'] + ' door mij veilig gesteld door gebruik te maken van ' + array['fortool'] + '.'
 						+ ' ' + capitalizeFirstLetter(array['fortool']) + ' extraheerd informatie uit het goed om het vervolgens aan de onderzoeker te kunnen presenteren.'
 
 						+  '</p>';
@@ -928,7 +929,7 @@ if	(array['SoortGoed'] == "Smartphone met Simkaart"){
 						+ '<h3>Onderzoek en veiligstellen</h3>'
 
 						+  '<p>'
-						+  'Op ' + werkelijkedatumtijdStr1 + ' uur is de ' + array['SoortGoed'] + ' door mij veilig gesteld door gebruik te maken van ' + array['fortool'] + '.'
+						+  'Op ' + datumaanvraagStr + ' uur is de ' + array['SoortGoed'] + ' door mij veilig gesteld door gebruik te maken van ' + array['fortool'] + '.'
 						+ ' ' + capitalizeFirstLetter(array['fortool']) + ' extraheerd informatie uit het goed om het vervolgens aan de onderzoeker te kunnen presenteren.'
 						+ ' '
 						+  '</p>';
@@ -942,7 +943,7 @@ if	(array['SoortGoed'] == "Smartphone met microSD"){
 						+ '<h3>Onderzoek en veiligstellen</h3>'
 
 						+  '<p>'
-						+  'Op ' + werkelijkedatumtijdStr1 + ' uur is de ' + array['SoortGoed'] + ' door mij veilig gesteld door gebruik te maken van ' + array['fortool'] + '.'
+						+  'Op ' + datumaanvraagStr + ' uur is de ' + array['SoortGoed'] + ' door mij veilig gesteld door gebruik te maken van ' + array['fortool'] + '.'
 						+ ' ' + capitalizeFirstLetter(array['fortool']) + ' extraheerd informatie uit het goed om het vervolgens aan de onderzoeker te kunnen presenteren.'
 						+ ' '
 						+  '</p>';
@@ -956,7 +957,7 @@ if	(array['SoortGoed'] == "Smartphone"){
 						+ '<h3>Onderzoek en veiligstellen</h3>'
 
 						+  '<p>'
-						+  'Op ' + werkelijkedatumtijdStr1 + ' uur is de ' + array['SoortGoed'] + ' door mij veilig gesteld door gebruik te maken van ' + array['fortool'] + '.'
+						+  'Op ' + datumaanvraagStr + ' uur is de ' + array['SoortGoed'] + ' door mij veilig gesteld door gebruik te maken van ' + array['fortool'] + '.'
 						+ ' ' + capitalizeFirstLetter(array['fortool']) + ' extraheerd informatie uit het goed om het vervolgens aan de onderzoeker te kunnen presenteren.'
 						+ ' '
 						+  '</p>';
@@ -970,7 +971,7 @@ if	(array['SoortGoed'] == "Simkaart"){
 						+ '<h3>Onderzoek en veiligstellen</h3>'
 
 						+  '<p>'
-						+  'Op ' + werkelijkedatumtijdStr1 + ' uur is de ' + array['SoortGoed'] + ' door mij veilig gesteld door gebruik te maken van ' + array['fortool'] + '.'
+						+  'Op ' + datumaanvraagStr + ' uur is de ' + array['SoortGoed'] + ' door mij veilig gesteld door gebruik te maken van ' + array['fortool'] + '.'
 						+ ' ' + capitalizeFirstLetter(array['fortool']) + ' extraheerd informatie uit het goed om het vervolgens aan de onderzoeker te kunnen presenteren.'
 						+ ' '
 						+  '</p>';
@@ -984,7 +985,7 @@ if	(array['SoortGoed'] == "Tablet met microSD"){
 						+ '<h3>Onderzoek en veiligstellen</h3>'
 
 						+  '<p>'
-						+  'Op ' + werkelijkedatumtijdStr1 + ' uur is de ' + array['SoortGoed'] + ' door mij veilig gesteld door gebruik te maken van ' + array['fortool'] + '.'
+						+  'Op ' + datumaanvraagStr + ' uur is de ' + array['SoortGoed'] + ' door mij veilig gesteld door gebruik te maken van ' + array['fortool'] + '.'
 						+ ' ' + capitalizeFirstLetter(array['fortool']) + ' extraheerd informatie uit het goed om het vervolgens aan de onderzoeker te kunnen presenteren.'
 						+ ' '
 						+  '</p>';
@@ -998,7 +999,7 @@ if	(array['SoortGoed'] == "Geheugenkaart"){
 	content = content	+ '<h3>Onderzoek en veiligstellen</h3>'
 
 						+  '<p>'
-						+  'Op ' + werkelijkedatumtijdStr1 + ' uur is de ' + array['SoortGoed'] + ' door mij veilig gesteld door gebruik te maken van ' + array['memtool'] + '.'
+						+  'Op ' + datumaanvraagStr + ' uur is de ' + array['SoortGoed'] + ' door mij veilig gesteld door gebruik te maken van ' + array['memtool'] + '.'
 						+  '</p>';
 
 					} else {
@@ -1010,7 +1011,7 @@ if	(array['SoortGoed'] == "Harde schijf"){
 	content = content	+ '<h3>Onderzoek en veiligstellen</h3>'
 
 						+  '<p>'
-						+  'Op ' + werkelijkedatumtijdStr1 + ' uur is de ' + array['SoortGoed'] + ' door mij veilig gesteld door gebruik te maken van ' + array['memtool'] + '.'
+						+  'Op ' + datumaanvraagStr + ' uur is de ' + array['SoortGoed'] + ' door mij veilig gesteld door gebruik te maken van ' + array['memtool'] + '.'
 						+  '</p>';
 
 					} else {
@@ -1022,7 +1023,7 @@ if	(array['SoortGoed'] == "USB stick"){
 	content = content	+ '<h3>Onderzoek en veiligstellen</h3>'
 
 						+  '<p>'
-						+  'Op ' + werkelijkedatumtijdStr1 + ' uur is de ' + array['SoortGoed'] + ' door mij veilig gesteld door gebruik te maken van ' + array['memtool'] + '.'
+						+  'Op ' + datumaanvraagStr + ' uur is de ' + array['SoortGoed'] + ' door mij veilig gesteld door gebruik te maken van ' + array['memtool'] + '.'
 						+  '</p>';
 
 					} else {
@@ -1034,7 +1035,7 @@ if	(array['SoortGoed'] == "Datadrager"){
 	content = content	+ '<h3>Onderzoek en veiligstellen</h3>'
 
 						+  '<p>'
-						+  'Op ' + werkelijkedatumtijdStr1 + ' uur is de ' + array['SoortGoed'] + ' door mij veilig gesteld door gebruik te maken van ' + array['memtool'] + '.'
+						+  'Op ' + datumaanvraagStr + ' uur is de ' + array['SoortGoed'] + ' door mij veilig gesteld door gebruik te maken van ' + array['memtool'] + '.'
 						+  '</p>';
 
 					} else {
@@ -1046,7 +1047,7 @@ if	(array['SoortGoed'] == "Laptop/Computer"){
 	content = content	+ '<h3>Onderzoek en veiligstellen</h3>'
 
 						+  '<p>'
-						+  'Op ' + werkelijkedatumtijdStr1 + ' uur is de ' + array['SoortGoed'] + ' door mij veilig gesteld door gebruik te maken van ' + array['memtool'] + '.'
+						+  'Op ' + datumaanvraagStr + ' uur is de ' + array['SoortGoed'] + ' door mij veilig gesteld door gebruik te maken van ' + array['memtool'] + '.'
 						+  '</p>';
 
 					} else {
