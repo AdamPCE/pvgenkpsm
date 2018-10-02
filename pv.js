@@ -150,7 +150,7 @@ var content = 			'<div class="page"> ';
 						+		'<td class="white">Philipsburg, Sint Maarten</td>'
 						+ 	'</tr>'
 						+ '</table>'
-						+ '<br><br><br>;'						;
+						+ '<br><br><br>;'
 
 
 	content = content 	+ '<table width="100%" style="border-bottom: solid 1px black; ">';
@@ -222,7 +222,7 @@ var content = 			'<div class="page"> ';
 	content = content	+ '</table>';
 
 	content = content 	+ '<p><br>'
-						+  'Hierbij verklaar ik, ' + array['verbalisantnaam'] + ', ' + lowercaseFirstLetter( array['verbalisantrang'] ) + ' van KPSM, en werkzaam bij de afdeling '
+						+  'Hierbij verklaar ik, ' + array['verbalisantnaam'] + ', ' + lowercaseFirstLetter( array['verbalisantrang'] ) + ' van KPSM, werkzaam bij de afdeling '
 						+   lowercaseFirstLetter( array['verbalisantafdeling'] ) + ' van de forensische opsporing, '
 
 if 	(array['cctv'] == "CCTV Gecertificeerd") {
