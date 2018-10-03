@@ -1078,7 +1078,7 @@ if	(array['fortool'] == "Ufed Touch with Tableau"){
 	content = content	+ '<h3>Datadrager</h3>'
 
 						+  '<p>'
-						+ 'Het goed was tevens voorzien van een datadrager, een ' + capitalizeFirstLetter ( array['extmemtype'] ) + '. Dit goed is door mij forensisch veiliggesteld met' + array['memtool'] +', voorzien van een hardwarematige schrijfbeveiliging. Deze beveiliging zorgt ervoor dat er tijdens het veiligstellen geen data geschreven kan worden naar de originele datadrager.'
+						+ 'Het goed was tevens voorzien van een datadrager, een ' + capitalizeFirstLetter ( array['extmemtype'] ) + '. Dit goed is door mij forensisch veiliggesteld met' + array['memtool'] +', voorzien van een hardwarematige schrijfbeveiliging. Deze beveiliging zorgt ervoor dat er tijdens het veiligstellen geen data geschreven kan worden naar de originele datadrager. '
 						+ 'De informatie is weggeschreven in een forensische image en vervolgens door mij onderzocht waarbij er informatie is gekopieerd vanuit de forensische image van de goed door gebruik te maken van PhotoRec, versie 7.1.'
 						+  '</p>'
 						+ '<br>'
@@ -1089,11 +1089,11 @@ if	(array['fortool'] == "Ufed Touch with Tableau"){
 						+ 	'</tr>'
 						+ 	'<tr>'
 						+		'<td class="grey" width="20%">SHA hashwaarde: </td>'
-						+ 		'<td>' + array['md5'] + '</td>'
+						+ 		'<td>' + array['sha'] + '</td>'
 						+ 	'</tr>'
 						+ '</table>'
 						+ '<br>'
-						+ 'De hashwaarde, die is berekend door ' + array['memtool'] +', is een digitale vingerafdruk van een bestand. Zo’n digitale vingerafdruk bestaat uit een reeks getallen (van vaste lengte) die berekend wordt aan de hand van, en die kenmerkend is voor, de inhoud van een bestand. De berekening geschiedt door middel van een hashalgoritme. Bij gebruik van een goed hashalgoritme is het bijzonder moeilijk om twee verschillende bestanden te vinden die gelijke bestandskenmerken opleveren.'
+						+ 'De hashwaarde, die is berekend door ' + array['memtool'] +', is een digitale vingerafdruk van een bestand. Een digitale vingerafdruk bestaat uit een reeks getallen (van vaste lengte) die berekend wordt aan de hand van, en die kenmerkend is voor, de inhoud van een bestand. De berekening geschiedt door middel van een hashalgoritme. Bij gebruik van een goed hashalgoritme is het bijzonder moeilijk om twee verschillende bestanden te vinden die gelijke bestandskenmerken opleveren.'
 						+ '<br>';
 	// next item
 }
@@ -1103,7 +1103,7 @@ if	(array['fortool'] == "Ufed4PC with Tableau"){
 	content = content	+ '<h3>Datadrager</h3>'
 
 						+  '<p>'
-						+ 'Het goed was tevens voorzien van een datadrager, een ' + capitalizeFirstLetter ( array['extmemtype'] ) + '. Dit goed is door mij forensisch veiliggesteld met' + array['memtool'] +', voorzien van een hardwarematige schrijfbeveiliging. Deze beveiliging zorgt ervoor dat er tijdens het veiligstellen geen data geschreven kan worden naar de originele datadrager.'
+						+ 'Het goed was tevens voorzien van een datadrager, een ' + capitalizeFirstLetter ( array['extmemtype'] ) + '. Dit goed is door mij forensisch veiliggesteld met' + array['memtool'] +', voorzien van een hardwarematige schrijfbeveiliging. Deze beveiliging zorgt ervoor dat er tijdens het veiligstellen geen data geschreven kan worden naar de originele datadrager. '
 						+ 'De informatie is weggeschreven in een forensische image en vervolgens door mij onderzocht waarbij er informatie is gekopieerd vanuit de forensische image van het goed door gebruik te maken van PhotoRec, versie 7.1.'
 						+  	'</p>'
 						+	'<br>'
@@ -1114,11 +1114,11 @@ if	(array['fortool'] == "Ufed4PC with Tableau"){
 						+ 	'</tr>'
 						+ 	'<tr>'
 						+		'<td class="grey" width="20%">SHA hashwaarde: </td>'
-						+ 		'<td>' + array['md5'] + '</td>'
+						+ 		'<td>' + array['sha'] + '</td>'
 						+ 	'</tr>'
 						+ '</table>'
 						+ '<br>'
-						+ 'De hashwaarde, die is berekend door ' + array['memtool'] +', is een digitale vingerafdruk van een bestand. Zo’n digitale vingerafdruk bestaat uit een reeks getallen (van vaste lengte) die berekend wordt aan de hand van, en die kenmerkend is voor, de inhoud van een bestand. De berekening geschiedt door middel van een hashalgoritme. Bij gebruik van een goed hashalgoritme is het bijzonder moeilijk om twee verschillende bestanden te vinden die gelijke bestandskenmerken opleveren.'
+						+ 'De hashwaarde, die is berekend door ' + array['memtool'] +', is een digitale vingerafdruk van een bestand. Een digitale vingerafdruk bestaat uit een reeks getallen (van vaste lengte) die berekend wordt aan de hand van, en die kenmerkend is voor, de inhoud van een bestand. De berekening geschiedt door middel van een hashalgoritme. Bij gebruik van een goed hashalgoritme is het bijzonder moeilijk om twee verschillende bestanden te vinden die gelijke bestandskenmerken opleveren.'
 						+ '<br>';
 					} else {
 	// next item
@@ -1129,7 +1129,7 @@ if	(array['fortool'] == "Tableau"){
 	content = content	+ '<h3>Datadrager</h3>'
 
 						+  '<p>'
-						+ 'Het goed is een datadrager, een ' + capitalizeFirstLetter ( array['extmemtype'] ) + '. Dit goed is door mij forensisch veiliggesteld met ' + array['memtool'] +', voorzien van een hardwarematige schrijfbeveiliging. Deze beveiliging zorgt ervoor dat er tijdens het veiligstellen geen data geschreven kan worden naar de originele datadrager.'
+						+ 'Het goed is een datadrager, een ' + capitalizeFirstLetter ( array['extmemtype'] ) + '. Dit goed is door mij forensisch veiliggesteld met ' + array['memtool'] +', voorzien van een hardwarematige schrijfbeveiliging. Deze beveiliging zorgt ervoor dat er tijdens het veiligstellen geen data geschreven kan worden naar de originele datadrager. '
 						+ 'De informatie is weggeschreven in een forensische image en vervolgens door mij onderzocht waarbij er informatie is gekopieerd vanuit de forensische image van het goed door gebruik te maken van PhotoRec, versie 7.1.'
 						+  '</p>'
 						+ '<br>'
@@ -1140,11 +1140,11 @@ if	(array['fortool'] == "Tableau"){
 						+ 	'</tr>'
 						+ 	'<tr>'
 						+		'<td class="grey" width="20%">SHA hashwaarde: </td>'
-						+ 		'<td>' + array['md5'] + '</td>'
+						+ 		'<td>' + array['sha'] + '</td>'
 						+ 	'</tr>'
 						+ '</table>'
 						+ '<br>'
-						+ 'De hashwaarde, die is berekend door ' + array['memtool'] +', is een digitale vingerafdruk van een bestand. Zo’n digitale vingerafdruk bestaat uit een reeks getallen (van vaste lengte) die berekend wordt aan de hand van, en die kenmerkend is voor, de inhoud van een bestand. De berekening geschiedt door middel van een hashalgoritme. Bij gebruik van een goed hashalgoritme is het bijzonder moeilijk om twee verschillende bestanden te vinden die gelijke bestandskenmerken opleveren.'
+						+ 'De hashwaarde, die is berekend door ' + array['memtool'] +', is een digitale vingerafdruk van een bestand. Een digitale vingerafdruk bestaat uit een reeks getallen (van vaste lengte) die berekend wordt aan de hand van, en die kenmerkend is voor, de inhoud van een bestand. De berekening geschiedt door middel van een hashalgoritme. Bij gebruik van een goed hashalgoritme is het bijzonder moeilijk om twee verschillende bestanden te vinden die gelijke bestandskenmerken opleveren.'
 						+ '<br>';
 					} else {
 	// next item
@@ -1237,7 +1237,7 @@ if 	(array['locatieveiligstellen'] != "Overgebracht naar bureau") {
 						+  'reeds was overschreven door het videobewakingssysteem. ';
 	}
 	else if (array['locatieveiligstellen'] == "Extractie gelukt") {
-	content = content 	+  'Vervolgens is door mij, verbalisant, de op bovenstaande wijze verkregen informatie geexporteerd naar een extern opslagmedium.'
+	content = content 	+  'Vervolgens is door mij, verbalisant, de op bovenstaande wijze verkregen informatie ge&euml;xporteerd naar een extern opslagmedium.'
 		if 	(array['verschildatumtijd'] != "0 minuten") {
 		content = content 	+  'Gelet op het tijdsverschil tussen de werkelijke datum en tijd en de datum en tijd op het goed, moet er bij de analyse van de informatie mogelijk rekening mee moeten worden gehouden.'
 		}
@@ -1322,7 +1322,8 @@ if 	(array['locatieveiligstellen'] == "Overgebracht naar bureau") {
 						+ 		'<td class="white"  width="15%">Gezien</td>'
 						+ 	'</tr>'
 						+ '<br>'
-///						+ 	'<tr>'
+						+ '<br>'
+						+ '<br>'
 						+ 	'<tr>'
 						+ 		'<td class="white"  width="15%">' + array['verbalisantnaam'] + '</td>'
 						+ 		'<td class="white"  width="15%">J. Muller-Rijna</td>'
