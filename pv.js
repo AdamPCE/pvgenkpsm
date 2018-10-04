@@ -892,7 +892,7 @@ if	(array['SoortGoed'] == "Laptop/Computer") {
 	content = content 	+	' '
 						+ 	'<h3>Vraagstelling onderzoeksteam</h3>'
 						+ 	'<p>'
-						+ 	'De vraag van het onderzoeksteam was om informatie vanaf de ' + capitalizeFirstLetter ( array['merkgoed'] ) + ' veilig te stellen, inclusief de eventueel aanwezige andere gegevensdragers. '
+						+ 	'De vraag van het onderzoeksteam was om informatie vanaf de ' + capitalizeFirstLetter ( array['merkgoed'] ) + ' veilig te stellen, inclusief de eventueel aanwezige andere gegevensdragers.'
 						+ 	'</p>';
 
 	content = content	+ '<br style="page-break-after: always">';
@@ -903,7 +903,7 @@ if	(array['SoortGoed'] == "Smartphone met Simkaart en microSD"){
 						+	'<h3>Onderzoek en veiligstellen</h3>'
 
 						+  '<p>'
-						+  'Op ' + datumaanvraagStr + ' uur is de ' + array['SoortGoed'] + ' door mij veilig gesteld door gebruik te maken van ' + array['fortool'] + '.'
+						+  'Op ' + datumonderzoekStr + ' uur is de ' + array['SoortGoed'] + ' door mij veilig gesteld door gebruik te maken van ' + array['fortool'] + '.'
 						+ ' ' + capitalizeFirstLetter(array['fortool']) + ' extraheerd informatie uit het goed om het vervolgens aan de onderzoeker te kunnen presenteren.'
 
 						+  '</p>';
@@ -1049,7 +1049,7 @@ if (array['opmerking'] == "Ja"){
 	content = content 	+ 	'<h3>Opmerking verbalisant</h3>'
 						+ 	'<p>'
 						+	'Ten aanzien van het goed zijn de volgende opmerkingen van toepassing: '
-						+	capitalizeFirstLetter ( array['overigevragen_1'] ) + '.'
+						+	capitalizeFirstLetter ( array['overigevragen_1'] ) + ''
 						+ 	'</p>';
 					} else {
 
@@ -1061,7 +1061,7 @@ if (array['opmerking'] == "Ja"){
 
 
 //gebruik van Tableau en photorec
-if	(array['fortool'] == "Ufed Touch with Tableau"){
+if	(array['fortool'] == "Ufed Touch van Cellebrite with Tableau"){
 	content = content	+ ' '
 	content = content	+ '<h3>Datadrager</h3>'
 
@@ -1086,7 +1086,7 @@ if	(array['fortool'] == "Ufed Touch with Tableau"){
 	// next item
 }
 
-if	(array['fortool'] == "Ufed4PC with Tableau"){
+if	(array['fortool'] == "Ufed4PC  van Cellebrite with Tableau"){
 	content = content	+ ' '
 	content = content	+ '<h3>Datadrager</h3>'
 
