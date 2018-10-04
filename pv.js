@@ -214,7 +214,7 @@ var content = 			'<div class="page"> ';
 						+		'<td class="grey">Naam</td>'
 						+ 		'<td class="white">' + array['NAW'] + '</td>'
 						+ 	'</tr>'
-						+ '</table>'
+						+ '</table>';
 
 	content = content 	+ '<table width="100%" style="border-bottom: solid 1px black; ">';
 	content = content	+ 	'<tr>';
@@ -1357,6 +1357,6 @@ for (var i = 0; i < htmlString.length; i++) {
 }
 
 var blob = new Blob([byteNumbers], {type: 'text/html'});
-saveAs(blob, array['werkelijkedatumtijd'] + '-' +  array['verbalisantdienstnummer'] + '-' + array['naamonderzoek'] + '-PV.doc');
+saveAs(blob, array['onderzoeksnummer'] + '-' + array['volgnummer'] + '-' + array['naamonderzoek']+ '.' +  array['verbalisantdienstnummer'] + '-' + array['werkelijkedatumtijd'] + '-PV.docx');
 
 }
