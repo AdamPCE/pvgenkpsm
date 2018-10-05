@@ -25,7 +25,7 @@ for (var i = 0; i < keys.length; i++) {
 
 for (var i = 0; i < keys.length; i++) {
 	keyname = keys[i][0];
-	
+
 	if (keys[i][1] == "") {
 		array[keyname] = "Niet opgegeven";
 	}
@@ -65,7 +65,7 @@ var content = 			  '<body>';
 
 ///	content = content	+ '<p align="center"><img src="' + img + '" height="50px" ></p>';
 
-content = content	+ '<p align="right"><img src="' + logo + '"></p>';
+content = content	+ '<p align="right"><img src="' + logo + '" height="50px"></p>';
 
 content = content 	+ '<table width="1%">'
 //						+ 	'<tr><td class="grey" colspan=1></tr></td>'
