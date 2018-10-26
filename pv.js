@@ -151,7 +151,7 @@ var content = 			'<div class="page"> ';
 						+		'<td class="white">Philipsburg, Sint Maarten</td>'
 						+ 	'</tr>'
 						+ '</table>'
-						+ '<br><br><br>';
+						+ '<br><br><br>;'
 
 
 	content = content 	+ '<table width="100%" style="border-bottom: solid 1px black; ">';
@@ -183,12 +183,14 @@ var content = 			'<div class="page"> ';
 						+ 		'<td class="white">' + capitalizeFirstLetter ( array['naamonderzoek'] ) + '</td>'
 						+ 		'<td class="grey">Inbeslagname nr. </td>'
 						+ 		'<td class="white">' + capitalizeFirstLetter ( array['inbeslagnamenummer'] ) + '</td>'
+
 						+ 	'</tr>'
 						+ 	'<tr>'
 						+ 		'<td class="grey">Onderzoeks nr. </td>'
 						+ 		'<td class="white">' + capitalizeFirstLetter ( array['onderzoeksnummer'] ) + '</td>'
 						+		'<td class="grey">Volgnummer goed </td>'
 						+ 		'<td class="white">' + capitalizeFirstLetter ( array['volgnummer'] ) + '</td>'
+
 						+ 	'</tr>'
 						+ '</table>';
 
@@ -1136,31 +1138,6 @@ if	(array['fortool'] == "Tableau"){
 	// next item
 }
 
-if (array)['fortool'] == "Guymager")
-content = content	+ ' '
-content = content	+ '<h3>Datadrager</h3>'
-
-					+  '<p>'
-					+ 'Het goed is een datadrager, een ' + capitalizeFirstLetter ( array['extmemtype'] ) + '. Dit goed is door mij forensisch veiliggesteld met ' + array['memtool'] +', voorzien van een softwarematige schrijfbeveiliging. Deze beveiliging zorgt ervoor dat er tijdens het veiligstellen geen data geschreven kan worden naar de originele datadrager. '
-					+ 'De informatie is weggeschreven in een forensische image en vervolgens door mij onderzocht waarbij er informatie is gekopieerd vanuit de forensische image van het goed door gebruik te maken van PhotoRec, versie 7.1.'
-					+  '</p>'
-					+ '<br>'
-content = content 	+ '<table width="100%">'
-					+ 	'<tr>'
-					+ 		'<td class="grey"  width="20%">MD5 hashwaarde: </td>'
-					+ 		'<td>' + array['md5'] + '</td>'
-					+ 	'</tr>'
-					+ 	'<tr>'
-					+		'<td class="grey" width="20%">SHA hashwaarde: </td>'
-					+ 		'<td>' + array['sha'] + '</td>'
-					+ 	'</tr>'
-					+ '</table>'
-					+ '<br>'
-					+ 'De hashwaarde, die is berekend door ' + array['memtool'] +', is een digitale vingerafdruk van een bestand. Een digitale vingerafdruk bestaat uit een reeks getallen (van vaste lengte) die berekend wordt aan de hand van, en die kenmerkend is voor, de inhoud van een bestand. De berekening geschiedt door middel van een hashalgoritme. Bij gebruik van een goed hashalgoritme is het bijzonder moeilijk om twee verschillende bestanden te vinden die gelijke bestandskenmerken opleveren.'
-					+ '<br>';
-				} else {
-// next item
-}
 
 
 	content = content	+ ' '
@@ -1380,6 +1357,6 @@ for (var i = 0; i < htmlString.length; i++) {
 }
 
 var blob = new Blob([byteNumbers], {type: 'text/html'});
-saveAs(blob, array['onderzoeksnummer'] + '-' + array['volgnummer'] + '-' + array['naamonderzoek']+ '.' +  array['verbalisantdienstnummer'] + '-' + array['werkelijkedatumtijd'] + '-PV.doc');
+saveAs(blob, array['onderzoeksnummer'] + '-' + array['volgnummer'] + '-' + array['naamonderzoek']+ '.' +  array['verbalisantdienstnummer'] + '-' + array['werkelijkedatumtijd'] + '-PV.docx');
 
 }
