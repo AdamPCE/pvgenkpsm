@@ -256,6 +256,8 @@ if 	(array['cctv'] == "CCTV Gecertificeerd") {
 						+ 	'</p>';
 
 
+
+
 // inhoud bepalen van het overzicht goed
 // Smartphone met Simkaarten microSD
 if	(array['SoortGoed'] == "Smartphone met Simkaart en microSD") {
@@ -887,6 +889,33 @@ if	(array['SoortGoed'] == "Laptop/Computer") {
 	// next item
 }
 
+// vluchtige gegevens (nog niet gebruiken)
+if	(array['SoortGoed'] == "Vluchtige gegevens (niet gebruiken)") {
+
+	content = content 	+ '<table width="100%">'
+						+ 	'<tr>'
+						+ 		'<td class="grey"  width="20%">Soort goed </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['SoortGoed'] ) + '</td>'
+						+ 	'</tr>'
+						+ 	'<tr>'
+						+ 		'<td class="grey"  width="20%">Merk goed </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['merkgoed'] ) + '</td>'
+						+ 	'</tr>'
+						+ 	'<tr>'
+						+		'<td class="grey" width="20%">Type </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['typegoed'] ) + '</td>'
+						+ 	'</tr>'
+						+ 	'<tr>'
+						+		'<td class="grey" width="20%">Serienummer </td>'
+						+ 		'<td>' + capitalizeFirstLetter ( array['serialgoed'] ) + '</td>'
+						+ 	'</tr>'
+						+ '</table>';
+					} else {
+	// next item
+}
+
+
+
 
 // Vraagstelling onderzoeksteam
 	content = content 	+	' '
@@ -896,6 +925,9 @@ if	(array['SoortGoed'] == "Laptop/Computer") {
 						+ 	'</p>';
 
 	content = content	+ '<br style="page-break-after: always">';
+
+
+
 
 //gebruik forensic tool
 if	(array['SoortGoed'] == "Smartphone met Simkaart en microSD"){
@@ -1042,6 +1074,62 @@ if	(array['SoortGoed'] == "Laptop/Computer"){
 	// next item
 }
 
+if	(array['SoortGoed'] == "Vluchtige gegevens (niet gebruiken)"){
+	content = content	+ ' '
+	content = content	+ '<h3>Onderzoek en veiligstellen</h3>'
+
+						+  '<p>'
+						+  'Op ' + datumonderzoekStr + ' is de ' + array['SoortGoed'] + ' door mij veilig gesteld door gebruik te maken van ' + array['memtool'] + '.'
+						+  '</p>';
+
+					} else {
+	// next item
+}
+
+
+
+
+// memtool explain
+//// Tableau TX1
+if	(array['memtool'] == "Tableau"){
+	content = content	+ ' '
+	content = content	+ '<h3>Gebruik Tableau</h3>'
+
+						+  '<p>'
+						+  'Door mij is de Tableau TX1 van Guidance Software (OpenText) gebruikt om het goed op een forensische wijze veilig te stellen. Tableau is een hardwarematige oplossing om informatie op een forensische wijze vanaf een datadrager veilig te stellen. Deze beveiliging zorgt ervoor dat er tijdens het veiligstellen geen data geschreven kan worden naar de originele datadrager. De veiliggestelde informatie is gekopieerd naar een bewijsbestand voor verder onderzoek. Het bewijsbestand is vervolgens door mij verder onderzocht waarbij er informatie is gekopieerd vanuit het bewijsbestand door gebruik te maken van PhotoRec, versie 7.1.'
+						+  '</p>';
+
+					} else {
+	// next item
+}
+
+//// Guymager
+if	(array['memtool'] == "Guymager"){
+	content = content	+ ' '
+	content = content	+ '<h3>Gebruik Guymager</h3>'
+
+						+  '<p>'
+						+  'Door mij is de softwaretool Guymager gebruikt om het goed op een forensische wijze veilig te stellen door gebruik te maken van een Linux distributie, CAINE versie 9. Linux is een besturingssysteem net als Windows van Microsoft of Mac OS X van Apple. Guymager is een softwarematige oplossing om informatie op een forensische wijze vanaf een datadrager veilig te stellen. Deze beveiliging zorgt ervoor dat er tijdens het veiligstellen geen data geschreven kan worden naar de originele datadrager. De veiliggestelde informatie is gekopieerd naar een bewijsbestand voor verder onderzoek. Het bewijsbestand is vervolgens door mij verder onderzocht waarbij er informatie is gekopieerd vanuit het bewijsbestand door gebruik te maken van PhotoRec, versie 7.1.'
+						+  '</p>';
+
+					} else {
+	// next item
+}
+
+///FTK imager
+if	(array['memtool'] == "FTK imager"){
+	content = content	+ ' '
+	content = content	+ '<h3>Gebruik FTK imager</h3>'
+
+						+  '<p>'
+						+  'Door mij is de softwaretool FTK imager van AccessData gebruikt om het goed op een forensische wijze veilig te stellen. FTK imager is met behulp van een software- of hardwarematige schrijfbeveiliging gebruikt om op een forensische wijze vanaf een datadrager, informatie veilig te stellen. Deze beveiliging zorgt ervoor dat er tijdens het veiligstellen geen data geschreven kan worden naar de originele datadrager. De veiliggestelde informatie is gekopieerd naar een bewijsbestand voor verder onderzoek. Het bewijsbestand is vervolgens door mij verder onderzocht waarbij er informatie is gekopieerd vanuit het bewijsbestand door gebruik te maken van PhotoRec, versie 7.1.'
+						+  '</p>';
+
+					} else {
+	// next item
+}
+
+
 
 
 // Zijn er bijzdonderheden voor het goed?
@@ -1054,8 +1142,6 @@ if (array['opmerking'] == "Ja"){
 					} else {
 
 }
-
-
 
 
 
@@ -1086,7 +1172,7 @@ if	(array['fortool'] == "Ufed Touch van Cellebrite with Tableau"){
 	// next item
 }
 
-if	(array['fortool'] == "Ufed4PC  van Cellebrite with Tableau"){
+if	(array['fortool'] == "Ufed4PC van Cellebrite met Tableau"){
 	content = content	+ ' '
 	content = content	+ '<h3>Datadrager</h3>'
 
@@ -1137,6 +1223,35 @@ if	(array['fortool'] == "Tableau"){
 					} else {
 	// next item
 }
+
+if	(array['fortool'] == "Guymager (niet gebruiken)"){
+	content = content	+ ' '
+	content = content	+ '<h3>Datadrager</h3>'
+
+						+  '<p>'
+						+ 'Het goed is een datadrager, een ' + capitalizeFirstLetter ( array['extmemtype'] ) + '. Dit goed is door mij forensisch veiliggesteld met ' + array['memtool'] +', voorzien van een softwarematige schrijfbeveiliging. Deze beveiliging zorgt ervoor dat er tijdens het veiligstellen geen data geschreven kan worden naar de originele datadrager.  Het goed is door mij veiliggesteld door gebruik te maken van een Linux distributie, CAINE versie 9. Linux is een besturingssysteem net als Windows van Microsoft of Mac OS X van Apple.'
+						+ 'De informatie is weggeschreven in een forensische image en vervolgens door mij onderzocht waarbij er informatie is gekopieerd vanuit de forensische image van het goed door gebruik te maken van PhotoRec, versie 7.1.'
+						+  '</p>'
+						+ '<br>'
+	content = content 	+ '<table width="100%">'
+						+ 	'<tr>'
+						+ 		'<td class="grey"  width="20%">MD5 hashwaarde: </td>'
+						+ 		'<td>' + array['md5'] + '</td>'
+						+ 	'</tr>'
+						+ 	'<tr>'
+						+		'<td class="grey" width="20%">SHA hashwaarde: </td>'
+						+ 		'<td>' + array['sha'] + '</td>'
+						+ 	'</tr>'
+						+ '</table>'
+						+ '<br>'
+						+ 'De hashwaarde, die is berekend door ' + array['memtool'] +', is een digitale vingerafdruk van een bestand. Een digitale vingerafdruk bestaat uit een reeks getallen (van vaste lengte) die berekend wordt aan de hand van, en die kenmerkend is voor, de inhoud van een bestand. De berekening geschiedt door middel van een hashalgoritme. Bij gebruik van een goed hashalgoritme is het bijzonder moeilijk om twee verschillende bestanden te vinden die gelijke bestandskenmerken opleveren.'
+						+ '<br>';
+					} else {
+	// next item
+}
+
+
+
 
 
 // Datum en tijd onderzoek
@@ -1252,6 +1367,7 @@ if 	(array['locatieveiligstellen'] == "Extractie mislukt") {
 
 
 // simkaart uitlezen?
+// Smartphone met Simkaart en microSD
 if	(array['SoortGoed'] == "Smartphone met Simkaart en microSD") {
 	content = content	+  '<p>'
 						+  'De simkaart is door mij uitgelezen door gebruik te maken van ' + array['ufedtool'] + '.'
@@ -1271,6 +1387,65 @@ if	(array['SoortGoed'] == "Smartphone met Simkaart en microSD") {
 	}
 }
 
+// Smartphone met Simkaart
+if	(array['SoortGoed'] == "Smartphone met Simkaart") {
+	content = content	+  '<p>'
+						+  'De simkaart is door mij uitgelezen door gebruik te maken van ' + array['ufedtool'] + '.'
+						+ ' ' + capitalizeFirstLetter(array['ufedtool']) + ' extraheerd informatie uit de simkaart om het vervolgens aan de onderzoeker te kunnen presenteren.'
+	if (array['simcode'] == "Ja, bekend") {
+						+ 'De simkaart was voorzien van een bekende pin code. Hierdoor kon de simkaart uitgelezen worden'
+						+ 'met ' + capitalizeFirstLetter(array['ufedtool']) + '.'
+						+  '</p>';
+	}else if (array['simcode'] == "Ja, onbekend") {
+						+ 'De simkaart was voorzien van een onbekende pin code. Hierdoor kon de simkaart niet uitgelezen worden.'
+	}else if (array['simcode'] == "nee, niet actief") {
+						+ 'De simkaart was niet voorzien van een pin code. Hierdoor kon de simkaart uitgelezen worden'
+						+ 'met ' + capitalizeFirstLetter(array['ufedtool']) + '.'
+						+  '</p>';
+	}
+	else {
+	}
+}
+
+// Simkaart
+if	(array['SoortGoed'] == "Simkaart") {
+	content = content	+  '<p>'
+						+  'De simkaart is door mij uitgelezen door gebruik te maken van ' + array['ufedtool'] + '.'
+						+ ' ' + capitalizeFirstLetter(array['ufedtool']) + ' extraheerd informatie uit de simkaart om het vervolgens aan de onderzoeker te kunnen presenteren.'
+	if (array['simcode'] == "Ja, bekend") {
+						+ 'De simkaart was voorzien van een bekende pin code. Hierdoor kon de simkaart uitgelezen worden'
+						+ 'met ' + capitalizeFirstLetter(array['ufedtool']) + '.'
+						+  '</p>';
+	}else if (array['simcode'] == "Ja, onbekend") {
+						+ 'De simkaart was voorzien van een onbekende pin code. Hierdoor kon de simkaart niet uitgelezen worden.'
+	}else if (array['simcode'] == "nee, niet actief") {
+						+ 'De simkaart was niet voorzien van een pin code. Hierdoor kon de simkaart uitgelezen worden'
+						+ 'met ' + capitalizeFirstLetter(array['ufedtool']) + '.'
+						+  '</p>';
+	}
+	else {
+	}
+}
+
+// Tablet met Simkaart en microSD
+if	(array['SoortGoed'] == "Tablet met Simkaart en microSD") {
+	content = content	+  '<p>'
+						+  'De simkaart is door mij uitgelezen door gebruik te maken van ' + array['ufedtool'] + '.'
+						+ ' ' + capitalizeFirstLetter(array['ufedtool']) + ' extraheerd informatie uit de simkaart om het vervolgens aan de onderzoeker te kunnen presenteren.'
+	if (array['simcode'] == "Ja, bekend") {
+						+ 'De simkaart was voorzien van een bekende pin code. Hierdoor kon de simkaart uitgelezen worden'
+						+ 'met ' + capitalizeFirstLetter(array['ufedtool']) + '.'
+						+  '</p>';
+	}else if (array['simcode'] == "Ja, onbekend") {
+						+ 'De simkaart was voorzien van een onbekende pin code. Hierdoor kon de simkaart niet uitgelezen worden.'
+	}else if (array['simcode'] == "nee, niet actief") {
+						+ 'De simkaart was niet voorzien van een pin code. Hierdoor kon de simkaart uitgelezen worden'
+						+ 'met ' + capitalizeFirstLetter(array['ufedtool']) + '.'
+						+  '</p>';
+	}
+	else {
+	}
+}
 
 
 
