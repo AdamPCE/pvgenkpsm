@@ -222,7 +222,7 @@ var content = 			'<div class="page"> ';
 	content = content	+ '</table>';
 
 	content = content 	+ '<p><br>'
-						+  'Hierbij verklaar ik, ' + array['verbalisantnaam'] + ', ' + lowercaseFirstLetter( array['verbalisantrang'] ) + ' van KPSM, werkzaam bij de afdeling '
+						+  'Hierbij verklaar ik, ' + array['verbalisantnaam'] + ', ' + lowercaseFirstLetter( array['verbalisantrang'] ) + ', werkzaam bij de afdeling '
 						+   lowercaseFirstLetter( array['verbalisantafdeling'] ) + ' van de forensische opsporing, '
 
 if 	(array['cctv'] == "CCTV Gecertificeerd") {
@@ -1138,6 +1138,16 @@ if (array['opmerking'] == "Ja"){
 						+ 	'<p>'
 						+	'Ten aanzien van het goed zijn de volgende opmerkingen van toepassing: '
 						+	capitalizeFirstLetter ( array['overigevragen_1'] ) + ''
+						+ 	'</p>';
+					} else {
+
+}
+
+//Flightmode option
+if (array['flightmode'] == "##############"){
+	content = content 	+ 	'<h3>Flightmode</h3>'
+						+ 	'<p>'
+						+	'De optie flightmode is niet juist gekozen. Indien flightmode niet van toepassing, verwijder deze alinea'
 						+ 	'</p>';
 					} else {
 
