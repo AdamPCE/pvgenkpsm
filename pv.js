@@ -943,10 +943,9 @@ if (array['opmerking'] == "Ja"){
 
 
 //gebruik forensic tool
-//if	((array['SoortGoed'] == "Smartphone met Simkaart en microSD")||(array['SoortGoed'] == "Smartphone met Simkaart")||(array['SoortGoed'] == "Smartphone met microSD")||(array['SoortGoed'] == "Smartphone")||(array['SoortGoed'] == "Simkaart")||(array['SoortGoed'] == "Tablet met microSD")) {
-if	((array['SoortGoed'] == "Smartphone met Simkaart en microSD")||(array['OVJname'] == "test")) {
+if	(array['SoortGoed'] == "Smartphone met Simkaart en microSD"){
 	content = content	+	' '
-						+	'<h3>Onderzoek en veiligstellen with OR statement</h3>'
+						+	'<h3>Onderzoek en veiligstellen</h3>'
 						+  '<p>'
 						+  'Op ' + datumonderzoekStr + ' is de ' + array['SoortGoed'] + ' door mij veilig gesteld door gebruik te maken van ' + array['fortool'] + '.'
 						+ ' ' + capitalizeFirstLetter(array['fortool']) + ' extraheerd informatie uit het goed om het vervolgens aan de onderzoeker te kunnen presenteren.'
@@ -1140,13 +1139,11 @@ if	(array['memtool'] == "FTK imager"){
 }
 
 
-<<<<<<< HEAD
 //Flightmode option
 if ((array['flightmode'] == "##############")||(array['OVJname'] == "test")){
 	content = content 	+ 	'<h3>Flightmode</h3>'
 						+ 	'<p>'
 						+	'De optie flightmode is niet juist gekozen. Indien flightmode niet van toepassing, verwijder deze alinea'
-=======
 
 
 // Zijn er bijzonderheden voor het goed?
@@ -1155,18 +1152,15 @@ if (array['opmerking'] == "Ja"){
 						+ 	'<p>'
 						+	'Ten aanzien van het goed zijn de volgende opmerkingen van toepassing: '
 						+	capitalizeFirstLetter ( array['overigevragen_1'] ) + ''
->>>>>>> parent of b5d3be4... 8 november 2018 10.26
 						+ 	'</p>';
 					} else {
-
 }
 
 
 
 
-<<<<<<< HEAD
 /////testing!!!!!
-if	((array['fortool'] == "Ufed Touch van Cellebrite met Tableau")||(array['fortool'] == "Ufed4PC van Cellebrite met Tableau")||(array['OVJname'] == "test")){
+if	(array['fortool'] == "Ufed Touch van Cellebrite met Tableau"){
 	content = content	+ ' '
 	content = content	+ '<h3>testje</h3>'
 
@@ -1183,8 +1177,7 @@ if	((array['fortool'] == "Ufed Touch van Cellebrite met Tableau")||(array['forto
 
 
 
-=======
->>>>>>> parent of 09f79e0... update with fortool ||
+
 //gebruik van Tableau en photorec
 if	(array['fortool'] == "Ufed Touch van Cellebrite met Tableau"){
 	content = content	+ ' '
@@ -1212,7 +1205,7 @@ if	(array['fortool'] == "Ufed Touch van Cellebrite met Tableau"){
 	// next item
 }
 
-//if	(array['fortool'] == "Ufed4PC van Cellebrite met Tableau"){
+if	(array['fortool'] == "Ufed4PC van Cellebrite met Tableau"){
 	content = content	+ ' '
 	content = content	+ '<h3>Datadrager</h3>'
 						+  '<p>'
@@ -1237,7 +1230,7 @@ if	(array['fortool'] == "Ufed Touch van Cellebrite met Tableau"){
 	// next item
 }
 
-//if	(array['fortool'] == "Tableau"){
+if	(array['fortool'] == "Tableau"){
 	content = content	+ ' '
 	content = content	+ '<h3>Datadrager</h3>'
 
@@ -1263,7 +1256,7 @@ if	(array['fortool'] == "Ufed Touch van Cellebrite met Tableau"){
 	// next item
 }
 
-//if	(array['fortool'] == "Guymager (niet gebruiken)"){
+if	(array['fortool'] == "Guymager (niet gebruiken)"){
 	content = content	+ ' '
 	content = content	+ '<h3>Datadrager</h3>'
 
