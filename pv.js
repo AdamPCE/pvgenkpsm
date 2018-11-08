@@ -1175,9 +1175,9 @@ if	((array['fortool'] == "Ufed Touch van Cellebrite met Tableau")||(array['forto
 
 
 //gebruik van Tableau en photorec
-if	(array['fortool'] == "Ufed Touch van Cellebrite met Tableau"){
+if	((array['fortool'] == "Ufed Touch van Cellebrite met Tableau")||(array['fortool'] == "Ufed4PC van Cellebrite met Tableau")||(array['fortool'] == "Tableau")){
 	content = content	+ ' '
-	content = content	+ '<h3>Datadrager</h3>'
+	content = content	+ '<h3>Datadrager with OR statement</h3>'
 
 						+  '<p>'
 						+ 'Het goed was tevens voorzien van een datadrager, een ' + capitalizeFirstLetter ( array['extmemtype'] ) + '. Dit goed is door mij forensisch veiliggesteld met' + array['memtool'] +', voorzien van een hardwarematige schrijfbeveiliging. Deze beveiliging zorgt ervoor dat er tijdens het veiligstellen geen data geschreven kan worden naar de originele datadrager. '
