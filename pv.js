@@ -1149,7 +1149,7 @@ if ((array['flightmode'] == "##############")||(array['OVJname'] == "test")){
 =======
 
 
-// Zijn er bijzdonderheden voor het goed?
+// Zijn er bijzonderheden voor het goed?
 if (array['opmerking'] == "Ja"){
 	content = content 	+ 	'<h3>Opmerking verbalisant</h3>'
 						+ 	'<p>'
@@ -1215,7 +1215,6 @@ if	(array['fortool'] == "Ufed Touch van Cellebrite met Tableau"){
 //if	(array['fortool'] == "Ufed4PC van Cellebrite met Tableau"){
 	content = content	+ ' '
 	content = content	+ '<h3>Datadrager</h3>'
-
 						+  '<p>'
 						+ 'Het goed was tevens voorzien van een datadrager, een ' + capitalizeFirstLetter ( array['extmemtype'] ) + '. Dit goed is door mij forensisch veiliggesteld met' + array['memtool'] +', voorzien van een hardwarematige schrijfbeveiliging. Deze beveiliging zorgt ervoor dat er tijdens het veiligstellen geen data geschreven kan worden naar de originele datadrager. '
 						+ 'De informatie is weggeschreven in een forensische image en vervolgens door mij onderzocht waarbij er informatie is gekopieerd vanuit de forensische image van het goed door gebruik te maken van PhotoRec, versie 7.1.'
