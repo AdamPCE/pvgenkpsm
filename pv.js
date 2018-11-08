@@ -926,20 +926,16 @@ if	(array['SoortGoed'] == "Vluchtige gegevens (niet gebruiken)") {
 
 	content = content	+ '<br style="page-break-after: always">';
 
-
-
 // Zijn er bijzdonderheden voor het goed?
 if (array['opmerking'] == "Ja"){
-	content = content 	+ 	'<h3>Opmerking(en) verbalisant</h3>'
-											+ 	'<p>'
-											+	'Ten aanzien van het goed zijn de volgende opmerkingen van toepassing: '
-											+	capitalizeFirstLetter ( array['overigevragen_1'] ) + ''
-											+ 	'</p>';
-						} else {
-	// next item
-	}
-
-
+		content = content 	+ 	'<h3>Opmerking(en) verbalisant</h3>'
+												+ 	'<p>'
+												+	'Ten aanzien van het goed zijn de volgende opmerkingen van toepassing: '
+												+	capitalizeFirstLetter ( array['overigevragen_1'] ) + ''
+												+ 	'</p>';
+							} else {
+		// next item
+}
 
 
 //gebruik forensic tool
@@ -1140,11 +1136,12 @@ if	(array['memtool'] == "FTK imager"){
 
 
 //Flightmode option
-if ((array['flightmode'] == "##############")||(array['OVJname'] == "test")){
+if (array['flightmode'] == "##############"){
 	content = content 	+ 	'<h3>Flightmode</h3>'
 						+ 	'<p>'
 						+	'De optie flightmode is niet juist gekozen. Indien flightmode niet van toepassing, verwijder deze alinea'
-
+					} else {
+}
 
 // Zijn er bijzonderheden voor het goed?
 if (array['opmerking'] == "Ja"){
