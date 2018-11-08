@@ -928,18 +928,28 @@ if	(array['SoortGoed'] == "Vluchtige gegevens (niet gebruiken)") {
 
 
 
+// Zijn er bijzdonderheden voor het goed?
+if (array['opmerking'] == "Ja"){
+	content = content 	+ 	'<h3>Opmerking(en) verbalisant</h3>'
+											+ 	'<p>'
+											+	'Ten aanzien van het goed zijn de volgende opmerkingen van toepassing: '
+											+	capitalizeFirstLetter ( array['overigevragen_1'] ) + ''
+											+ 	'</p>';
+						} else {
+	// next item
+	}
+
+
+
 
 //gebruik forensic tool
-if	(array['SoortGoed'] == "Smartphone met Simkaart en microSD"){
+if	((array['SoortGoed'] == "Smartphone met Simkaart en microSD")||(array['SoortGoed'] == "Smartphone met Simkaart")||(array['SoortGoed'] == "Smartphone met microSD")||(array['SoortGoed'] == "Smartphone")||(array['SoortGoed'] == "Simkaart")||(array['SoortGoed'] == "Tablet met microSD")) {
 	content = content	+	' '
-						+	'<h3>Onderzoek en veiligstellen</h3>'
-
+						+	'<h3>Onderzoek en veiligstellen with OR statement</h3>'
 						+  '<p>'
 						+  'Op ' + datumonderzoekStr + ' is de ' + array['SoortGoed'] + ' door mij veilig gesteld door gebruik te maken van ' + array['fortool'] + '.'
 						+ ' ' + capitalizeFirstLetter(array['fortool']) + ' extraheerd informatie uit het goed om het vervolgens aan de onderzoeker te kunnen presenteren.'
-
 						+  '</p>';
-
 					} else {
 	// next item
 }
@@ -947,7 +957,6 @@ if	(array['SoortGoed'] == "Smartphone met Simkaart en microSD"){
 if	(array['SoortGoed'] == "Smartphone met Simkaart"){
 	content = content	+ ' '
 						+ '<h3>Onderzoek en veiligstellen</h3>'
-
 						+  '<p>'
 						+  'Op ' + datumonderzoekStr + ' is de ' + array['SoortGoed'] + ' door mij veilig gesteld door gebruik te maken van ' + array['fortool'] + '.'
 						+ ' ' + capitalizeFirstLetter(array['fortool']) + ' extraheerd informatie uit het goed om het vervolgens aan de onderzoeker te kunnen presenteren.'
@@ -1129,19 +1138,6 @@ if	(array['memtool'] == "FTK imager"){
 	// next item
 }
 
-
-
-
-// Zijn er bijzdonderheden voor het goed?
-if (array['opmerking'] == "Ja"){
-	content = content 	+ 	'<h3>Opmerking verbalisant</h3>'
-						+ 	'<p>'
-						+	'Ten aanzien van het goed zijn de volgende opmerkingen van toepassing: '
-						+	capitalizeFirstLetter ( array['overigevragen_1'] ) + ''
-						+ 	'</p>';
-					} else {
-
-}
 
 //Flightmode option
 if (array['flightmode'] == "##############"){
