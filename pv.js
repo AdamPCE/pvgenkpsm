@@ -943,7 +943,8 @@ if (array['opmerking'] == "Ja"){
 
 
 //gebruik forensic tool
-if	((array['SoortGoed'] == "Smartphone met Simkaart en microSD")||(array['SoortGoed'] == "Smartphone met Simkaart")||(array['SoortGoed'] == "Smartphone met microSD")||(array['SoortGoed'] == "Smartphone")||(array['SoortGoed'] == "Simkaart")||(array['SoortGoed'] == "Tablet met microSD")) {
+//if	((array['SoortGoed'] == "Smartphone met Simkaart en microSD")||(array['SoortGoed'] == "Smartphone met Simkaart")||(array['SoortGoed'] == "Smartphone met microSD")||(array['SoortGoed'] == "Smartphone")||(array['SoortGoed'] == "Simkaart")||(array['SoortGoed'] == "Tablet met microSD")) {
+if	((array['SoortGoed'] == "Smartphone met Simkaart en microSD")||(array['OVJname'] == "test")) {
 	content = content	+	' '
 						+	'<h3>Onderzoek en veiligstellen with OR statement</h3>'
 						+  '<p>'
@@ -1140,7 +1141,7 @@ if	(array['memtool'] == "FTK imager"){
 
 
 //Flightmode option
-if (array['flightmode'] == "##############"){
+if ((array['flightmode'] == "##############")||(array['OVJname'] == "test")){
 	content = content 	+ 	'<h3>Flightmode</h3>'
 						+ 	'<p>'
 						+	'De optie flightmode is niet juist gekozen. Indien flightmode niet van toepassing, verwijder deze alinea'
@@ -1153,7 +1154,7 @@ if (array['flightmode'] == "##############"){
 
 
 /////testing!!!!!
-if	((array['fortool'] == "Ufed Touch van Cellebrite met Tableau")||(array['fortool'] == "Ufed4PC van Cellebrite met Tableau")){
+if	((array['fortool'] == "Ufed Touch van Cellebrite met Tableau")||(array['fortool'] == "Ufed4PC van Cellebrite met Tableau")||(array['OVJname'] == "test")){
 	content = content	+ ' '
 	content = content	+ '<h3>testje</h3>'
 
