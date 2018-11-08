@@ -1157,16 +1157,17 @@ if (array['flightmode'] == "##############"){
 
 
 /////testing!!!!!
-//if	((array['fortool'] == "Ufed Touch van Cellebrite with Tableau")||(array['fortool'] == "Ufed4PC van Cellebrite met Tableau")){
-//	content = content	+ ' '
-//	content = content	+ '<h3>testje</h3>'
-//
-//						+  '<p>'
-//						+ 'Dit is een testje.'
-//						+  '</p>'
-//						+ '<br>';
-	// next item
-//}
+if	((array['fortool'] == "Ufed Touch van Cellebrite met Tableau")||(array['fortool'] == "Ufed4PC van Cellebrite met Tableau")){
+	content = content	+ ' '
+	content = content	+ '<h3>testje</h3>'
+
+						+  '<p>'
+						+ 'Dit is een testje.'
+						+  '</p>'
+						+ '<br>';
+					}else{
+ //next item
+}
 
 
 
@@ -1174,7 +1175,7 @@ if (array['flightmode'] == "##############"){
 
 
 //gebruik van Tableau en photorec
-if	(array['fortool'] == "Ufed Touch van Cellebrite with Tableau"){
+if	(array['fortool'] == "Ufed Touch van Cellebrite met Tableau"){
 	content = content	+ ' '
 	content = content	+ '<h3>Datadrager</h3>'
 
@@ -1196,6 +1197,7 @@ if	(array['fortool'] == "Ufed Touch van Cellebrite with Tableau"){
 						+ '<br>'
 						+ 'De hashwaarde, die is berekend door ' + array['memtool'] +', is een digitale vingerafdruk van een bestand. Een digitale vingerafdruk bestaat uit een reeks getallen (van vaste lengte) die berekend wordt aan de hand van, en die kenmerkend is voor, de inhoud van een bestand. De berekening geschiedt door middel van een hashalgoritme. Bij gebruik van een goed hashalgoritme is het bijzonder moeilijk om twee verschillende bestanden te vinden die gelijke bestandskenmerken opleveren.'
 						+ '<br>';
+					}else{
 	// next item
 }
 
