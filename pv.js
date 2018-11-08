@@ -1180,7 +1180,7 @@ if	((array['fortool'] == "Ufed Touch van Cellebrite met Tableau")||(array['forto
 	content = content	+ '<h3>Datadrager with OR statement</h3>'
 
 						+  '<p>'
-						+ 'Het goed was tevens voorzien van een datadrager, een ' + capitalizeFirstLetter ( array['extmemtype'] ) + '. Dit goed is door mij forensisch veiliggesteld met' + array['memtool'] +', voorzien van een hardwarematige schrijfbeveiliging. Deze beveiliging zorgt ervoor dat er tijdens het veiligstellen geen data geschreven kan worden naar de originele datadrager. '
+						+ 'Het goed was tevens voorzien van een datadrager, een ' + capitalizeFirstLetter ( array['extmemtype'] ) + '. Dit goed is door mij forensisch veiliggesteld met ' + array['memtool'] +', voorzien van een hardwarematige schrijfbeveiliging. Deze beveiliging zorgt ervoor dat er tijdens het veiligstellen geen data geschreven kan worden naar de originele datadrager. '
 						+ 'De informatie is weggeschreven in een forensische image en vervolgens door mij onderzocht waarbij er informatie is gekopieerd vanuit de forensische image van de goed door gebruik te maken van PhotoRec, versie 7.1.'
 						+  '</p>'
 						+ '<br>'
@@ -1201,7 +1201,7 @@ if	((array['fortool'] == "Ufed Touch van Cellebrite met Tableau")||(array['forto
 	// next item
 }
 
-if	(array['fortool'] == "Ufed4PC van Cellebrite met Tableau"){
+//if	(array['fortool'] == "Ufed4PC van Cellebrite met Tableau"){
 	content = content	+ ' '
 	content = content	+ '<h3>Datadrager</h3>'
 
@@ -1227,7 +1227,7 @@ if	(array['fortool'] == "Ufed4PC van Cellebrite met Tableau"){
 	// next item
 }
 
-if	(array['fortool'] == "Tableau"){
+//if	(array['fortool'] == "Tableau"){
 	content = content	+ ' '
 	content = content	+ '<h3>Datadrager</h3>'
 
@@ -1253,7 +1253,7 @@ if	(array['fortool'] == "Tableau"){
 	// next item
 }
 
-if	(array['fortool'] == "Guymager (niet gebruiken)"){
+//if	(array['fortool'] == "Guymager (niet gebruiken)"){
 	content = content	+ ' '
 	content = content	+ '<h3>Datadrager</h3>'
 
