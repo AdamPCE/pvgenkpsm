@@ -1157,16 +1157,16 @@ if (array['flightmode'] == "##############"){
 
 
 /////testing!!!!!
-if	((array['fortool'] == "Ufed Touch van Cellebrite with Tableau")||(array['fortool'] == "Ufed4PC van Cellebrite met Tableau")){
-	content = content	+ ' '
-	content = content	+ '<h3>testje</h3>'
-
-						+  '<p>'
-						+ 'Dit is een testje.'
-						+  '</p>'
-						+ '<br>';
+//if	((array['fortool'] == "Ufed Touch van Cellebrite with Tableau")||(array['fortool'] == "Ufed4PC van Cellebrite met Tableau")){
+//	content = content	+ ' '
+//	content = content	+ '<h3>testje</h3>'
+//
+//						+  '<p>'
+//						+ 'Dit is een testje.'
+//						+  '</p>'
+//						+ '<br>';
 	// next item
-}
+//}
 
 
 
