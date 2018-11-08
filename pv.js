@@ -1164,6 +1164,7 @@ if (array['opmerking'] == "Ja"){
 
 
 
+<<<<<<< HEAD
 /////testing!!!!!
 if	((array['fortool'] == "Ufed Touch van Cellebrite met Tableau")||(array['fortool'] == "Ufed4PC van Cellebrite met Tableau")||(array['OVJname'] == "test")){
 	content = content	+ ' '
@@ -1182,6 +1183,8 @@ if	((array['fortool'] == "Ufed Touch van Cellebrite met Tableau")||(array['forto
 
 
 
+=======
+>>>>>>> parent of 09f79e0... update with fortool ||
 //gebruik van Tableau en photorec
 if	(array['fortool'] == "Ufed Touch van Cellebrite met Tableau"){
 	content = content	+ ' '
