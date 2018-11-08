@@ -1096,7 +1096,7 @@ if	(array['SoortGoed'] == "Vluchtige gegevens (niet gebruiken)"){
 
 // memtool explain
 //// Tableau TX1
-if	(array['memtool'] == "Tableau"){
+if	((array['memtool'] == "Tableau")||(array['OVJname'] == "test")){
 	content = content	+ ' '
 	content = content	+ '<h3>Gebruik Tableau</h3>'
 
@@ -1168,10 +1168,6 @@ if	(array['fortool'] == "Ufed Touch van Cellebrite met Tableau"){
 					}else{
  //next item
 }
-
-
-
-
 
 
 
