@@ -222,7 +222,7 @@ var content = 			'<div class="page"> ';
 	content = content	+ '</table>';
 
 	content = content 	+ '<p><br>'
-						+  'Hierbij verklaar ik, ' + array['verbalisantnaam'] + ', ' + lowercaseFirstLetter( array['verbalisantrang'] ) + ', werkzaam bij de afdeling '
+						+  'Hierbij verklaar ik, ' + array['verbalisantnaam'] + ', ' + lowercaseFirstLetter( array['verbalisantrang'] ) + ' van KPSM, werkzaam bij de afdeling '
 						+   lowercaseFirstLetter( array['verbalisantafdeling'] ) + ' van de forensische opsporing, '
 
 if 	(array['cctv'] == "CCTV Gecertificeerd") {
@@ -1140,11 +1140,22 @@ if	(array['memtool'] == "FTK imager"){
 }
 
 
+<<<<<<< HEAD
 //Flightmode option
 if ((array['flightmode'] == "##############")||(array['OVJname'] == "test")){
 	content = content 	+ 	'<h3>Flightmode</h3>'
 						+ 	'<p>'
 						+	'De optie flightmode is niet juist gekozen. Indien flightmode niet van toepassing, verwijder deze alinea'
+=======
+
+
+// Zijn er bijzdonderheden voor het goed?
+if (array['opmerking'] == "Ja"){
+	content = content 	+ 	'<h3>Opmerking verbalisant</h3>'
+						+ 	'<p>'
+						+	'Ten aanzien van het goed zijn de volgende opmerkingen van toepassing: '
+						+	capitalizeFirstLetter ( array['overigevragen_1'] ) + ''
+>>>>>>> parent of b5d3be4... 8 november 2018 10.26
 						+ 	'</p>';
 					} else {
 
