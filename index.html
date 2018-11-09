@@ -126,7 +126,7 @@
 			<form id="form" class="form-horizontal" style="padding: 10px; ">
 				<fieldset id="stap0" style="display: none;">
 					<legend> </legend>
-					<p>Welkom bij de PV generator Versie d.d. 9 november 2018 13.06 uur.<br>Kies "Nieuw proces verbaal" om een nieuw pv te maken.</p>
+					<p>Welkom bij de PV generator Versie d.d. 9 november 2018 14.06 uur.<br>Kies "Nieuw proces verbaal" om een nieuw pv te maken.</p>
 					<br>
 					<center>
 <!--						<button id="buttonopenen" type="button" class="btn btn-default" onclick="showStep(1)" style="width: 75%; margin-bottom: 10px;">Openen bestaande zaak </button>						<br>
@@ -649,6 +649,19 @@
 						<div class="col-md-4">
 							<label for="verschildatumtijd" class="required">Verschil datum / tijd </label>
 							<input id="verschildatumtijd" name="verschildatumtijd" type="text" placeholder="Tijdsverschil" class="form-control input-md" required="true" readonly required="true">
+						</div>
+					</div>
+
+					<legend>Timezone</legend>
+					<div class="form-group">
+						<div class="col-md-4">
+							<label for="TZdata" class="required">Timezone </label>
+							<select id="TZdata" name="TZdata" type="text" placeholder="Timezone " class="form-control input-md" required="true">
+								<option>##############</option>
+								<option>Onbekend</option>>
+								<option>UTC/GMT</option>
+								<option>UTC -4 (Atlantic Standard Time)</option>
+							</select>
 						</div>
 					</div>
 

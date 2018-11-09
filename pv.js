@@ -1298,6 +1298,10 @@ if 	(array['verschildatumtijd'] == "0 minuten") {
 						+		'<td class="grey" width="20%">Datum en tijd van het goed</td>'
 						+ 		'<td>' + recorderdatumtijdStr + '</td>'
 						+ 	'</tr>'
+						+ 	'<tr>'
+						+		'<td class="grey" width="20%">Timezone</td>'
+						+ 		'<td>' + array['TZdata'] + '</td>'
+						+ 	'</tr>'
 						+ '</table>';
 
 } else {
