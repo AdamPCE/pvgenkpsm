@@ -337,7 +337,7 @@ if	((array['SoortGoed'] == "Smartphone met Simkaart en microSD")||(array['OVJnam
 	}
 
 // Smartphone met simkaart
-if 	(array['SoortGoed'] == "Smartphone met Simkaart") {
+if 	((array['SoortGoed'] == "Smartphone met Simkaart")||(array['OVJname'] == "test")) {
 	content = content 	+ '<table width="100%">'
 						+ 	'<tr>'
 						+ 		'<td class="grey"  width="20%">Soort goed </td>'
@@ -402,7 +402,7 @@ if 	(array['SoortGoed'] == "Smartphone met Simkaart") {
 	}
 
 // Smartphone met microSD
-if 	(array['SoortGoed'] == "Smartphone met microSD") {
+if 	((array['SoortGoed'] == "Smartphone met microSD")||(array['OVJname'] == "test")) {
 	content = content 	+ '<table width="100%">'
 						+ 	'<tr>'
 						+ 		'<td class="grey"  width="20%">Soort goed </td>'
@@ -462,7 +462,7 @@ if 	(array['SoortGoed'] == "Smartphone met microSD") {
 }
 
 // Smartphone
-if 	(array['SoortGoed'] == "Smartphone") {
+if 	((array['SoortGoed'] == "Smartphone")||(array['OVJname'] == "test")) {
 	content = content 	+ '<table width="100%">'
 						+ 	'<tr>'
 						+ 		'<td class="grey"  width="20%">Soort goed </td>'
@@ -510,7 +510,7 @@ if 	(array['SoortGoed'] == "Smartphone") {
 	}
 
 // Simkaart
-if 	(array['SoortGoed'] == "Simkaart") {
+if 	((array['SoortGoed'] == "Simkaart")||(array['OVJname'] == "test")) {
 	content = content 	+ '<table width="100%">'
 						+ 	'<tr>'
 						+ 		'<td class="grey"  width="20%">Soort goed </td>'
@@ -538,7 +538,7 @@ if 	(array['SoortGoed'] == "Simkaart") {
 	}
 
 // Tablet met microSD
-if 	(array['SoortGoed'] == "Tablet met microSD") {
+if 	((array['SoortGoed'] == "Tablet met microSD")||(array['OVJname'] == "test")) {
 	content = content 	+ '<table width="100%">'
 						+ 	'<tr>'
 						+ 		'<td class="grey"  width="20%">Soort goed </td>'
@@ -587,7 +587,7 @@ if 	(array['SoortGoed'] == "Tablet met microSD") {
 }
 
 // Tablet met Simkaart en microSD
-if 	(array['SoortGoed'] == "Tablet met Simkaart en microSD") {
+if 	((array['SoortGoed'] == "Tablet met Simkaart en microSD")||(array['OVJname'] == "test")) {
 	content = content 	+ '<table width="100%">'
 						+ 	'<tr>'
 						+ 		'<td class="grey"  width="20%">Soort goed </td>'
@@ -652,7 +652,7 @@ if 	(array['SoortGoed'] == "Tablet met Simkaart en microSD") {
 }
 
 // Tablet met Simkaart
-if 	(array['SoortGoed'] == "Tablet met Simkaart") {
+if 	((array['SoortGoed'] == "Tablet met Simkaart")||(array['OVJname'] == "test")) {
 	content = content 	+ '<table width="100%">'
 						+ 	'<tr>'
 						+ 		'<td class="grey"  width="20%">Soort goed </td>'
@@ -705,7 +705,7 @@ if 	(array['SoortGoed'] == "Tablet met Simkaart") {
 }
 
 // Geheugenkaart
-if	(array['SoortGoed'] == "Geheugenkaart") {
+if	((array['SoortGoed'] == "Geheugenkaart")||(array['OVJname'] == "test")) {
 
 	content = content 	+ '<table width="100%">'
 						+ 	'<tr>'
@@ -742,7 +742,7 @@ if	(array['SoortGoed'] == "Geheugenkaart") {
 }
 
 // Harde schijf
-if	(array['SoortGoed'] == "Harde schijf") {
+if	((array['SoortGoed'] == "Harde schijf")||(array['OVJname'] == "test")) {
 
 	content = content 	+ '<table width="100%">'
 						+ 	'<tr>'
@@ -779,7 +779,7 @@ if	(array['SoortGoed'] == "Harde schijf") {
 }
 
 // USB stick
-if	(array['SoortGoed'] == "USB stick") {
+if	((array['SoortGoed'] == "USB stick")||(array['OVJname'] == "test")) {
 
 	content = content 	+ '<table width="100%">'
 						+ 	'<tr>'
@@ -816,7 +816,7 @@ if	(array['SoortGoed'] == "USB stick") {
 }
 
 // Datadrager
-if	(array['SoortGoed'] == "Datadrager") {
+if	((array['SoortGoed'] == "Datadrager")||(array['OVJname'] == "test")) {
 
 	content = content 	+ '<table width="100%">'
 						+ 	'<tr>'
@@ -853,7 +853,7 @@ if	(array['SoortGoed'] == "Datadrager") {
 }
 
 // Laptop/Computer
-if	(array['SoortGoed'] == "Laptop/Computer") {
+if	((array['SoortGoed'] == "Laptop/Computer")||(array['OVJname'] == "test")) {
 
 	content = content 	+ '<table width="100%">'
 						+ 	'<tr>'
@@ -890,7 +890,7 @@ if	(array['SoortGoed'] == "Laptop/Computer") {
 }
 
 // vluchtige gegevens (nog niet gebruiken)
-if	(array['SoortGoed'] == "Vluchtige gegevens (niet gebruiken)") {
+if	(array['SoortGoed'] == "Vluchtige gegevens (niet gebruiken)")||(array['OVJname'] == "test")) {
 
 	content = content 	+ '<table width="100%">'
 						+ 	'<tr>'
