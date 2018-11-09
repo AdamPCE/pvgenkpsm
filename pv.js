@@ -260,7 +260,7 @@ if 	(array['cctv'] == "CCTV Gecertificeerd") {
 
 // inhoud bepalen van het overzicht goed
 // Smartphone met Simkaarten microSD
-if	((array['SoortGoed'] == "Smartphone met Simkaart en microSD")||(array['OVJname'] == "test")) {
+if	(array['SoortGoed'] == "Smartphone met Simkaart en microSD") {
 	content = content 	+ '<table width="100%">'
 						+ 	'<tr>'
 						+ 		'<td class="grey"  width="20%">Soort goed </td>'
@@ -337,7 +337,7 @@ if	((array['SoortGoed'] == "Smartphone met Simkaart en microSD")||(array['OVJnam
 	}
 
 // Smartphone met simkaart
-if 	((array['SoortGoed'] == "Smartphone met Simkaart")||(array['OVJname'] == "test")) {
+if 	(array['SoortGoed'] == "Smartphone met Simkaart") {
 	content = content 	+ '<table width="100%">'
 						+ 	'<tr>'
 						+ 		'<td class="grey"  width="20%">Soort goed </td>'
@@ -402,7 +402,7 @@ if 	((array['SoortGoed'] == "Smartphone met Simkaart")||(array['OVJname'] == "te
 	}
 
 // Smartphone met microSD
-if 	((array['SoortGoed'] == "Smartphone met microSD")||(array['OVJname'] == "test")) {
+if 	(array['SoortGoed'] == "Smartphone met microSD") {
 	content = content 	+ '<table width="100%">'
 						+ 	'<tr>'
 						+ 		'<td class="grey"  width="20%">Soort goed </td>'
@@ -462,7 +462,7 @@ if 	((array['SoortGoed'] == "Smartphone met microSD")||(array['OVJname'] == "tes
 }
 
 // Smartphone
-if 	((array['SoortGoed'] == "Smartphone")||(array['OVJname'] == "test")) {
+if 	(array['SoortGoed'] == "Smartphone") {
 	content = content 	+ '<table width="100%">'
 						+ 	'<tr>'
 						+ 		'<td class="grey"  width="20%">Soort goed </td>'
@@ -510,7 +510,7 @@ if 	((array['SoortGoed'] == "Smartphone")||(array['OVJname'] == "test")) {
 	}
 
 // Simkaart
-if 	((array['SoortGoed'] == "Simkaart")||(array['OVJname'] == "test")) {
+if 	(array['SoortGoed'] == "Simkaart") {
 	content = content 	+ '<table width="100%">'
 						+ 	'<tr>'
 						+ 		'<td class="grey"  width="20%">Soort goed </td>'
@@ -538,7 +538,7 @@ if 	((array['SoortGoed'] == "Simkaart")||(array['OVJname'] == "test")) {
 	}
 
 // Tablet met microSD
-if 	((array['SoortGoed'] == "Tablet met microSD")||(array['OVJname'] == "test")) {
+if 	(array['SoortGoed'] == "Tablet met microSD") {
 	content = content 	+ '<table width="100%">'
 						+ 	'<tr>'
 						+ 		'<td class="grey"  width="20%">Soort goed </td>'
@@ -587,7 +587,7 @@ if 	((array['SoortGoed'] == "Tablet met microSD")||(array['OVJname'] == "test"))
 }
 
 // Tablet met Simkaart en microSD
-if 	((array['SoortGoed'] == "Tablet met Simkaart en microSD")||(array['OVJname'] == "test")) {
+if 	(array['SoortGoed'] == "Tablet met Simkaart en microSD") {
 	content = content 	+ '<table width="100%">'
 						+ 	'<tr>'
 						+ 		'<td class="grey"  width="20%">Soort goed </td>'
@@ -652,7 +652,7 @@ if 	((array['SoortGoed'] == "Tablet met Simkaart en microSD")||(array['OVJname']
 }
 
 // Tablet met Simkaart
-if 	((array['SoortGoed'] == "Tablet met Simkaart")||(array['OVJname'] == "test")) {
+if 	(array['SoortGoed'] == "Tablet met Simkaart") {
 	content = content 	+ '<table width="100%">'
 						+ 	'<tr>'
 						+ 		'<td class="grey"  width="20%">Soort goed </td>'
@@ -705,7 +705,7 @@ if 	((array['SoortGoed'] == "Tablet met Simkaart")||(array['OVJname'] == "test")
 }
 
 // Geheugenkaart
-if	((array['SoortGoed'] == "Geheugenkaart")||(array['OVJname'] == "test")) {
+if	(array['SoortGoed'] == "Geheugenkaart") {
 
 	content = content 	+ '<table width="100%">'
 						+ 	'<tr>'
@@ -742,7 +742,7 @@ if	((array['SoortGoed'] == "Geheugenkaart")||(array['OVJname'] == "test")) {
 }
 
 // Harde schijf
-if	((array['SoortGoed'] == "Harde schijf")||(array['OVJname'] == "test")) {
+if	(array['SoortGoed'] == "Harde schijf") {
 
 	content = content 	+ '<table width="100%">'
 						+ 	'<tr>'
@@ -779,7 +779,7 @@ if	((array['SoortGoed'] == "Harde schijf")||(array['OVJname'] == "test")) {
 }
 
 // USB stick
-if	((array['SoortGoed'] == "USB stick")||(array['OVJname'] == "test")) {
+if	(array['SoortGoed'] == "USB stick") {
 
 	content = content 	+ '<table width="100%">'
 						+ 	'<tr>'
@@ -816,7 +816,7 @@ if	((array['SoortGoed'] == "USB stick")||(array['OVJname'] == "test")) {
 }
 
 // Datadrager
-if	((array['SoortGoed'] == "Datadrager")||(array['OVJname'] == "test")) {
+if	(array['SoortGoed'] == "Datadrager") {
 
 	content = content 	+ '<table width="100%">'
 						+ 	'<tr>'
@@ -853,7 +853,7 @@ if	((array['SoortGoed'] == "Datadrager")||(array['OVJname'] == "test")) {
 }
 
 // Laptop/Computer
-if	((array['SoortGoed'] == "Laptop/Computer")||(array['OVJname'] == "test")) {
+if	(array['SoortGoed'] == "Laptop/Computer") {
 
 	content = content 	+ '<table width="100%">'
 						+ 	'<tr>'
@@ -890,7 +890,7 @@ if	((array['SoortGoed'] == "Laptop/Computer")||(array['OVJname'] == "test")) {
 }
 
 // vluchtige gegevens (nog niet gebruiken)
-if	(array['SoortGoed'] == "Vluchtige gegevens (niet gebruiken)")||(array['OVJname'] == "test")) {
+if	(array['SoortGoed'] == "Vluchtige gegevens (niet gebruiken)") {
 
 	content = content 	+ '<table width="100%">'
 						+ 	'<tr>'
@@ -1096,7 +1096,7 @@ if	(array['SoortGoed'] == "Vluchtige gegevens (niet gebruiken)"){
 
 // memtool explain
 //// Tableau TX1
-if	((array['memtool'] == "Tableau")||(array['OVJname'] == "test")){
+if	(array['memtool'] == "Tableau"){
 	content = content	+ ' '
 	content = content	+ '<h3>Gebruik Tableau</h3>'
 
@@ -1157,7 +1157,7 @@ if (array['opmerking'] == "Ja"){
 
 
 /////testing!!!!!
-if	(array['fortool'] == "Ufed Touch van Cellebrite met Tableau"){
+if	((array['fortool'] == "Ufed Touch van Cellebrite met Tableau")||(array['OVJname'] == "test")){
 	content = content	+ ' '
 	content = content	+ '<h3>testje</h3>'
 
