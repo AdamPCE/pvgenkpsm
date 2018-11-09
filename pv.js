@@ -926,6 +926,10 @@ if	(array['SoortGoed'] == "Vluchtige gegevens (niet gebruiken)") {
 
 	content = content	+ '<br style="page-break-after: always">';
 
+
+
+
+
 // Zijn er bijzdonderheden voor het goed?
 if (array['opmerking'] == "Ja"){
 		content = content 	+ 	'<h3>Opmerking(en) verbalisant</h3>'
@@ -936,6 +940,17 @@ if (array['opmerking'] == "Ja"){
 							} else {
 		// next item
 }
+
+
+
+//Flightmode option
+if (array['flightmode'] == "##############"){
+	content = content 	+ 	'<h3>Flightmode</h3>'
+						+ 	'<p>'
+						+	'De optie flightmode is niet juist gekozen. Indien flightmode niet van toepassing, verwijder deze alinea'
+					} else {
+}
+
 
 
 //gebruik forensic tool
@@ -1135,34 +1150,15 @@ if	(array['memtool'] == "FTK imager"){
 }
 
 
-//Flightmode option
-if (array['flightmode'] == "##############"){
-	content = content 	+ 	'<h3>Flightmode</h3>'
-						+ 	'<p>'
-						+	'De optie flightmode is niet juist gekozen. Indien flightmode niet van toepassing, verwijder deze alinea'
-					} else {
-}
-
-// Zijn er bijzonderheden voor het goed?
-if (array['opmerking'] == "Ja"){
-	content = content 	+ 	'<h3>Opmerking verbalisant</h3>'
-						+ 	'<p>'
-						+	'Ten aanzien van het goed zijn de volgende opmerkingen van toepassing: '
-						+	capitalizeFirstLetter ( array['overigevragen_1'] ) + ''
-						+ 	'</p>';
-					} else {
-}
-
-
 
 
 /////testing!!!!!
-if	((array['fortool'] == "Ufed Touch van Cellebrite met Tableau")||(array['OVJname'] == "test")){
+if	((array['OVJname'] == "##############")||(array['OVJname'] == "test")){
 	content = content	+ ' '
 	content = content	+ '<h3>testje</h3>'
 
 						+  '<p>'
-						+ 'Dit is een testje.'
+						+ 'Dit is een testje voor ############## en OvJ Test!!!.'
 						+  '</p>'
 						+ '<br>';
 					}else{
@@ -1172,7 +1168,7 @@ if	((array['fortool'] == "Ufed Touch van Cellebrite met Tableau")||(array['OVJna
 
 
 //gebruik van Tableau en photorec
-if	(array['fortool'] == "Ufed Touch van Cellebrite met Tableau"){
+if	((array['fortool'] == "Ufed Touch van Cellebrite met Tableau")||(array['fortool'] == "Ufed4PC van Cellebrite met Tableau")||(array['fortool'] == "Tableau")){
 	content = content	+ ' '
 	content = content	+ '<h3>Datadrager</h3>'
 
@@ -1195,57 +1191,6 @@ if	(array['fortool'] == "Ufed Touch van Cellebrite met Tableau"){
 						+ 'De hashwaarde, die is berekend door ' + array['memtool'] +', is een digitale vingerafdruk van een bestand. Een digitale vingerafdruk bestaat uit een reeks getallen (van vaste lengte) die berekend wordt aan de hand van, en die kenmerkend is voor, de inhoud van een bestand. De berekening geschiedt door middel van een hashalgoritme. Bij gebruik van een goed hashalgoritme is het bijzonder moeilijk om twee verschillende bestanden te vinden die gelijke bestandskenmerken opleveren.'
 						+ '<br>';
 					}else{
-	// next item
-}
-
-if	(array['fortool'] == "Ufed4PC van Cellebrite met Tableau"){
-	content = content	+ ' '
-	content = content	+ '<h3>Datadrager</h3>'
-						+  '<p>'
-						+ 'Het goed was tevens voorzien van een datadrager, een ' + capitalizeFirstLetter ( array['extmemtype'] ) + '. Dit goed is door mij forensisch veiliggesteld met' + array['memtool'] +', voorzien van een hardwarematige schrijfbeveiliging. Deze beveiliging zorgt ervoor dat er tijdens het veiligstellen geen data geschreven kan worden naar de originele datadrager. '
-						+ 'De informatie is weggeschreven in een forensische image en vervolgens door mij onderzocht waarbij er informatie is gekopieerd vanuit de forensische image van het goed door gebruik te maken van PhotoRec, versie 7.1.'
-						+  	'</p>'
-						+	'<br>'
-	content = content 	+ '<table width="100%">'
-						+ 	'<tr>'
-						+ 		'<td class="grey"  width="20%">MD5 hashwaarde: </td>'
-						+ 		'<td>' + array['md5'] + '</td>'
-						+ 	'</tr>'
-						+ 	'<tr>'
-						+		'<td class="grey" width="20%">SHA hashwaarde: </td>'
-						+ 		'<td>' + array['sha'] + '</td>'
-						+ 	'</tr>'
-						+ '</table>'
-						+ '<br>'
-						+ 'De hashwaarde, die is berekend door ' + array['memtool'] +', is een digitale vingerafdruk van een bestand. Een digitale vingerafdruk bestaat uit een reeks getallen (van vaste lengte) die berekend wordt aan de hand van, en die kenmerkend is voor, de inhoud van een bestand. De berekening geschiedt door middel van een hashalgoritme. Bij gebruik van een goed hashalgoritme is het bijzonder moeilijk om twee verschillende bestanden te vinden die gelijke bestandskenmerken opleveren.'
-						+ '<br>';
-					} else {
-	// next item
-}
-
-if	(array['fortool'] == "Tableau"){
-	content = content	+ ' '
-	content = content	+ '<h3>Datadrager</h3>'
-
-						+  '<p>'
-						+ 'Het goed is een datadrager, een ' + capitalizeFirstLetter ( array['extmemtype'] ) + '. Dit goed is door mij forensisch veiliggesteld met ' + array['memtool'] +', voorzien van een hardwarematige schrijfbeveiliging. Deze beveiliging zorgt ervoor dat er tijdens het veiligstellen geen data geschreven kan worden naar de originele datadrager. '
-						+ 'De informatie is weggeschreven in een forensische image en vervolgens door mij onderzocht waarbij er informatie is gekopieerd vanuit de forensische image van het goed door gebruik te maken van PhotoRec, versie 7.1.'
-						+  '</p>'
-						+ '<br>'
-	content = content 	+ '<table width="100%">'
-						+ 	'<tr>'
-						+ 		'<td class="grey"  width="20%">MD5 hashwaarde: </td>'
-						+ 		'<td>' + array['md5'] + '</td>'
-						+ 	'</tr>'
-						+ 	'<tr>'
-						+		'<td class="grey" width="20%">SHA hashwaarde: </td>'
-						+ 		'<td>' + array['sha'] + '</td>'
-						+ 	'</tr>'
-						+ '</table>'
-						+ '<br>'
-						+ 'De hashwaarde, die is berekend door ' + array['memtool'] +', is een digitale vingerafdruk van een bestand. Een digitale vingerafdruk bestaat uit een reeks getallen (van vaste lengte) die berekend wordt aan de hand van, en die kenmerkend is voor, de inhoud van een bestand. De berekening geschiedt door middel van een hashalgoritme. Bij gebruik van een goed hashalgoritme is het bijzonder moeilijk om twee verschillende bestanden te vinden die gelijke bestandskenmerken opleveren.'
-						+ '<br>';
-					} else {
 	// next item
 }
 
@@ -1304,7 +1249,7 @@ if 	(array['verschildatumtijd'] == "0 minuten") {
 						+ 	'</tr>'
 						+ '</table>';
 
-} else {
+					} else {
 	content = content 	+ 'Hierbij zag ik dat de datum en tijd op dat moment stond ingesteld op: '	+ recorderdatumtijdStr + ' uur. '
 						+ 'De op dat moment geldige datum en/of tijd bleek echter te zijn: ' + werkelijkedatumtijdStr1 + ' uur. '
 						+ 'Gelet op vorenstaande bleek mij dat de ingestelde tijd op het goed derhalve '
@@ -1356,8 +1301,6 @@ if 	(array['verschildatumtijd'] == "0 minuten") {
 	content = content 	+ 	'<h3>Veiligstellen</h3>'
 						+ 	'<p>'
 
-
-
 ///// naar bureau en geen opnames.
 // ombuigen naar:
 //  .....
@@ -1391,29 +1334,46 @@ if 	(array['locatieveiligstellen'] == "Extractie mislukt") {
 
 
 
-	content = content 	+ 	'<h3>Simkaart</h3>'
-						+ 	'<p>'
 
+
+
+	content = content 	+ 	'<h3>Simkaartcode</h3>'
+							+ 	'<p>'
+//if (array['simcode'] == "Ja, bekend") {
+//		content = content	+ 'De simkaart was voorzien van een bekende pin code. Hierdoor kon de simkaart uitgelezen worden'
+//											+ 'met ' + capitalizeFirstLetter(array['ufedtool']) + '.'
+//											+  '</p>';
+//		}else if (array['simcode'] == "Ja, onbekend") {
+//												+ 'De simkaart was voorzien van een onbekende pin code. Hierdoor kon de simkaart niet uitgelezen worden.'
+//		}else if (array['simcode'] == "nee, niet actief") {
+//												+ 'De simkaart was niet voorzien van een pin code. Hierdoor kon de simkaart uitgelezen worden'
+//												+ 'met ' + capitalizeFirstLetter(array['ufedtool']) + '.'
+//												+  '</p>';
+//				}else{
+//		}
+
+
+	content = content 	+ 	'<h3>Simkaart veiligstellen</h3>'
+											+ 	'<p>'
 
 // simkaart uitlezen?
 // Smartphone met Simkaart en microSD
 if	(array['SoortGoed'] == "Smartphone met Simkaart en microSD") {
 	content = content	+  '<p>'
-						+  'De simkaart is door mij uitgelezen door gebruik te maken van ' + array['ufedtool'] + '.'
-						+ ' ' + capitalizeFirstLetter(array['ufedtool']) + ' extraheerd informatie uit de simkaart om het vervolgens aan de onderzoeker te kunnen presenteren.'
+										+  'De simkaart is door mij uitgelezen door gebruik te maken van ' + array['ufedtool'] + '.'
+										+ ' ' + capitalizeFirstLetter(array['ufedtool']) + ' extraheerd informatie uit de simkaart om het vervolgens aan de onderzoeker te kunnen presenteren.'
 	if (array['simcode'] == "Ja, bekend") {
-						+ 'De simkaart was voorzien van een bekende pin code. Hierdoor kon de simkaart uitgelezen worden'
-						+ 'met ' + capitalizeFirstLetter(array['ufedtool']) + '.'
-						+  '</p>';
+										+ 'De simkaart was voorzien van een bekende pin code. Hierdoor kon de simkaart uitgelezen worden'
+										+ 'met ' + capitalizeFirstLetter(array['ufedtool']) + '.'
+										+  '</p>';
 	}else if (array['simcode'] == "Ja, onbekend") {
-						+ 'De simkaart was voorzien van een onbekende pin code. Hierdoor kon de simkaart niet uitgelezen worden.'
+										+ 'De simkaart was voorzien van een onbekende pin code. Hierdoor kon de simkaart niet uitgelezen worden.'
 	}else if (array['simcode'] == "nee, niet actief") {
-						+ 'De simkaart was niet voorzien van een pin code. Hierdoor kon de simkaart uitgelezen worden'
-						+ 'met ' + capitalizeFirstLetter(array['ufedtool']) + '.'
-						+  '</p>';
-	}
-	else {
-	}
+										+ 'De simkaart was niet voorzien van een pin code. Hierdoor kon de simkaart uitgelezen worden'
+										+ 'met ' + capitalizeFirstLetter(array['ufedtool']) + '.'
+										+  '</p>';
+						}else {
+					}
 }
 
 // Smartphone met Simkaart
