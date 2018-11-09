@@ -260,7 +260,7 @@ if 	(array['cctv'] == "CCTV Gecertificeerd") {
 
 // inhoud bepalen van het overzicht goed
 // Smartphone met Simkaarten microSD
-if	(array['SoortGoed'] == "Smartphone met Simkaart en microSD") {
+if	((array['SoortGoed'] == "Smartphone met Simkaart en microSD")||(array['OVJname'] == "test")) {
 	content = content 	+ '<table width="100%">'
 						+ 	'<tr>'
 						+ 		'<td class="grey"  width="20%">Soort goed </td>'
