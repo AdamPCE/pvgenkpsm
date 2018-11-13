@@ -1313,33 +1313,60 @@ if 	(array['locatieveiligstellen'] != "Overgebracht naar bureau") {
 						+  'reeds was overschreven door het videobewakingssysteem. ';
 	}
 	else if (array['locatieveiligstellen'] == "Extractie gelukt") {
-	content = content 	+  'Vervolgens is door mij, verbalisant, de op bovenstaande wijze verkregen informatie ge&euml;xporteerd naar een extern opslagmedium.'
+	content = content 	+  'Vervolgens is door mij, verbalisant, de op bovenstaande wijze verkregen informatie ge&euml;xporteerd naar een extern opslagmedium. '
 		if 	(array['verschildatumtijd'] != "0 minuten") {
 		content = content 	+  'Gelet op het tijdsverschil tussen de werkelijke datum en tijd en de datum en tijd op het goed, moet er bij de analyse van de informatie mogelijk rekening mee moeten worden gehouden.'
 		}
 	}
-}
+}videobewakingssysteemvideo
 
+
+//// EXTRACTIE WEL OF NIET GELUKT?
+//	Extractie mislukt
 if 	(array['locatieveiligstellen'] == "Extractie mislukt") {
-	if 	(array['opnamesaanwezig'] == "Geen informatie geen geheugen") {
-	content = content 	+  'Het bleek niet mogelijk om het goed veilig te stellen. '
-//						+  'Nader onderzoek wees namelijk uit dat er binnen eerder gevraagde periode geen opnameactiviteiten '
-//						+  'hebben plaatsgevonden, lopende opnamen zijn stop gezet of dat de gevraagde data '
-//						+  'reeds was overschreven door het videobewakingssysteem. ';
-	}
-	else if (array['opnamesaanwezig'] == "Geen informatie wel geheugen") {
-	content = content 	+  'Vervolgens zijn door mij, verbalisant, bovengenoemde informatie van het bewijsbestand ge&euml;xporteerd naar een extern opslagmedium.  ';
-	}
-}
+	content = content 	+  'Het bleek niet mogelijk om het goed veilig te stellen.'
 	content = content	+ 	'</p>';
+	}else{
+// next item
+}
+
+///	Extractie mislukt, met fotorapportage
+if 	(array['locatieveiligstellen'] == "Extractie mislukt, met fotorapportage") {
+	//	if 	(array['opnamesaanwezig'] == "Geen informatie geen geheugen") {
+		content = content 	+  'Het bleek niet mogelijk om het goed veilig te stellen. Door mij is echter wel een fotorapportage gemaakt van de voor het onderzoek relevante informatie'
+		content = content	+ 	'</p>';
+		}else{
+	// next item
+}
+
+
+////Extractie gelukt, met fotorapportage
+	///	Extractie gelukt, met fotorapportage
+	if 	(array['locatieveiligstellen'] == "Extractie gelukt, met fotorapportage") {
+		//	if 	(array['opnamesaanwezig'] == "Geen informatie geen geheugen") {
+			content = content 	+  'Buiten de extractie van het goed is er aanvullend nog een fotorapportage gemaakt door mij met de voor het onderzoek relevante informatie'
+			content = content	+ 	'</p>';
+			}else{
+		// next item
+	}
+
+
+
+//if 	(array['locatieveiligstellen'] == "Extractie mislukt") {
+//	if 	(array['opnamesaanwezig'] == "Geen informatie geen geheugen") {
+//	content = content 	+  'Het bleek niet mogelijk om het goed veilig te stellen. '
+//	}
+//	else if (array['opnamesaanwezig'] == "Geen informatie wel geheugen") {
+//	content = content 	+  'Vervolgens zijn door mij, verbalisant, bovengenoemde informatie van het bewijsbestand ge&euml;xporteerd naar een extern opslagmedium.  ';
+//	}
+//}
+//	content = content	+ 	'</p>';
 
 
 
 
 
 
-	content = content 	+ 	'<h3>Simkaartcode</h3>'
-							+ 	'<p>'
 //if (array['simcode'] == "Ja, bekend") {
 //		content = content	+ 'De simkaart was voorzien van een bekende pin code. Hierdoor kon de simkaart uitgelezen worden'
 //											+ 'met ' + capitalizeFirstLetter(array['ufedtool']) + '.'
@@ -1354,102 +1381,59 @@ if 	(array['locatieveiligstellen'] == "Extractie mislukt") {
 //		}
 
 
-	content = content 	+ 	'<h3>Simkaart veiligstellen</h3>'
-											+ 	'<p>'
 
-// simkaart uitlezen?
-// Smartphone met Simkaart en microSD
-if	(array['SoortGoed'] == "Smartphone met Simkaart en microSD") {
-	content = content	+  '<p>'
-										+  'De simkaart is door mij uitgelezen door gebruik te maken van ' + array['ufedtool'] + '.'
-										+ ' ' + capitalizeFirstLetter(array['ufedtool']) + ' extraheerd informatie uit de simkaart om het vervolgens aan de onderzoeker te kunnen presenteren.'
-	if (array['simcode'] == "Ja, bekend") {
-										+ 'De simkaart was voorzien van een bekende pin code. Hierdoor kon de simkaart uitgelezen worden'
-										+ 'met ' + capitalizeFirstLetter(array['ufedtool']) + '.'
-										+  '</p>';
-	}else if (array['simcode'] == "Ja, onbekend") {
-										+ 'De simkaart was voorzien van een onbekende pin code. Hierdoor kon de simkaart niet uitgelezen worden.'
-	}else if (array['simcode'] == "nee, niet actief") {
-										+ 'De simkaart was niet voorzien van een pin code. Hierdoor kon de simkaart uitgelezen worden'
-										+ 'met ' + capitalizeFirstLetter(array['ufedtool']) + '.'
-										+  '</p>';
-						}else {
-					}
-}
+if	((array['SoortGoed'] == "Smartphone met Simkaart en microSD")||(array['SoortGoed'] == "Smartphone met Simkaart")||(array['SoortGoed'] == "Simkaart")||(array['SoortGoed'] == "Tablet met Simkaart en microSD")||(array['SoortGoed'] == "Tablet met Simkaart")||(array['OVJname'] == "test")){
 
-// Smartphone met Simkaart
-if	(array['SoortGoed'] == "Smartphone met Simkaart") {
-	content = content	+  '<p>'
-						+  'De simkaart is door mij uitgelezen door gebruik te maken van ' + array['ufedtool'] + '.'
-						+ ' ' + capitalizeFirstLetter(array['ufedtool']) + ' extraheerd informatie uit de simkaart om het vervolgens aan de onderzoeker te kunnen presenteren.'
-	if (array['simcode'] == "Ja, bekend") {
-						+ 'De simkaart was voorzien van een bekende pin code. Hierdoor kon de simkaart uitgelezen worden'
-						+ 'met ' + capitalizeFirstLetter(array['ufedtool']) + '.'
-						+  '</p>';
-	}else if (array['simcode'] == "Ja, onbekend") {
-						+ 'De simkaart was voorzien van een onbekende pin code. Hierdoor kon de simkaart niet uitgelezen worden.'
-	}else if (array['simcode'] == "nee, niet actief") {
-						+ 'De simkaart was niet voorzien van een pin code. Hierdoor kon de simkaart uitgelezen worden'
-						+ 'met ' + capitalizeFirstLetter(array['ufedtool']) + '.'
-						+  '</p>';
-	}
-	else {
-	}
-}
+					if (array['simcode'] == "Ja, onbekend") {
+						content = content + 	'<h3>Simkaartcode</h3>'
+															+ 	'<p>'
+						content = content	+ 'De simkaart was voorzien van een onbekende pin code. Hierdoor kon de simkaart niet uitgelezen worden.'
+						content = content	+  '</p>';
 
-// Simkaart
-if	(array['SoortGoed'] == "Simkaart") {
-	content = content	+  '<p>'
-						+  'De simkaart is door mij uitgelezen door gebruik te maken van ' + array['ufedtool'] + '.'
-						+ ' ' + capitalizeFirstLetter(array['ufedtool']) + ' extraheerd informatie uit de simkaart om het vervolgens aan de onderzoeker te kunnen presenteren.'
-	if (array['simcode'] == "Ja, bekend") {
-						+ 'De simkaart was voorzien van een bekende pin code. Hierdoor kon de simkaart uitgelezen worden'
-						+ 'met ' + capitalizeFirstLetter(array['ufedtool']) + '.'
-						+  '</p>';
-	}else if (array['simcode'] == "Ja, onbekend") {
-						+ 'De simkaart was voorzien van een onbekende pin code. Hierdoor kon de simkaart niet uitgelezen worden.'
-	}else if (array['simcode'] == "nee, niet actief") {
-						+ 'De simkaart was niet voorzien van een pin code. Hierdoor kon de simkaart uitgelezen worden'
-						+ 'met ' + capitalizeFirstLetter(array['ufedtool']) + '.'
-						+  '</p>';
-	}
-	else {
-	}
-}
 
-// Tablet met Simkaart en microSD
-if	(array['SoortGoed'] == "Tablet met Simkaart en microSD") {
-	content = content	+  '<p>'
-						+  'De simkaart is door mij uitgelezen door gebruik te maken van ' + array['ufedtool'] + '.'
-						+ ' ' + capitalizeFirstLetter(array['ufedtool']) + ' extraheerd informatie uit de simkaart om het vervolgens aan de onderzoeker te kunnen presenteren.'
-	if (array['simcode'] == "Ja, bekend") {
-						+ 'De simkaart was voorzien van een bekende pin code. Hierdoor kon de simkaart uitgelezen worden'
-						+ 'met ' + capitalizeFirstLetter(array['ufedtool']) + '.'
-						+  '</p>';
-	}else if (array['simcode'] == "Ja, onbekend") {
-						+ 'De simkaart was voorzien van een onbekende pin code. Hierdoor kon de simkaart niet uitgelezen worden.'
-	}else if (array['simcode'] == "nee, niet actief") {
-						+ 'De simkaart was niet voorzien van een pin code. Hierdoor kon de simkaart uitgelezen worden'
-						+ 'met ' + capitalizeFirstLetter(array['ufedtool']) + '.'
-						+  '</p>';
-	}
-	else {
-	}
+					}else if (array['simcode'] == "Ja, bekend") {
+						content = content + 	'<h3>Simkaartcode</h3>'
+															+ 	'<p>'
+						content = content	+ 'De simkaart was voorzien van een bekende pin code. Hierdoor kon de simkaart uitgelezen worden'
+						content = content	+  '</p>';
+						content = content + 	'<h3>Simkaart veiligstellen</h3>'
+															+ 	'<p>'
+															+  'De simkaart is door mij uitgelezen door gebruik te maken van ' + array['ufedtool'] + '.'
+															+  ' ' + capitalizeFirstLetter(array['ufedtool']) + ' extraheerd informatie uit de simkaart om het vervolgens aan de onderzoeker te kunnen presenteren.'
+						content = content +  'Vervolgens zijn door mij, verbalisant, bovengenoemde informatie van het bewijsbestand ge&euml;xporteerd naar een extern opslagmedium.  ';
+						content = content	+  '</p>';
+
+
+					}else (array['simcode'] == "nee, niet actief") {
+						content = content + 	'<h3>Simkaartcode</h3>'
+															+ 	'<p>'
+						content = content	+ 'De simkaart was niet voorzien van een pin code. Hierdoor kon de simkaart uitgelezen worden'
+						content = content	+  '</p>';
+						content = content + 	'<h3>Simkaart veiligstellen</h3>'
+															+ 	'<p>'
+															+  'De simkaart is door mij uitgelezen door gebruik te maken van ' + array['ufedtool'] + '.'
+															+  ' ' + capitalizeFirstLetter(array['ufedtool']) + ' extraheerd informatie uit de simkaart om het vervolgens aan de onderzoeker te kunnen presenteren.'
+						content = content +  'Vervolgens zijn door mij, verbalisant, bovengenoemde informatie van het bewijsbestand ge&euml;xporteerd naar een extern opslagmedium.  ';
+						content = content	+  '</p>';
+				}else{
 }
 
 
 
 
-
-
-
-var overdracht = 	 	 	'<h3>Vertrekking veiliggestelde data</h3>'
+/// VERSTREKKING DATA
+if 	(array['locatieveiligstellen'] == "Extractie gelukt") {
+	var overdracht = 	 	 	'<h3>Vertrekking veiliggestelde data</h3>'
 						+ 	'<p>'
 						+ 	'De (kopie&euml;n van) de veiliggestelde data, '
 						+	'worden tijdelijk bewaard op een server, in gebruik bij de afdeling Digitale Recherche en zijn '
 						+	'voor verder onderzoek reeds overgedragen middels een extern opslagmedium aan een '
 						+ 	'medewerker van het aanvragende onderzoeksteam.'
 						+ 	'</p>';
+			}else{
+	// next item
+}
+
 
 if 	(array['locatieveiligstellen'] != "Overgebracht naar bureau") {
 	if (array['locatieveiligstellen'] == "Extractie gelukt") {
