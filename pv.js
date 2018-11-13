@@ -1390,18 +1390,15 @@ if	((array['SoortGoed'] == "Smartphone met Simkaart en microSD")||(array['SoortG
 						content = content	+ 'De simkaart was voorzien van een onbekende pin code. Hierdoor kon de simkaart niet uitgelezen worden.'
 						content = content	+  '</p>';
 
-
 					}else if (array['simcode'] == "Ja, bekend") {
-						content = content + 	'<h3>Simkaartcode</h3>'
-															+ 	'<p>'
-						content = content	+ 'De simkaart was voorzien van een bekende pin code. Hierdoor kon de simkaart uitgelezen worden'
-						content = content	+  '</p>';
-						content = content + 	'<h3>Simkaart veiligstellen</h3>'
-															+ 	'<p>'
-															+  'De simkaart is door mij uitgelezen door gebruik te maken van ' + array['ufedtool'] + '.'
-															+  ' ' + capitalizeFirstLetter(array['ufedtool']) + ' extraheerd informatie uit de simkaart om het vervolgens aan de onderzoeker te kunnen presenteren.'
-						content = content +  'Vervolgens zijn door mij, verbalisant, bovengenoemde informatie van het bewijsbestand ge&euml;xporteerd naar een extern opslagmedium.  ';
-						content = content	+  '</p>';
+						content = content +	'<h3>Simkaartcode</h3>'
+															+ 'De simkaart was voorzien van een bekende pin code. Hierdoor kon de simkaart uitgelezen worden'
+						content = content + '<h3>Simkaart veiligstellen</h3>'
+															+ '<p>'
+															+ 'De simkaart is door mij uitgelezen door gebruik te maken van ' + array['ufedtool'] + '.'
+															+ ' ' + capitalizeFirstLetter(array['ufedtool']) + ' extraheerd informatie uit de simkaart om het vervolgens aan de onderzoeker te kunnen presenteren.'
+						content = content + 'Vervolgens zijn door mij, verbalisant, bovengenoemde informatie van het bewijsbestand ge&euml;xporteerd naar een extern opslagmedium.'
+						content = content	+ '</p>';
 
 
 					}else (array['simcode'] == "nee, niet actief") {
