@@ -124,8 +124,9 @@ var htmlhead = 			 '<!DOCTYPE html>'
 
 	htmlhead = htmlhead	 +  '</head>';
 
-var img = "http://www.keijsper.com/kpsm_small.jpg";
-var logo =	"http://www.keijsper.com/logo.jpeg";
+//var img = "http://www.keijsper.com/kpsm_small.jpg";
+//var logo =	"http://www.keijsper.com/logo.jpeg";
+var logo =	"http://www.keijsper.com/logo.png";
 
 var content = 			'<div class="page"> ';
 
